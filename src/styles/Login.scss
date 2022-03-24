@@ -1,0 +1,40 @@
+.login-section{
+    background-image: url("../assets/images/login_background.png");
+    background-repeat: no-repeat;
+    background-position-x: 700px;
+    background-position-y: -100px;
+  background-color: #FDCB05;
+}
+.header-content-mobile{
+  background-color: #000000;
+  position: fixed;
+  color: #FFFFFF;
+  z-index: 50;
+}
+
+@media (max-width: 992px) {
+  .header-content-mobile{
+    background-color: #000000;
+    position: relative;
+    color: #FFFFFF;
+    height: 86px;
+   
+ 
+    z-index: 0;
+  
+    
+  }
+  .menu-nav{
+    margin-top: 10px;
+
+  }
+  
+}
+
+@media (max-width: 576px) {
+  .form-login{
+    width: 288px;
+height: 330px;
+  }
+}
+

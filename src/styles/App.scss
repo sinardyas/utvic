@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './_mixin.scss';
+
+@layer utilities {
+
+  * {
+    @apply scroll-smooth
+  }
+
+  :root {
+    --header-height-desktop: 70px;
+    --header-height-mobile: 50px;
+  }
+  
+  ::selection {
+    @apply bg-gray-700 text-yellow-300
+  }
+
+  ::-moz-selection {
+    @apply bg-gray-700 text-yellow-300
+  }
+
+  html {
+    @apply overflow-x-hidden min-h-full;
+  }
+
+  body {
+    @apply flex flex-col h-full subpixel-antialiased antialiased min-h-screen m-0 ;
+  }
+
+  #root {
+    @apply flex flex-col min-h-screen flex-1;
+  }
+
+  main {
+    @apply flex-1
+  }
+
+  pre {
+    @apply text-xs;
+    white-space: break-spaces;
+  }
+
+  .material-icons {
+    vertical-align: bottom !important;
+  }
+
+  a, button {
+    &[class*=btn-] {
+      @apply px-4 py-2 rounded
+    }
+  }
+
+  .btn-yellow {
+    @apply bg-yellow-400;
+  }
+
+  .space-from-header {
+    // @apply mt-[var(--header-height-mobile)] lg:mt-[var(--header-height-desktop)];
+
+    margin-top: var(--header-height-mobile);
+
+    @media (min-width: 1200px) {
+      margin-top: var(--header-height-desktop);
+    }
+  }
+}
+section{
+  padding-left: 100px;
+  padding-right: 100px;
+}
+h1{
+  font-family: 'SF Pro Display';
+font-style: normal;
+font-weight: 500;
+font-size: 36px;
+line-height: 43px;
+
+color: #000000;
+}
+.share{
+  width: 24px;
+height: 24px;
+}
+@media (max-width: 1024px) {
+  section{
+    padding: 0px;
+  
+  }
+}
+@media (max-width: 992px) {
+  h1{
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    
+    color: #000000;
+  }
+}
+.active{
+  color: red;
+}
+ 
+
+
+
+
+

@@ -1,0 +1,46 @@
+.drawer-main {
+  .drawer-wrap {
+    @apply fixed top-0 bg-gray-50 bottom-0 z-[90] text-black;
+    transition: all 500ms ease-in-out;
+  }
+
+  &, &.hide {
+    .drawer-wrap {
+      @apply left-[-100%] invisible
+    }
+  }
+
+  // &.show {
+  //   @apply left-[0%] visible
+  // }
+
+  .drawer-nav-show & {
+    .drawer-wrap {
+      @apply left-[0%] visible
+    }
+  }
+
+  .bg {
+    @apply invisible opacity-0;
+
+    .drawer-nav-show & {
+      @apply fixed top-0 w-full h-full left-0 z-[80] bg-black opacity-80 visible;
+    }
+  }
+}
+
+.drawer-menu {
+  > .nav {
+    > li {
+      .children {
+        display: none;
+      }
+
+      &.show {
+        > .children {
+          display: block;
+        }
+      }
+    }
+  }
+}

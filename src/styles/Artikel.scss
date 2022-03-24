@@ -1,0 +1,88 @@
+.list-artikel{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 10px;
+}
+
+.textarea{
+    height: 261px;
+
+
+background: rgba(125, 125, 125, 0.1);
+border-radius: 5px;
+}
+
+.img-artikel-read{
+    width: 117.93px;
+height: 132px;
+}
+.comment-foto{
+    width: 72px;
+height: 72px;
+}
+
+@media (max-width: 992px) {
+    .list-artikel{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 10px;
+    }
+
+    .img-artikel{
+        width: 117.93px;
+height: 132px;
+    }
+    .img-artikelku{
+        width: 117.93px;
+        height: 132px;
+       object-fit: cover;
+
+    }
+    .comment-foto{
+        width: 72px;
+height: 72px;
+    }
+}
+
+@media (max-width: 576px) {
+    .img-artikel{
+        width: 117.93px;
+height: 132px;
+    }
+
+    .img-artikelku{
+        width: 117.93px;
+        height: 132px;
+       object-fit: cover;
+
+    }
+
+    .comment-foto{
+        width: 72px;
+height: 72px;
+    }
+
+  .date{
+    font-family: 'SF Pro Display';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 25px;
+/* identical to box height, or 155% */
+
+
+color: #686E80;
+
+  }
+  h2{
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    
+    color: #000000;
+}
+}
+
+

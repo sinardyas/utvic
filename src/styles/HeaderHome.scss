@@ -1,0 +1,124 @@
+.header-nav-main {
+  .nav {
+    > li {
+      @apply inline-block mr-4;
+
+      > .link {
+        > a {
+          @apply py-4;
+        }
+      }
+
+      &:last-child {
+        @apply mr-0;
+      }
+
+      > .children {
+        @apply absolute invisible bg-gray-50 text-gray-800 rounded-xl border py-4;
+        top: calc(100% + 2rem);
+        transition: 300ms linear;
+
+        .link {
+          @apply px-4 py-2;
+        }
+      }
+
+
+      &:hover {
+        > .children {
+          @apply visible;
+          top: 100%;
+          li {
+            &:hover {
+              > .link {
+                @apply bg-slate-100;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.button-languages-group {
+  li {
+    @apply inline-flex items-center;
+
+    + li {
+      &::before {
+        content: '';
+        border-left: solid 1px #eee;
+        height: 14px
+      }
+    }
+  }
+  button {
+    @apply opacity-50 px-2;
+
+    &.active {
+      @apply opacity-100
+    }
+  }
+}
+
+Button{
+  img{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+  .menu-text{
+    font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  /* identical to box height */
+  
+  
+  color: #FFFFFF;
+  }
+  
+
+}
+
+.header-content{
+  background-color: #000000;
+  position: fixed;
+  color: #FFFFFF;
+  z-index: 50;
+}
+
+@media (max-width: 992px) {
+  .header-content{
+    background-color: #FDCB05;
+    position: relative;
+    color: #FFFFFF;
+    background-image: url(../assets/images/splash.png);
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    z-index: 0;
+    .flex{
+      padding-top: 20px;
+      padding-bottom: 10px;
+    }
+    .flex-col{
+      padding-bottom: 80px;
+    }
+    
+  }
+  .menu-nav{
+    margin-top: 10px;
+
+  }
+  .alert{
+    position: relative;
+    top: 10px;
+    background-color: #000000;
+  }
+}
