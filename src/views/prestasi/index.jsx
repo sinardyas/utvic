@@ -299,7 +299,9 @@ class Child extends React.Component {
             </h2>
            </div>
            </div>
+           <div className='block md:hidden'>
            <img src={Search} alt=".." />
+           </div>
          </div>
         
        </div>

@@ -24,6 +24,7 @@ import Share from "../../assets/images/share-certif.png"
 import SelectUnstyled, { selectUnstyledClasses } from '@mui/base/SelectUnstyled';
 import OptionUnstyled, { optionUnstyledClasses } from '@mui/base/OptionUnstyled';
 import PopperUnstyled from '@mui/base/PopperUnstyled';
+import Search from "../../assets/images/search.png"
 
 import { styled } from '@mui/system';
 const { 
@@ -282,33 +283,50 @@ class Child extends React.Component {
   </div>
   </div>
   </section>
-     <section className='hidden md:flex'>
+  
+
+
+     <section>
        <div className="container">
-         <div className="flex flex-row pt-5">
+
+         <div className="flex flex-row justify-between pt-5">
+           <div className="flex flex-row">
            <div className='px-5'>
            <img src={CertifLogo} alt="..." />
            </div>
            <div className='flex items-center'>
              <h2>
-            E-Certificate
+             E-Certificate
             </h2>
            </div>
+           </div>
+           <div className='block md:hidden'>
+           <img src={Search} alt=".." />
+           </div>
          </div>
+        
        </div>
+      
      </section>
+
 
      <SearchForm/>
 
-      <section className='profile-body lg:pt-10 pb-40 sm:pt-20'>
+     <section className='profile-body lg:pt-10 pb-40 sm:pt-20 w-full'>
         <div className="container">
 
       <div className="flex flex-col">
-      <div className="flex flex-row pb-5 justify-between">
+        <div className="flex flex-row pb-5 justify-between">
           <div className="flex flex-row">
           <img src={CertifLogo} alt="..." width="40" height="47"/>
+   
           <div className='flex items-center pl-5'>
-          <h2>Total Certificate (4)</h2>
+          <h2>Total certificate (4)</h2>
           </div>
+         
+
+          
+
           </div>
 
           <CustomSelect defaultValue={10}>
@@ -319,119 +337,191 @@ class Child extends React.Component {
       </CustomSelect>
         </div>
 
-        <div className="flex lg:flex-row sm:flex-col gap-5">
-
-        <div class="p-6   bg-white rounded-xl border-solid border-2 border-slate-200  w-full">
+        <div className="col-prestasi flex flex-row  gap-5 justify-between  ">
+       
+        <div class="p-6 bg-white rounded-xl border-solid border-2 border-slate-200 border-l-orange-300 w-full">
                 <div className='flex flex-row'>
                   <div>
                 <img src={CertifLogo} alt="..." width="40" height="47"/>
                 </div>
-                <div className="flex flex-col pl-5 pr-20">
-                  <div className="flex lg:flex-col sm:flex-row">
-                  <div className="flex lg:flex-row sm:flex-col">
-                    <span className='pr-5 font-slate-200'>Prestasi</span>
-                    <span>: Juara 2 Grand Final</span>
+                <div className='list-content1'>
+                <div className="content-list flex flex-col pl-5">
+                  <div className="flex flex-col ">
+                  <div className="content-prestasi flex flex-row ">
+                    <span className='pr-5 font-content'>Prestasi :</span>
+                   
+                    <span className='font-subcontent'>Juara&nbsp;2&nbsp;Grand&nbsp;Final</span>
                   </div>
-                  <div className="flex lg:flex-row sm:flex-col pt-2">
-                    <span className='pr-9'>Judul</span>
-                    <span>: STAR</span>
+                  <div className="content-prestasi flex flex-row  pt-2">
+                    <span className='pr-9 font-content'> Judul :</span>
+                  
+                    <span className='font-subcontent'>STAR</span>
                   </div>
                   </div>
-                  <div className="flex flex-row pt-2">
-                    <span className='pr-10'>Role</span>
-                    <span>: member</span>
+                  <div className="flex flex-row pt-2 hidden md:flex ">
+                    <span className='pr-10 font-content'>Role :</span>
+                   
+                    <span className='font-subcontent'> member</span>
                   </div>
 
                 </div>
-                <div className='flex flex-col'>
-                <img src={View} alt=".." width="71" height="26" />
+              
+                <div className='col-downloadpres gap-2'>
+          <div className='w-full flex items-center'>
+        <img src={View} alt=".." width="71" height="26" />
+        </div>
+        <div className='w-full'>
                 <img src={Download} alt=".." width="105" height="25" className='pt-2'/>
+                </div>
+                <div className='w-full flex items-center'>
                 <img src={Share} alt=".." width="76" height="25" className='pt-2'/>
                 </div>
+        </div>
+                </div>
+
+                <div className="flex flex-col block md:hidden ">
+                    <span className='pr-10 font-content'>Role&nbsp;:</span>
+                    <span className='font-subcontent'> member</span>
+                  </div>
                 </div>
           </div>
-          <div class="p-6   bg-white rounded-xl border-solid border-2 border-slate-200  w-full">
+          <div class="p-6   bg-white rounded-xl border-solid border-2 border-slate-200 border-l-orange-300 w-full">
                 <div className='flex flex-row'>
                   <div>
                 <img src={CertifLogo} alt="..." width="40" height="47"/>
                 </div>
-                <div className="flex flex-col pl-5 pr-20">
-                  <div className="flex flex-row">
-                    <span className='pr-5'>Prestasi</span>
-                    <span>: Juara 2 Grand Final</span>
+                <div className='list-content1'>
+                <div className="content-list flex flex-col pl-5">
+                  <div className="flex flex-col ">
+                  <div className="content-prestasi flex flex-row ">
+                    <span className='pr-5 font-content'>Prestasi :</span>
+                   
+                    <span className='font-subcontent'>Juara&nbsp;2&nbsp;Grand&nbsp;Final</span>
                   </div>
-                  <div className="flex flex-row pt-2">
-                    <span className='pr-9'>Judul</span>
-                    <span>: STAR</span>
+                  <div className="content-prestasi flex flex-row  pt-2">
+                    <span className='pr-9 font-content'> Judul :</span>
+                  
+                    <span className='font-subcontent'>STAR</span>
                   </div>
-                  <div className="flex flex-row pt-2">
-                    <span className='pr-10'>Role</span>
-                    <span>: member</span>
+                  </div>
+                  <div className="flex flex-row pt-2 hidden md:flex ">
+                    <span className='pr-10 font-content'>Role :</span>
+                   
+                    <span className='font-subcontent'> member</span>
                   </div>
 
                 </div>
-                <div className='flex flex-col'>
-                <img src={View} alt=".." width="71" height="26" />
+                <div className='col-downloadpres gap-2'>
+          <div className='w-full flex items-center'>
+        <img src={View} alt=".." width="71" height="26" />
+        </div>
+        <div className='w-full'>
                 <img src={Download} alt=".." width="105" height="25" className='pt-2'/>
+                </div>
+                <div className='w-full flex items-center'>
                 <img src={Share} alt=".." width="76" height="25" className='pt-2'/>
                 </div>
+        </div>
+                </div>
+                <div className="flex flex-col block md:hidden ">
+                    <span className='pr-10 font-content'>Role&nbsp;:</span>
+                    <span className='font-subcontent'> member</span>
+                  </div>
+
                 </div>
           </div>
+         
           </div>
-          <div className="flex lg:flex-row sm:flex-col gap-5 pt-5">
 
-<div class="p-6   bg-white rounded-xl border-solid border-2 border-slate-200  w-full">
+
+          <div className="col-prestasi flex lg:flex-row sm:flex-col justify-between gap-5 pt-5">
+
+<div class="p-6   bg-white rounded-xl border-solid border-2 border-slate-200 border-l-orange-300 w-full">
         <div className='flex flex-row'>
           <div>
         <img src={CertifLogo} alt="..." width="40" height="47"/>
         </div>
-        <div className="flex flex-col pl-5 pr-20">
-          <div className="flex flex-row">
-            <span className='pr-5'>Prestasi</span>
-            <span>: Juara 2 Grand Final</span>
-          </div>
-          <div className="flex flex-row pt-2">
-            <span className='pr-9'>Judul</span>
-            <span>: STAR</span>
-          </div>
-          <div className="flex flex-row pt-2">
-            <span className='pr-10'>Role</span>
-            <span>: member</span>
-          </div>
+        <div className='list-content1'>
+        <div className="content-list flex flex-col pl-5">
+                  <div className="flex flex-col ">
+                  <div className="content-prestasi flex flex-row ">
+                    <span className='pr-5 font-content'>Prestasi :</span>
+                   
+                    <span className='font-subcontent'>Juara&nbsp;2&nbsp;Grand&nbsp;Final</span>
+                  </div>
+                  <div className="content-prestasi flex flex-row  pt-2">
+                    <span className='pr-9 font-content'> Judul :</span>
+                  
+                    <span className='font-subcontent'>STAR</span>
+                  </div>
+                  </div>
+                  <div className="flex flex-row pt-2 hidden md:flex ">
+                    <span className='pr-10 font-content'>Role :</span>
+                   
+                    <span className='font-subcontent'> member</span>
+                  </div>
 
+                </div>
+                <div className='col-downloadpres gap-2'>
+          <div className='w-full flex items-center'>
+        <img src={View} alt=".." width="71" height="26" />
         </div>
-        <div className='flex flex-col'>
-                <img src={View} alt=".." width="71" height="26" />
+        <div className='w-full'>
                 <img src={Download} alt=".." width="105" height="25" className='pt-2'/>
+                </div>
+                <div className='w-full flex items-center'>
                 <img src={Share} alt=".." width="76" height="25" className='pt-2'/>
                 </div>
+        </div>
+        </div>
+        <div className="flex flex-col block md:hidden ">
+                    <span className='pr-10 font-content'>Role&nbsp;:</span>
+                    <span className='font-subcontent'> member</span>
+                  </div>
         </div>
   </div>
-  <div class="p-6   bg-white rounded-xl border-solid border-2 border-slate-200  w-full">
+  <div class="p-6   bg-white rounded-xl border-solid border-2 border-slate-200 border-l-orange-300 w-full">
         <div className='flex flex-row'>
           <div>
         <img src={CertifLogo} alt="..." width="40" height="47"/>
         </div>
-        <div className="flex flex-col pl-5 pr-20">
-          <div className="flex flex-row">
-            <span className='pr-5'>Certificate</span>
-            <span>: Juara 2 Grand Final</span>
-          </div>
-          <div className="flex flex-row pt-2">
-            <span className='pr-9'>Judul</span>
-            <span>: STAR</span>
-          </div>
-          <div className="flex flex-row pt-2">
-            <span className='pr-10'>Role</span>
-            <span>: member</span>
-          </div>
+        <div className='list-content1'>
+        <div className="content-list flex flex-col pl-5">
+                  <div className="flex flex-col ">
+                  <div className="content-prestasi flex flex-row ">
+                    <span className='pr-5 font-content'>Prestasi :</span>
+                   
+                    <span className='font-subcontent'>Juara&nbsp;2&nbsp;Grand&nbsp;Final</span>
+                  </div>
+                  <div className="content-prestasi flex flex-row  pt-2">
+                    <span className='pr-9 font-content'> Judul :</span>
+                  
+                    <span className='font-subcontent'>STAR</span>
+                  </div>
+                  </div>
+                  <div className="flex flex-row pt-2 hidden md:flex ">
+                    <span className='pr-10 font-content'>Role :</span>
+                   
+                    <span className='font-subcontent'> member</span>
+                  </div>
 
+                </div>
+        <div className='col-downloadpres gap-2'>
+          <div className='w-full flex items-center'>
+        <img src={View} alt=".." width="71" height="26" />
         </div>
-        <div className='flex flex-col'>
-                <img src={View} alt=".." width="71" height="26" />
+        <div className='w-full'>
                 <img src={Download} alt=".." width="105" height="25" className='pt-2'/>
+                </div>
+                <div className='w-full flex items-center'>
                 <img src={Share} alt=".." width="76" height="25" className='pt-2'/>
                 </div>
+        </div>
+        </div>
+        <div className="flex flex-col block md:hidden ">
+                    <span className='pr-10 font-content'>Role&nbsp;:</span>
+                    <span className='font-subcontent'> member</span>
+                  </div>
         </div>
   </div>
   </div>
