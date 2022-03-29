@@ -402,7 +402,7 @@ Artikel Ku
 
                   
 <div className='pr-2'>
-<div class="max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
+<div class=" bg-white rounded-xl shadow-lg flex items-center space-x-4">
 <img class="img-artikel rounded-xl" src={article.ImageUrl} alt="ChitChat Logo"/>
 
   <div>

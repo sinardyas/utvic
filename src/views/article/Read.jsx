@@ -134,16 +134,16 @@ class Child extends React.Component {
   </div>
   </div>
   </section>
-  <section className='lg:pt-5 sm:pt-20'>
+  <section className='section-article lg:pt-5 sm:pt-20'>
     <div className="container">
-      <div className="flex lg:flex-row sm:flex-col justify-between">
+      <div className="flex flex-row justify-between">
         <div>
           <div className='flex w-10/12'>
       <h1 className='artikel-title'>The Agricultural Drone Market Could Reach $6 Billion in 5 Years</h1>
       </div>
       </div>
-      <div className='flex'>
-      <span>18&nbsp;Jan,&nbsp;2022&nbsp;</span>
+      <div className='date-col'>
+      <span>18&nbsp;Jan,&nbsp;2022&nbsp; </span>
       <img src={Share} alt=".." className='share'/>
       </div>
 
@@ -225,7 +225,7 @@ In their brief time on the agricultural market, drones have made a substantial i
 
         </div>
       </section>
-      <section className='pt-12'>
+      <section className='section-commment pt-12'>
         <div className="container">
           <div className='flex flex-row gap-2'>
           <h3 className='font-semibold'>Komentar</h3>
@@ -264,12 +264,15 @@ In their brief time on the agricultural market, drones have made a substantial i
         <div className="flex flex-row lg:gap-5 sm:gap-2">
       
        
-          <img src={CommentPhoto} alt=".." width="72" height="72" className='comment-foto'/>
+          <img src={CommentPhoto} alt=".."  className='comment-foto'/>
           
         
-        <div >
-          <div className='flex lg:flex-row sm:flex-col'>
-            <div className='flex w-2/12 sm:w-10/12'> <span className='font-semibold'>Fariz Sumarjo</span></div>
+        <div>
+          <div className='flex flex-row'>
+            <div className='flex w-2/12'> 
+            <span className='font-semibold'>Fariz Sumarjo</span>
+            </div>
+            
             <div className='flex flex-row'>
             <img src={Calendar} alt="..." width="24" height="24"/>
             <span className='date text-slate-500'>19 Jan, 2022</span>

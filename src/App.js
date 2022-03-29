@@ -16,6 +16,7 @@ import Error404 from './views/error/404'
 import Home from './views/home'
 import Profile from './views/profile'
 import Prestasi from './views/prestasi'
+import Certifikat from './views/certificate'
 import Article from './views/article/_index'
 
 
@@ -79,6 +80,15 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <Prestasi/>
+                </PrivateRoute>
+              }
+            />
+
+<Route exact
+              path='/certifikat'
+              element={
+                <PrivateRoute>
+                  <Certifikat/>
                 </PrivateRoute>
               }
             />

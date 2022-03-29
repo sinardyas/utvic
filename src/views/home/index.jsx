@@ -169,7 +169,7 @@ class Child extends React.Component {
                       </div>
 
                       </Link>
-                    <Link to='/achievement' className='flex items-center'>
+                    <Link to='/prestasi' className='flex items-center'>
 
                     <div className='px-10 py-5'>
              <div className="flex gap-7 flex-row">
@@ -202,7 +202,7 @@ class Child extends React.Component {
                     
                       </Link>
 
-                      <Link to='/e-certificate' >
+                      <Link to='/certifikat' >
                         <div className='px-10 py-5'>
              <div className="flex gap-8 flex-row">
                <div className="flex">
@@ -234,7 +234,7 @@ class Child extends React.Component {
                 </div>
                 <Link to='/article/all' className='lihat-semua'>Lihat Semua</Link>
               </div>
-                  <div className=" flex flex-col p-6 min-w-lg mx-auto bg-white rounded-xl shadow-lg mt-5">
+                  <div className=" flex flex-col p-6 min-w-lg mx-auto bg-white rounded-xl shadow-lg mt-5 ">
                     
                   <h2  className='innovate-text'>Periode: WINA</h2>
                   <div className='w-full'>
@@ -298,7 +298,7 @@ class Child extends React.Component {
             </div>
           </section>
 
-          <section className='features block lg:hidden'>
+          <section className='features block lg:hidden pt-5'>
             <div className="container">
               <div className="flex flex-col">
 
