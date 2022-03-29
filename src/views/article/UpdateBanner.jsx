@@ -18,11 +18,14 @@ import IconButton from '@mui/material/IconButton';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import { Editor } from '@tinymce/tinymce-react';
 import TextEditor from '../../components/TextEditor2'
+
 import Header from '../../components/Header'
 import DrawerNav from '../../components/menu/DrawerNav'
-import Artikel from '../../assets/images/artikel-logo.png'
+import Update from '../../assets/images/update.png'
 import Upload from '../../assets/images/upload.png'
-import LinkLogo from '../../assets/images/link.png'
+import Banner from "../../assets/images/banner-validate.png"
+
+
 
 const Input = styled('input')({
   display: 'none',
@@ -81,14 +84,8 @@ const CustomInput = React.forwardRef(function CustomInput(props, ref) {
 
 
 
-
-
-
-
-
-
 class Child extends React.Component {
-
+  
   render() {
    
     return <>
@@ -116,37 +113,39 @@ class Child extends React.Component {
        
         className='font-bold'
       >
-         Create Article
+         Update Banner
       </Link>
     
     </Breadcrumbs>
   </div>
   </div>
   </section>
-  <section>
+  <section className='hidden md:flex'>
        <div className="container">
          <div className="flex flex-row pt-12">
            <div className='px-5'>
-           <img src={Artikel} alt="..." />
+           <img src={Update} alt="..." />
            </div>
            <div className='flex items-center'>
              <h2>
-             Pendaftaran Artikel
+             Update Banner
             </h2>
            </div>
          </div>
        </div>
      </section>
-      <section className='pendaftaran-artikel pt-10'>
+      <section className='pt-10'>
         <div className="container">
           <div className="flex flex-col">
-            <div className="col-upload">
-             
-             
-        <div className="flex lg:flex-row gap-5 sm:flex-col">
-        <div className=' flex flex-col lg:w-6/12 sm:w-full'>
-        <div className="col-upload2 flex flex-row justify-between">
-            <span className='pb-3 font-semibold'>Header Image</span>
+              <div className="flex flex-col">
+                 
+              <img src={Banner} alt=".." width="1060" height="342"/>
+              </div>
+      
+
+        <div className='flex flex-col  w-full pt-5'>
+          <div className="flex flex-row justify-between">
+            <span className='pb-3 font-semibold'>Upload Banner</span>
             <span className='text-upload'>Belum ada file dipilih</span>
             </div>
            
@@ -154,12 +153,12 @@ class Child extends React.Component {
         
         <div class="p-1 bg-slate-100 rounded-lg border-solid border border-slate-300 w-full">
         <Input accept="image/*" id="icon-button-file" type="file" />
-        <div className="upload-form flex flex-row">
+        <div className="flex flex-row">
         <IconButton color="primary" aria-label="upload picture" component="span">
-        <img src={Upload} alt=".." width="20" height="20"/>
+        <img src={Upload} alt=".." />
         </IconButton>
-        <div className='upload-placeholder flex items-center'>
-        <span >Upload Image Banner Artikel</span>
+        <div className='flex items-center'>
+        <span className='upload-placeholder'>Upload Image Banner Artikel</span>
         </div>
         </div>
                   </div>
@@ -169,38 +168,7 @@ class Child extends React.Component {
             <div className='pt-3'>
               <div className='text-upload'>*Upload file dalam format gambar ( <span className='text-upload2'>jpeg, png</span> )</div>
             </div>
-           
-            </div>
-            <div className='flex flex-col  w-full'>
-            <span className='pb-3 font-semibold'>Judul Artkel</span>
-          <div>
-          <CustomInput aria-label="Judul" placeholder="Masukan judul artikel kamu disini.." />
-            </div>
-      </div>
-      </div>
-        </div>
-
-
-
-
-        <div className='flex flex-col  w-full pt-5'>
-            <span className='pb-3 font-semibold'>Link</span>
-          <div>
-          <div class="form-group has-search">
-    <span class="form-control-feedback pt-3 pl-3">
-      <img src={LinkLogo} alt=".." />
-    </span>
-    <input type="text" class="form-control" placeholder="Masukan Link"/>
-  </div>
-            </div>
-      </div>
-
-    <div className='flex flex-col pt-5'>
-    <span className='pb-3 font-semibold'>Konten</span>
-      <TextEditor/>
-      </div>
-
-      <div className="flex flex-row gap-4 pt-10 pb-10">
+            <div className="flex flex-row gap-4 pt-10 pb-10">
             <button
                       type='submit'
                      
@@ -216,6 +184,9 @@ class Child extends React.Component {
                       Submit
                     </button>
             </div>
+      </div>
+
+  
 
         </div>
    
@@ -226,7 +197,7 @@ class Child extends React.Component {
   }
 }
 
-const List = function({...props}) {
+const UpdateBanner = function({...props}) {
   let { type, option } = useParams()
   const navigate = useNavigate()
 
@@ -248,4 +219,4 @@ const List = function({...props}) {
   )
 }
 
-export default List
+export default UpdateBanner

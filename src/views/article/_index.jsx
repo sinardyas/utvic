@@ -4,13 +4,12 @@ import { useParams, useNavigate } from 'react-router-dom'
 import Read from './Read'
 import Create from './Create'
 import List from './List'
+import UpdateBanner from './UpdateBanner'
 import ArtikelKu from './ArtikelKu'
+import ValidasiArtikel from './Validasi'
 import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
-
-
-
 
 const Article = function() {
 
@@ -49,6 +48,16 @@ const Article = function() {
       case 'create':
         return SetChild((
           <Create />
+        ))
+
+        case 'update':
+        return SetChild((
+          <UpdateBanner />
+        ))
+
+        case 'validate':
+        return SetChild((
+          <ValidasiArtikel />
         ))
 
       // // ERROR - NOT FOUND

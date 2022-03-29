@@ -1,20 +1,19 @@
 import React, { useEffect } from 'react'
-import { useParams, useNavigate, NavLink, Link } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { GlobalContext } from '../../store/global/Provider'
 import Button from '@mui/material/Button';
 import PageSpinner from '../../components/Spinner-1'
 import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
-
+import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import InputUnstyled from '@mui/base/InputUnstyled';
 import SelectUnstyled, { selectUnstyledClasses } from '@mui/base/SelectUnstyled';
 import OptionUnstyled, { optionUnstyledClasses } from '@mui/base/OptionUnstyled';
 import PopperUnstyled from '@mui/base/PopperUnstyled';
-import { styled } from '@mui/system';
-import LinkLogo from '../../assets/images/link.png'
+import Delete from '../../assets/images/delete_search.png';
 import SearchLogo from '../../assets/images/search-form.png'
-
+import { styled } from '@mui/system';
 
 
 const blue = {
@@ -39,15 +38,15 @@ const blue = {
   
   const StyledInputElement = styled('input')(
     ({ theme }) => `
-    width: 320px;
+    width: 100%;
     font-size: 0.875rem;
     font-family: IBM Plex Sans, sans-serif;
     font-weight: 400;
     line-height: 1.5;
     color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
-    background: ${theme.palette.mode === 'dark' ? grey[900] : grey[50]};
+    background: ${theme.palette.mode === 'dark' ? grey[900] : grey[100]};
     border: 1px solid ${theme.palette.mode === 'dark' ? grey[800] : grey[300]};
-    border-radius: 8px;
+    border-radius: 5px;
     padding: 12px 12px;
   
     &:hover {
@@ -73,8 +72,8 @@ const blue = {
     font-size: 0.875rem;
     box-sizing: border-box;
     min-height: calc(1.5em + 22px);
-    min-width: 320px;
-    background: ${theme.palette.mode === 'dark' ? grey[900] : grey[100]};
+    width: 100%;
+    background: ${theme.palette.mode === 'dark' ?  grey[900] : grey[100]};
     border: 1px solid ${theme.palette.mode === 'dark' ? grey[800] : grey[300]};
     border-radius: 5px;
     
@@ -118,7 +117,7 @@ const blue = {
     min-width: 320px;
     background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
     border: 1px solid ${theme.palette.mode === 'dark' ? grey[800] : grey[300]};
-    border-radius: 8px;
+    border-radius: 5px;
     color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
     overflow: auto;
     outline: 0px;
@@ -130,8 +129,8 @@ const blue = {
   const StyledOption = styled(OptionUnstyled)(
     ({ theme }) => `
     list-style: none;
-    padding: 8px;
-    border-radius: 8px;
+    padding: 5px;
+    border-radius: 5px;
     padding: 12px 12px;
     cursor: default;
   
@@ -193,6 +192,8 @@ const blue = {
             <div className="flex lg:flex-row sm:flex-col gap-3">
                 <div className='flex flex-col w-4/12'>
                     <span className='pb-3 font-semibold'>Search</span>
+         
+         
         
             <div class="form-group has-search">
     <span class="form-control-feedback pt-3 pl-3">
@@ -200,9 +201,7 @@ const blue = {
     </span>
     <input type="text" class="form-control" placeholder="Ketik yang ingin dicari"/>
   </div>
-  
-
-
+           
             </div>
             <div className='flex flex-col w-4/12'>
             <span className='pb-3 font-semibold'>Filter</span>
@@ -214,27 +213,17 @@ const blue = {
       </CustomSelect>
       </div>
       </div>
-      <div className='flex flex-row'>
-      <div className='flex items-center pt-5'>
+      <div className='flex flex-col w-4/12'>
+                    <span className='pb-3 font-semibold'>Kategori</span>
+          <div>
+            <CustomInput aria-label="Search"  type="search"/>
+            </div>
+            </div>
+      <div className='flex items-center pt-8'>
 
-      <button class="hover:bg-amber-400  active:bg-amber-400 focus:outline-none focus:ring focus:ring-amber-400 focus:bg-amber-400 font-bold rounded-full px-5 h-12" onClick={() => {window.location.href="/article/all"}} >
-  Semua Artikel
-</button>
+        <img src={Delete} alt="..." />
 
-
-
-
-
-</div>
-
-<div className='flex items-center pt-5'>
-<button class=" hover:bg-amber-400  active:bg-amber-400 focus:outline-none focus:ring focus:ring-amber-400 focus:bg-amber-400 font-bold rounded-full px-5 h-12" onClick={() => {window.location.href="/article/my"}}>
-Artikel Ku
-</button>
-
-
-</div>
-</div>
+      </div>
 
           </div>
           </div>

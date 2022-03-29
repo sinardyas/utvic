@@ -1,0 +1,55 @@
+.col-prestasi{
+    display: flex;
+    flex-direction: row;
+}
+.list-content1{
+   
+       display: flex;
+       flex-direction: row;
+   }
+ 
+@media (max-width: 992px) {
+    .col-prestasi{
+        display: flex;
+        flex-direction: column;
+    }
+    .list-content1{
+     .col-downloadpres{
+         padding-left: 15px;
+         padding-top: 10px;
+     }
+        display: flex;
+        flex-direction: column;
+    }
+    .content-prestasi{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .font-content{
+        font-family: 'SF Pro Display';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        /* identical to box height, or 150% */
+        
+        
+        color: #000000;
+        
+        opacity: 0.5;
+    }
+
+    .font-subcontent{
+        font-family: 'SF Pro Display';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        /* identical to box height */
+        
+        
+        color: #000000;
+      
+    }
+}

@@ -1,22 +1,12 @@
 import React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { GlobalContext } from '../../store/global/Provider'
-import Artikel from '../../assets/images/artikel.png';
-import { Swiper, SwiperSlide } from 'swiper/react';
+
 import 'swiper/css';
 import '../../styles/profile.scss';
 import PageSpinner from '../../components/Spinner-1';
 import Link from '@mui/material/Link';
-import Prestasi from '../../assets/images/menu/prestasi.png';
-import Star from '../../assets/images/menu/star.png';
-import Certif from '../../assets/images/menu/certif.png';
-import Like from '../../assets/images/like.png';
-import Comment from '../../assets/images/comment.png';
-import Innovation from '../../assets/images/feature/innovation.png';
-import Feature from '../../assets/images/feature.png';
-
 import Foto from "../../assets/images/foto.png";
-import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import ProfileLogo from '../../assets/images/menu/profil.png';
 import Edit from "../../assets/images/edit.png";
