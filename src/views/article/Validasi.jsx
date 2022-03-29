@@ -17,15 +17,21 @@ import PopperUnstyled from '@mui/base/PopperUnstyled';
 import IconButton from '@mui/material/IconButton';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import { Editor } from '@tinymce/tinymce-react';
-import TextEditor from '../../components/TextEditor2'
+import TextEditor from '../../components/TextEditor'
 import TextField from '@mui/material/TextField';
 import Header from '../../components/Header'
+import DatePickers from '../../components/DatePickers'
 import DrawerNav from '../../components/menu/DrawerNav'
 import Artikel from '../../assets/images/artikel-logo.png'
 import Banner from "../../assets/images/banner-validate.png"
 import Upload from '../../assets/images/upload.png'
 import LinkLogo from '../../assets/images/link.png'
+import DatePicker from "react-datepicker";
+import moment from 'moment';
+import Calendar from '../../assets/images/calender.png'
 
+
+import "react-datepicker/dist/react-datepicker.css";
 
 const Input = styled('input')({
   display: 'none',
@@ -88,11 +94,12 @@ const CustomInput = React.forwardRef(function CustomInput(props, ref) {
 
 
 
-
-
 class Child extends React.Component {
-
+	state = {
+		value: moment(),
+	};
   render() {
+    
    
     return <>
      {
@@ -204,6 +211,36 @@ class Child extends React.Component {
  
             </div>
       </div>
+  
+   
+      <div className="col-datepicker flex flex-row gap-5 pt-5">
+        <div className='flex flex-col w-full'>
+        <span className='pb-3 font-semibold'>Publish Date</span>
+        <div>
+        <div class="form-group has-search">
+    <span class="form-control-feedback pt-5 pl-3">
+      <img src={Calendar} alt=".." />
+    </span>
+    <DatePickers/>
+  </div>
+     
+      </div>
+        </div>
+        <div className='flex flex-col w-full'>
+        <span className='pb-3 font-semibold'>Unpublish Date</span>
+        <div>
+        <div class="form-group has-search">
+    <span class="form-control-feedback pt-5 pl-3">
+      <img src={Calendar} alt=".." />
+    </span>
+    <DatePickers/>
+  </div>
+      </div>
+        </div>
+
+      
+      </div>
+      
 
     <div className='flex flex-col pt-5'>
     <span className='pb-3 font-semibold'>Konten</span>
