@@ -113,7 +113,7 @@ const StyledListbox = styled('ul')(
   box-sizing: border-box;
   padding: 5px;
   margin: 10px 0;
-  min-width: 320px;
+  min-width: auto;
   background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
   border: 1px solid ${theme.palette.mode === 'dark' ? grey[800] : grey[300]};
   border-radius: 5px;
@@ -185,11 +185,11 @@ const CustomSelect = React.forwardRef(function CustomSelect(props, ref) {
       return <>
       
     
-        <section className="hidden md:flex pt-10">
+        <section className=" pt-10 pb-10">
           
           <div className="container">
-            <div className="flex lg:flex-row sm:flex-col gap-3">
-                <div className='flex flex-col w-4/12'>
+            <div className="col-search flex lg:flex-row gap-3">
+                <div className='hidden md:flex flex flex-col w-full'>
                     <span className='pb-3 font-semibold'>Search</span>
                     <div class="form-group has-search">
     <span class="form-control-feedback pt-3 pl-3">
@@ -198,7 +198,7 @@ const CustomSelect = React.forwardRef(function CustomSelect(props, ref) {
     <input type="text" class="form-control" placeholder="Ketik yang ingin dicari"/>
   </div>
             </div>
-            <div className='flex flex-col w-4/12'>
+            <div className='flex flex-col w-full'>
             <span className='pb-3 font-semibold'>Filter</span>
             <div>
             <CustomSelect defaultValue={10}>
@@ -208,7 +208,8 @@ const CustomSelect = React.forwardRef(function CustomSelect(props, ref) {
       </CustomSelect>
       </div>
       </div>
-      <div className='flex flex-col w-4/12'>
+      <div className="flex flex-row gap-3 w-full">
+      <div className='flex flex-col w-full'>
                     <span className='pb-3 font-semibold'>Kategori</span>
           <div>
             <CustomInput aria-label="Search"  type="search"/>
@@ -218,6 +219,7 @@ const CustomSelect = React.forwardRef(function CustomSelect(props, ref) {
 
         <img src={Delete} alt="..." />
 
+      </div>
       </div>
 
           </div>

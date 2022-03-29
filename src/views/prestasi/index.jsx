@@ -17,7 +17,7 @@ import Header from '../../components/Header'
 import DrawerNav from '../../components/menu/DrawerNav'
 import SearchForm from "./SearchForm"
 import Download from "../../assets/images/download.png"
-
+import Search from "../../assets/images/search.png"
 import SelectUnstyled, { selectUnstyledClasses } from '@mui/base/SelectUnstyled';
 import OptionUnstyled, { optionUnstyledClasses } from '@mui/base/OptionUnstyled';
 import PopperUnstyled from '@mui/base/PopperUnstyled';
@@ -285,10 +285,11 @@ class Child extends React.Component {
   </div>
   </div>
   </section>
-     <section className='hidden md:flex'>
+     <section>
        <div className="container">
 
-         <div className="flex flex-row pt-5">
+         <div className="flex flex-row justify-between pt-5">
+           <div className="flex flex-row">
            <div className='px-5'>
            <img src={PrestasiLogo} alt="..." />
            </div>
@@ -297,6 +298,8 @@ class Child extends React.Component {
             Prestasi
             </h2>
            </div>
+           </div>
+           <img src={Search} alt=".." />
          </div>
         
        </div>
@@ -312,9 +315,14 @@ class Child extends React.Component {
         <div className="flex flex-row pb-5 justify-between">
           <div className="flex flex-row">
           <img src={PrestasiLogo} alt="..." width="40" height="47"/>
+   
           <div className='flex items-center pl-5'>
           <h2>Total certificate (4)</h2>
           </div>
+         
+
+          
+
           </div>
 
           <CustomSelect defaultValue={10}>
@@ -327,13 +335,13 @@ class Child extends React.Component {
 
         <div className="col-prestasi flex flex-row  gap-5 justify-between  ">
        
-        <div class="lg:p-6 sm:p-3  bg-white rounded-xl border-solid border-2 border-slate-200 border-l-orange-300 w-full">
+        <div class="p-6 bg-white rounded-xl border-solid border-2 border-slate-200 border-l-orange-300 w-full">
                 <div className='flex flex-row'>
                   <div>
                 <img src={PrestasiLogo} alt="..." width="40" height="47"/>
                 </div>
                 <div className='list-content1'>
-                <div className="flex flex-col pl-5 pr-20">
+                <div className="content-list flex flex-col pl-5">
                   <div className="flex flex-col ">
                   <div className="content-prestasi flex flex-row ">
                     <span className='pr-5 font-content'>Prestasi :</span>
@@ -359,8 +367,8 @@ class Child extends React.Component {
                 </div>
                 </div>
 
-                <div className="flex flex-col pt-2 block md:hidden ">
-                    <span className='pr-10 font-content'>Role :</span>
+                <div className="flex flex-col block md:hidden ">
+                    <span className='pr-10 font-content'>Role&nbsp;:</span>
                     <span className='font-subcontent'> member</span>
                   </div>
                 </div>
@@ -371,18 +379,23 @@ class Child extends React.Component {
                 <img src={PrestasiLogo} alt="..." width="40" height="47"/>
                 </div>
                 <div className='list-content1'>
-                <div className="flex flex-col pl-5 pr-20">
-                  <div className="flex flex-row">
+                <div className="content-list flex flex-col pl-5">
+                  <div className="flex flex-col ">
+                  <div className="content-prestasi flex flex-row ">
                     <span className='pr-5 font-content'>Prestasi :</span>
+                   
                     <span className='font-subcontent'>Juara&nbsp;2&nbsp;Grand&nbsp;Final</span>
                   </div>
-                  <div className="flex flex-row pt-2">
-                    <span className='pr-9 font-content'>Judul :</span>
-                    <span> STAR</span>
+                  <div className="content-prestasi flex flex-row  pt-2">
+                    <span className='pr-9 font-content'> Judul :</span>
+                  
+                    <span className='font-subcontent'>STAR</span>
                   </div>
-                  <div className="flex flex-row pt-2">
+                  </div>
+                  <div className="flex flex-row pt-2 hidden md:flex ">
                     <span className='pr-10 font-content'>Role :</span>
-                    <span> member</span>
+                   
+                    <span className='font-subcontent'> member</span>
                   </div>
 
                 </div>
@@ -390,6 +403,10 @@ class Child extends React.Component {
                 <img src={Download} alt=".." width="105" height="25"/>
                 </div>
                 </div>
+                <div className="flex flex-col block md:hidden ">
+                    <span className='pr-10 font-content'>Role&nbsp;:</span>
+                    <span className='font-subcontent'> member</span>
+                  </div>
 
                 </div>
           </div>
@@ -405,25 +422,34 @@ class Child extends React.Component {
         <img src={PrestasiLogo} alt="..." width="40" height="47"/>
         </div>
         <div className='list-content1'>
-        <div className="flex flex-col pl-5 pr-20">
-          <div className="flex flex-row">
-            <span className='pr-5 font-content'>Prestasi :</span>
-            <span>Juara&nbsp;2&nbsp;Grand&nbsp;Final</span>
-          </div>
-          <div className="flex flex-row pt-2">
-            <span className='pr-9 font-content'>Judul :</span>
-            <span> STAR</span>
-          </div>
-          <div className="flex flex-row pt-2">
-            <span className='pr-10 font-content'>Role :</span>
-            <span> member</span>
-          </div>
+        <div className="content-list flex flex-col pl-5">
+                  <div className="flex flex-col ">
+                  <div className="content-prestasi flex flex-row ">
+                    <span className='pr-5 font-content'>Prestasi :</span>
+                   
+                    <span className='font-subcontent'>Juara&nbsp;2&nbsp;Grand&nbsp;Final</span>
+                  </div>
+                  <div className="content-prestasi flex flex-row  pt-2">
+                    <span className='pr-9 font-content'> Judul :</span>
+                  
+                    <span className='font-subcontent'>STAR</span>
+                  </div>
+                  </div>
+                  <div className="flex flex-row pt-2 hidden md:flex ">
+                    <span className='pr-10 font-content'>Role :</span>
+                   
+                    <span className='font-subcontent'> member</span>
+                  </div>
 
-        </div>
+                </div>
         <div className='col-downloadpres'>
         <img src={Download} alt=".." width="105" height="25"/>
         </div>
         </div>
+        <div className="flex flex-col block md:hidden ">
+                    <span className='pr-10 font-content'>Role&nbsp;:</span>
+                    <span className='font-subcontent'> member</span>
+                  </div>
         </div>
   </div>
   <div class="p-6   bg-white rounded-xl border-solid border-2 border-slate-200 border-l-orange-300 w-full">
@@ -432,25 +458,34 @@ class Child extends React.Component {
         <img src={PrestasiLogo} alt="..." width="40" height="47"/>
         </div>
         <div className='list-content1'>
-        <div className="flex flex-col pl-5 pr-20">
-          <div className="flex flex-row">
-            <span className='pr-5 font-content'>Prestasi :</span>
-            <span>Juara&nbsp;2&nbsp;Grand&nbsp;Final</span>
-          </div>
-          <div className="flex flex-row pt-2">
-            <span className='pr-9 font-content'>Judul :</span>
-            <span> STAR</span>
-          </div>
-          <div className="flex flex-row pt-2">
-            <span className='pr-10 font-content'>Role :</span>
-            <span> member</span>
-          </div>
+        <div className="content-list flex flex-col pl-5">
+                  <div className="flex flex-col ">
+                  <div className="content-prestasi flex flex-row ">
+                    <span className='pr-5 font-content'>Prestasi :</span>
+                   
+                    <span className='font-subcontent'>Juara&nbsp;2&nbsp;Grand&nbsp;Final</span>
+                  </div>
+                  <div className="content-prestasi flex flex-row  pt-2">
+                    <span className='pr-9 font-content'> Judul :</span>
+                  
+                    <span className='font-subcontent'>STAR</span>
+                  </div>
+                  </div>
+                  <div className="flex flex-row pt-2 hidden md:flex ">
+                    <span className='pr-10 font-content'>Role :</span>
+                   
+                    <span className='font-subcontent'> member</span>
+                  </div>
 
-        </div>
+                </div>
         <div className='col-downloadpres'>
         <img src={Download} alt=".." width="105" height="25"/>
         </div>
         </div>
+        <div className="flex flex-col block md:hidden ">
+                    <span className='pr-10 font-content'>Role&nbsp;:</span>
+                    <span className='font-subcontent'> member</span>
+                  </div>
         </div>
   </div>
   </div>
