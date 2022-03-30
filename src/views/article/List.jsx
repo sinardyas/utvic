@@ -303,7 +303,28 @@ class Child extends React.Component {
   </div>
   </section>
   
-    <Search/>
+    
+
+    <section className="hidden md:flex pt-10">
+          <div className="container">
+            <div className="flex lg:flex-row sm:flex-col gap-3">
+            <Search/>
+                <div className='flex flex-row gap-5'>
+                    <div className='flex items-center pt-5'>
+                      <button class="active hover:bg-amber-400  active:bg-amber-400 focus:outline-none focus:ring focus:ring-amber-400 focus:bg-amber-400 font-bold rounded-full px-5 h-12" onClick={() => {window.location.href="/article/all"}} >
+                          Semua Artikel
+                      </button>
+                    </div>
+                    <div className='flex items-center pt-5'>
+                      <button class=" hover:bg-amber-400  active:bg-amber-400 focus:outline-none focus:ring focus:ring-amber-400 focus:bg-amber-400 font-bold rounded-full px-5 h-12" onClick={() => {window.location.href="/article/my"}}>
+                          Artikel Ku
+                      </button>
+                    </div>
+                </div>
+
+            </div>
+          </div>
+        </section>
     
 
     <section className="block md:hidden pt-20">

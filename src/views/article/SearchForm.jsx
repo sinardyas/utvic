@@ -185,64 +185,25 @@ const blue = {
   
     render() {
       return <>
-      
-    
-        <section className="hidden md:flex pt-10">
-          
-          <div className="container">
-            <div className="flex lg:flex-row sm:flex-col gap-3">
-                <div className='flex flex-col w-4/12'>
+           <div className='flex flex-col w-4/12'>
                     <span className='pb-3 font-semibold'>Search</span>
-        
-            <div class="form-group has-search">
-    <span class="form-control-feedback pt-3 pl-3">
-      <img src={SearchLogo} alt=".." width="24px" height="24px"/>
-    </span>
-    <input type="text" class="form-control" placeholder="Ketik yang ingin dicari"/>
-  </div>
-  
-
-
-            </div>
-            <div className='flex flex-col w-4/12'>
-            <span className='pb-3 font-semibold'>Filter</span>
-            <div>
-            <CustomSelect defaultValue={10}>
-        <StyledOption value={10}>Pilih filter yang diinginkan</StyledOption>
-        <StyledOption value={20}>filter 1</StyledOption>
-        <StyledOption value={30}>filter 2</StyledOption>
-      </CustomSelect>
-      </div>
-      </div>
-      <div className='flex flex-row'>
-      <div className='flex items-center pt-5'>
-
-      <button class="hover:bg-amber-400  active:bg-amber-400 focus:outline-none focus:ring focus:ring-amber-400 focus:bg-amber-400 font-bold rounded-full px-5 h-12" onClick={() => {window.location.href="/article/all"}} >
-  Semua Artikel
-</button>
-
-
-
-
-
-</div>
-
-<div className='flex items-center pt-5'>
-<button class=" hover:bg-amber-400  active:bg-amber-400 focus:outline-none focus:ring focus:ring-amber-400 focus:bg-amber-400 font-bold rounded-full px-5 h-12" onClick={() => {window.location.href="/article/my"}}>
-Artikel Ku
-</button>
-
-
-</div>
-</div>
-
-          </div>
-          </div>
-        </section>
-  
-      
-      
-     
+                    <div class="form-group has-search">
+                      <span class="form-control-feedback pt-3 pl-3">
+                        <img src={SearchLogo} alt=".." width="24px" height="24px"/>
+                      </span>
+                      <input type="text" class="form-control" placeholder="Ketik yang ingin dicari"/>
+                    </div>
+                  </div>
+                  <div className='flex flex-col w-4/12'>
+                      <span className='pb-3 font-semibold'>Filter</span>
+                      <div>
+                      <CustomSelect defaultValue={10}>
+                      <StyledOption value={10}>Pilih filter yang diinginkan</StyledOption>
+                      <StyledOption value={20}>filter 1</StyledOption>
+                      <StyledOption value={30}>filter 2</StyledOption>
+                      </CustomSelect>
+                      </div>
+                  </div>
       </>
     }
   }

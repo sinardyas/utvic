@@ -159,7 +159,11 @@ border-radius: 5px;
 
 }
 .active{
-  color: red;
+  background: #FFCD00;
+/* Shadow Card 1 */
+
+box-shadow: 0px 9px 20px rgba(0, 0, 0, 0.05);
+border-radius: 45px;
 }
 
 .datepicker{
