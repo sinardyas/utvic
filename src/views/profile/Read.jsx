@@ -113,8 +113,8 @@ class Child extends React.Component {
           : <></>
         }
       
-<section className='space-from-header py-[1rem] bg-slate-200'>
-  <div className="container">
+<section className='space-from-header py-[1rem] bg-slate-200 hidden md:flex'>
+  <div className="container ">
   <div role="presentation" className='pt-3'>
     <Breadcrumbs aria-label="breadcrumb" >
       <Link underline="hover" color="inherit" href="/" className='font-bold'>
@@ -165,13 +165,15 @@ class Child extends React.Component {
               <div className='flex pb-3'>
                 <h2>Agat322</h2>
               </div>
-              <div className='flex flex-row'>
+              <div className='flex flex-row' onClick={() => {window.location.href="/profile/update"}}>
+           
                 <div className='pr-3'>
                 <img src={EditPen} alt=".." />
                 </div>
                 <div className='flex items-center'>
                 <span>Edit profile</span>
                 </div>
+               
 
               </div>
 
@@ -185,7 +187,7 @@ class Child extends React.Component {
               <div className='flex'>
                 <h2>Agat322</h2>
               </div>
-              <div className='flex flex-row justify-between'>
+              <div className='flex flex-row justify-between' onClick={() => {window.location.href="/profile/update"}}>
                 <div className='pr-3'>
                 <img src={Edit} alt=".." />
                 </div>
@@ -300,7 +302,7 @@ class Child extends React.Component {
   }
 }
 
-const Profile = function() {
+const Read = function() {
   let { page } = useParams()
   const navigate = useNavigate()
   return (
@@ -317,4 +319,4 @@ const Profile = function() {
 }
 
 
-export default Profile
+export default Read

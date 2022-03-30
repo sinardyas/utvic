@@ -156,7 +156,7 @@ class Child extends React.Component {
 
                   <div className="hidden lg:flex flex-col h-full">
                     
-                    <Link to='/profile' className='flex items-center'>
+                    <Link to='/profile/read' className='flex items-center'>
                     <div className='px-10 py-5'>
 
                     <div class="grid gap-1 grid-cols-2">

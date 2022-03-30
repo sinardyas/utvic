@@ -112,7 +112,7 @@ class Child extends React.Component {
           )
           : <></>
         }
-     <section className='space-from-header py-[1rem] bg-slate-200'>
+     <section className='space-from-header py-[1rem] bg-slate-200 hidden md:flex'>
   <div className="container">
   <div role="presentation" className='pt-3'>
     <Breadcrumbs aria-label="breadcrumb" >
@@ -135,7 +135,7 @@ class Child extends React.Component {
   </section>
   <section >
        <div className="container">
-         <div className="flex flex-row pt-12">
+         <div className="title flex flex-row pt-12">
            <div className='px-5'>
            <img src={Artikel} alt="..." />
            </div>

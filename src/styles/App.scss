@@ -125,6 +125,16 @@ line-height: 25px;
 color: #000000;
 }
 
+.form-control{
+  height: 67px;
+padding-left: 10px;
+
+background: rgba(125, 125, 125, 0.1);
+border: 0.5px solid rgba(0, 0, 0, 0.1);
+box-sizing: border-box;
+border-radius: 5px;
+}
+
 @media (max-width: 1024px) {
   section{
     padding: 0px;
@@ -161,6 +171,17 @@ background: rgba(125, 125, 125, 0.1);
 border: 0.5px solid rgba(0, 0, 0, 0.1);
 box-sizing: border-box;
 border-radius: 5px;
+}
+
+
+
+@media (max-width: 786px) {
+  .title{
+    padding-top: 80px;
+  }
+  .body-section{
+    padding-top: 80px;
+  }
 }
  
 @media (max-width: 576px) {
