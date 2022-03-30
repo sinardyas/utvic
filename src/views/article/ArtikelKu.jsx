@@ -391,28 +391,30 @@ Artikel Ku
 
                   
 <div className='pt-2'>
-<div class="w-full bg-white rounded-xl shadow-lg flex items-center w-full space-x-1">
+<div class="w-full bg-white rounded-xl shadow-lg flex items-center ">
 <img class="img-artikelku rounded-xl" src={Artikel} alt="ChitChat Logo" width="254" height="180"/>
-<div className='flex lg:flex-row md:flex-col w-full justify-between px-1'>
+<div className='flex flex-col w-full justify-between px-1'>
   <div>
   <h3 class="text-title">{article.Title}</h3>
                 <p class="text-description">{article.Description}</p>
                 <div className="flex flex-row mt-3 w-full">
                   
 
-              
-<div className='w-7/12'>
+      <div className="flex flex-row w-full">       
+<div className=' pt-4 pr-2'>
                <img src={Reject} alt=".." width='86' height="28"/>
                </div>
-                <div className='flex flex-row  block md:hidden w-full'>
-                
+                <div className='flex flex-row w-full  block md:hidden'>
+                <div className='w-full pt-3'>
       <img src={Delete} alt="..." width="28" height="28" className='delete'/>
+      </div>
     
-    <div>
+    <div className='flex w-full justify-end'>
     <Checkbox {...label}  size="small" />
     </div>
 
                 </div>
+                </div> 
                
               
                
