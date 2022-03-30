@@ -14,7 +14,7 @@ import EditPen from "../../assets/images/edit-pen.png";
 import Header from '../../components/Header'
 import DrawerNav from '../../components/menu/DrawerNav'
 import Menus from './Menu.jsx'
-
+import Tables from './Table.jsx'
 
 const { 
   api: {
@@ -145,6 +145,13 @@ class Child extends React.Component {
   </section>
 
      <Menus/>
+     <section className='pt-10'>
+       <div className="container">
+         <Tables/>
+
+       </div>
+     </section>
+
 
       
        
@@ -152,7 +159,7 @@ class Child extends React.Component {
   }
 }
 
-const Read = function() {
+const Admin = function() {
   let { page } = useParams()
   const navigate = useNavigate()
   return (
@@ -169,4 +176,4 @@ const Read = function() {
 }
 
 
-export default Read
+export default Admin

@@ -13,6 +13,8 @@ import Edit from "../../assets/images/edit.png";
 import EditPen from "../../assets/images/edit-pen.png";
 import Header from '../../components/Header'
 import DrawerNav from '../../components/menu/DrawerNav'
+import Menus from './Menu.jsx'
+import Tables from './Table.jsx'
 
 const { 
   api: {
@@ -113,7 +115,7 @@ class Child extends React.Component {
         }
       
 <section className='space-from-header py-[1rem] bg-slate-200 hidden md:flex'>
-  <div className="container">
+  <div className="container ">
   <div role="presentation" className='pt-3'>
     <Breadcrumbs aria-label="breadcrumb" >
       <Link underline="hover" color="inherit" href="/" className='font-bold'>
@@ -126,148 +128,38 @@ class Child extends React.Component {
        
         className='font-bold'
       >
-         Profile
+         BOTB
+      </Link>
+      <Link
+        underline="hover"
+        color="inherit"
+       
+        className='font-bold'
+      >
+         Star
       </Link>
     
     </Breadcrumbs>
   </div>
   </div>
   </section>
-     <section className='hidden md:flex'>
+
+     <Menus/>
+     <section className='pt-10'>
        <div className="container">
-         <div className="flex flex-row pt-5">
-           <div className='px-5'>
-           <img src={ProfileLogo} alt="..." />
-           </div>
-           <div className='flex items-center'>
-             <h2>
-            Profile
-            </h2>
-           </div>
-         </div>
+         <Tables/>
+
        </div>
      </section>
 
-      <section className='body-section lg:pt-10 pb-40 sm:pt-20'>
-        <div className="container">
-        
-        <div className='flex lg:gap-14 md:gap-0 flex-row '>
-          <div>
-            <img src={Foto} alt=".."  width="280" height="280" className='hidden md:flex'/>
-            </div>
-          <div className="flex flex-col w-full">
-            <div className="flex flex-col hidden md:flex">
-          <div>
-                <h2>Agat322</h2>
-              </div>
-              <div className='pt-5'>
-             
-                <span className='font-semibold'>Jakarta</span>
-              </div>
 
-              </div>
-
-              <div className='flex md:flex-row md:hidden'>
-            <div className='flex w-5/12 items-center'>
-            <img src={Foto} alt=".." className='foto-profile'/>
-          </div>
-          <div className="flex flex-col sm:flex-col pb-5 pt-5">
-          
-              <div className='flex pb-3'>
-                <h2>Agat322</h2>
-              </div>
-              <div className='pb-3'>
-              <span>Maintenance</span>
-              </div>
-              <div className='flex flex-row' onClick={() => {window.location.href="/profile/update"}}>
-           
-                <div className='pr-3'>
-                <img src={EditPen} alt=".." />
-                </div>
-                <div className='flex items-center'>
-                <span>Edit profile</span>
-                </div>
-               
-
-              </div>
-
-            </div>
-
-            </div>
-
-              
-              
-              <div className="flex flex-row colupdate-profile gap-4 pt-5">
-            
-                <div className="flex flex-col w-full">
-                  <span className='font-semibold'>Nama</span>
-                  <input class="form-control" type="text" placeholder="Nama"></input>
-                </div>
-                <div className="flex flex-col w-full">
-                  <span className='font-semibold'>NRP</span>
-                  <input class="form-control" type="text" placeholder="NRP"></input>
-                </div>
-                
-              </div>
-              <div className="flex flex-row colupdate-profile gap-4 pt-5">
-                <div className="flex flex-col w-full">
-                  <span className='font-semibold'>Area</span>
-                  <input class="form-control" type="text" placeholder="Area"></input>
-                </div>
-                <div className="flex flex-col w-full">
-                  <span className='font-semibold'>Masa Kerja</span>
-                  <input class="form-control" type="text" placeholder="Masa Kerja"></input>
-                </div>
-              </div>
-              <div className="flex flex-row colupdate-profile gap-4 pt-5">
-                <div className="flex flex-col w-full">
-                  <span className='font-semibold'>Posisi</span>
-                  <input class="form-control" type="text" placeholder="Posisi"></input>
-                </div>
-                <div className="flex flex-col w-full">
-                  <span className='font-semibold'>Email</span>
-                  <input class="form-control" type="text" placeholder="Email"></input>
-                </div>
-              </div>
-              <div className="flex flex-row pt-5">
-                <div className="flex flex-col w-6/12 colupdate-profile">
-                  <span className='font-semibold'>No. Handphone</span>
-                  <input class="form-control" type="text" placeholder="No. Handphone"></input>
-                </div>
-               
-              </div>
-            
-
-
-              <div className="flex flex-row gap-4 pt-10 pb-10">
-            <button
-                      type='submit'
-                     
-                      className='bg-red-700 px-4 py-2 rounded-md text-white font-semibold disabled:opacity-75'
-                      >
-                      Cancel
-                    </button>
-                    <button
-                      type='submit'
-                      
-                      className='bg-yellow-400 px-4 py-2 rounded-md text-black font-semibold disabled:opacity-75'
-                      >
-                      Submit
-                    </button>
-            </div>
-          
-          </div>
-
-        </div>
-        </div>
-
-      </section>
+      
        
         </>
   }
 }
 
-const UpdateProfile = function() {
+const User = function() {
   let { page } = useParams()
   const navigate = useNavigate()
   return (
@@ -284,4 +176,4 @@ const UpdateProfile = function() {
 }
 
 
-export default UpdateProfile
+export default User
