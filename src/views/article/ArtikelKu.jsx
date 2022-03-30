@@ -396,7 +396,26 @@ Artikel Ku
 <div className='flex flex-col w-full justify-between px-1'>
   <div>
   <h3 class="text-title">{article.Title}</h3>
+  <div className="flex flex-row pr-4 gap-1">
+    <div className='w-full'>
                 <p class="text-description">{article.Description}</p>
+                </div>
+                <div className='flex flex-row justify-end  hidden md:flex'>
+    <div>
+    <Checkbox
+        {...label}
+       
+        sx={{ '& .MuiSvgIcon-root': { fontSize: 30 } }}
+      />
+    </div>
+    <div className='pt-1'>
+      <img src={Delete} alt="..." width="47" height="47"/>
+    </div>
+  
+  </div>
+
+                </div>
+
                 <div className="flex flex-row mt-3 w-full">
                   
 
@@ -421,19 +440,7 @@ Artikel Ku
    
                       </div>
   </div>
-  <div className='flex flex-row justify-end space-x-4 hidden md:flex'>
-    <div>
-    <Checkbox
-        {...label}
-       
-        sx={{ '& .MuiSvgIcon-root': { fontSize: 30 } }}
-      />
-    </div>
-    <div>
-      <img src={Delete} alt="..." width="47" height="47"/>
-    </div>
-  
-  </div>
+ 
   </div>
     </div>
 </div>
