@@ -17,7 +17,7 @@ import PopperUnstyled from '@mui/base/PopperUnstyled';
 import IconButton from '@mui/material/IconButton';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import { Editor } from '@tinymce/tinymce-react';
-import TextEditor from '../../components/TextEditor2'
+import TextEditor from '../../components/TextEditor'
 import Header from '../../components/Header'
 import DrawerNav from '../../components/menu/DrawerNav'
 import Artikel from '../../assets/images/artikel-logo.png'
