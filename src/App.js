@@ -16,6 +16,7 @@ import Error404 from './views/error/404'
 import Home from './views/home'
 //import Profile from './views/profile'
 import Profile from './views/profile/_index'
+import BotbStar from './views/botbstar/_index'
 import Prestasi from './views/prestasi'
 import Certifikat from './views/certificate'
 import Article from './views/article/_index'
@@ -111,7 +112,7 @@ export default function AppFunc() {
               )
             }
 
-{
+            {
               [
                 '/profile',
                 '/profile/:type',
@@ -121,6 +122,22 @@ export default function AppFunc() {
                   element={
                     <PrivateRoute>
                       <Profile/>
+                    </PrivateRoute>
+                  }
+                />
+              )
+            }
+
+{
+              [
+                '/botbstar',
+                '/botbstar/:type',
+                '/botbstar/:type/:option'
+              ].map((path, index) => 
+                <Route key={index} path={path}
+                  element={
+                    <PrivateRoute>
+                      <BotbStar/>
                     </PrivateRoute>
                   }
                 />
