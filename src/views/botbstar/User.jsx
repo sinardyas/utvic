@@ -14,7 +14,7 @@ import EditPen from "../../assets/images/edit-pen.png";
 import Header from '../../components/Header'
 import DrawerNav from '../../components/menu/DrawerNav'
 import Menus from './Menu.jsx'
-import Tables from './Table.jsx'
+import Tables from './Table2.jsx'
 
 const { 
   api: {
