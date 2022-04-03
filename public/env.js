@@ -1,13 +1,13 @@
 window.localhost
-  = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') 
+  = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
   ? 'http://localhost:9000/'
   : 'http://utcms.dipstrategy.com/'
 
 // window.localhost = `http://mandomcms.dipstrategy.com/`
 window.baseUrl = `${localhost}api/`
 
-var ext 
-  = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') 
+var ext
+  = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
   ? '.php'
   : ''
 
@@ -22,5 +22,16 @@ window.processEnv = {
     homeEvent: `${baseUrl}home-event` + ext,
 
     articleDetail: `${baseUrl}detail-artikel` + ext,
+    masterArea: `${baseUrl}master-area` + ext,
+    masterTipeProyek: `${baseUrl}master-tipe-proyek` + ext,
+    masterKategoriInovasi: `${baseUrl}master-kategori-inovasi` + ext,
+    masterSubkategoriInovasi: `${baseUrl}master-subkategori-inovasi` + ext,
+    masterTemaInovasi: `${baseUrl}master-tema-inovasi` + ext,
+    masterReferensi: `${baseUrl}master-referensi` + ext,
+    masterMetodologiProyek: `${baseUrl}master-metodologi-proyek` + ext,
+    masterFasilitator: `${baseUrl}master-fasilitator` + ext,
+    masterUser: `${baseUrl}master-user` + ext,
+    masterTipeInovasi: `${baseUrl}master-tipe-inovasi` + ext,
+    createInnovation: `${baseUrl}create-innovation` + ext,
   }
 }
