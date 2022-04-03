@@ -14,7 +14,7 @@
     --header-height-desktop: 70px;
     --header-height-mobile: 50px;
   }
-  
+
   ::selection {
     @apply bg-gray-700 text-yellow-300
   }
@@ -63,7 +63,7 @@
 
     margin-top: var(--header-height-mobile);
 
-    @media (min-width: 1200px) {
+    @media (min-width: 993px) {
       margin-top: var(--header-height-desktop);
     }
   }
@@ -138,7 +138,7 @@ border-radius: 5px;
 @media (max-width: 1024px) {
   section{
     padding: 0px;
-  
+
   }
 }
 @media (max-width: 992px) {
@@ -148,7 +148,7 @@ border-radius: 5px;
     font-weight: 500;
     font-size: 24px;
     line-height: 29px;
-    
+
     color: #000000;
   }
 
@@ -187,7 +187,7 @@ border-radius: 5px;
     padding-top: 80px;
   }
 }
- 
+
 @media (max-width: 576px) {
   h2{
     font-family: 'SF Pro Display';
@@ -196,8 +196,8 @@ border-radius: 5px;
   font-size: 14px;
   line-height: 19px;
   /* identical to box height */
-  
-  
+
+
   color: #000000;
   }
 }
