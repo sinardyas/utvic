@@ -130,6 +130,12 @@ border-radius: 5px;
     color: #aaa;
 }
 
+@media (max-width: 992px) {
+.col-datepicker{
+    display: flex;
+    flex-direction: column;
+}
+}
 @media (max-width: 768px) {
     .section-article{
         padding-top: 60px;
@@ -172,14 +178,7 @@ border-radius: 5px;
     line-height: 25px;
     color: #686E80;
   }
-  h2{
-    font-family: 'SF Pro Display';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 29px;
-    color: #000000;
-    }
+ 
     .section-article{
       padding-top: 60px;
             

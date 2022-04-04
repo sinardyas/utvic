@@ -312,7 +312,26 @@ class Child extends React.Component {
   </div>
   </section>
 
-    <Search />
+  <section className="hidden md:flex pt-10">
+          <div className="container">
+            <div className="flex lg:flex-row sm:flex-col gap-3">
+            <Search/>
+                <div className='flex flex-row gap-5'>
+                    <div className='flex items-center pt-5'>
+                      <button class=" hover:bg-amber-400  active:bg-amber-400 focus:outline-none focus:ring focus:ring-amber-400 focus:bg-amber-400 font-bold rounded-full px-5 h-12" onClick={() => {window.location.href="/article/all"}} >
+                          Semua Artikel
+                      </button>
+                    </div>
+                    <div className='flex items-center pt-5'>
+                      <button class="active hover:bg-amber-400  active:bg-amber-400 focus:outline-none focus:ring focus:ring-amber-400 focus:bg-amber-400 font-bold rounded-full px-5 h-12" onClick={() => {window.location.href="/article/my"}}>
+                          Artikel Ku
+                      </button>
+                    </div>
+                </div>
+
+            </div>
+          </div>
+        </section>
 
     <section className="block md:hidden pt-20">
           
@@ -372,35 +391,16 @@ Artikel Ku
 
                   
 <div className='pt-2'>
-<div class="w-full bg-white rounded-xl shadow-lg flex items-center w-full space-x-1">
+<div class="w-full bg-white rounded-xl shadow-lg flex items-center ">
 <img class="img-artikelku rounded-xl" src={Artikel} alt="ChitChat Logo" width="254" height="180"/>
-<div className='flex lg:flex-row md:flex-col w-full justify-between px-1'>
+<div className='flex flex-col w-full justify-between px-1'>
   <div>
   <h3 class="text-title">{article.Title}</h3>
+  <div className="flex flex-row pr-4 gap-1">
+    <div className='w-full'>
                 <p class="text-description">{article.Description}</p>
-                <div className="flex flex-row mt-3 w-full">
-                  
-
-              
-<div className='w-7/12'>
-               <img src={Reject} alt=".." width='86' height="28"/>
-               </div>
-                <div className='flex flex-row  block md:hidden w-full'>
-                
-      <img src={Delete} alt="..." width="28" height="28" className='delete'/>
-    
-    <div>
-    <Checkbox {...label}  size="small" />
-    </div>
-
                 </div>
-               
-              
-               
-   
-                      </div>
-  </div>
-  <div className='flex flex-row justify-end space-x-4 hidden md:flex'>
+                <div className='flex flex-row justify-end  hidden md:flex'>
     <div>
     <Checkbox
         {...label}
@@ -408,11 +408,39 @@ Artikel Ku
         sx={{ '& .MuiSvgIcon-root': { fontSize: 30 } }}
       />
     </div>
-    <div>
+    <div className='pt-1'>
       <img src={Delete} alt="..." width="47" height="47"/>
     </div>
   
   </div>
+
+                </div>
+
+                <div className="flex flex-row mt-3 w-full">
+                  
+
+      <div className="flex flex-row w-full">       
+<div className=' pt-4 pr-2'>
+               <img src={Reject} alt=".." width='86' height="28"/>
+               </div>
+                <div className='flex flex-row w-full  block md:hidden'>
+                <div className='w-full pt-3'>
+      <img src={Delete} alt="..." width="28" height="28" className='delete'/>
+      </div>
+    
+    <div className='flex w-full justify-end'>
+    <Checkbox {...label}  size="small" />
+    </div>
+
+                </div>
+                </div> 
+               
+              
+               
+   
+                      </div>
+  </div>
+ 
   </div>
     </div>
 </div>

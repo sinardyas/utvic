@@ -2,6 +2,14 @@
 
 
 @media (max-width: 639px) {
+    .colupdate-profile{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+@media (max-width: 639px) {
     .foto-profile{
         width: 100px;
         height: 100px;

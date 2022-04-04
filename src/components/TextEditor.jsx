@@ -1,24 +1,39 @@
-import React, {useState, useRef} from 'react';
+import React from 'react';
+
+import 'jodit';
+import 'jodit/build/jodit.min.css';
 import JoditEditor from "jodit-react";
 
-const Editor = ({}) => {
-	const editor = useRef(null)
-	const [content, setContent] = useState('')
+class TextEditor extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+        	content: '',
+        }
+    }
 
-const config = {
-		readonly: false
-}
-
-	return (
+    updateContent = (value) => {
+        this.setState({content:value})
+    }
+    /**
+     * @property Jodit jodit instance of native Jodit
+     */
+	jodit;
+	setRef = jodit => this.jodit = jodit;
+	
+	config = {
+		readonly: false // all options from https://xdsoft.net/jodit/doc/
+	}
+    render() {
+        return (
             <JoditEditor
-            	ref={editor}
-                value={content}
-                config={config}
-		tabIndex={1} 
-		onBlur={newContent => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
-                onChange={newContent => {}}
+            	editorRef={this.setRef}
+                value={this.state.content}
+                config={this.config}
+                onChange={this.updateContent}
             />
         );
+    }
 }
 
-export default Editor
+export default TextEditor

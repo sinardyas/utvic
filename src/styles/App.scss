@@ -89,6 +89,52 @@ height: 24px;
   width: 72px;
   height: 72px;
 }
+
+h2{
+  font-family: 'SF Pro Display';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+
+
+color: #000000;
+}
+
+p{
+  font-family: 'SF Pro Display';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 24px;
+/* or 133% */
+
+
+color: #000000;
+}
+span{
+  font-family: 'SF Pro Display';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 25px;
+/* or 155% */
+
+
+color: #000000;
+}
+
+.form-control{
+  height: 67px;
+padding-left: 10px;
+
+background: rgba(125, 125, 125, 0.1);
+border: 0.5px solid rgba(0, 0, 0, 0.1);
+box-sizing: border-box;
+border-radius: 5px;
+}
+
 @media (max-width: 1024px) {
   section{
     padding: 0px;
@@ -113,10 +159,48 @@ height: 24px;
 
 }
 .active{
-  color: red;
+  background: #FFCD00;
+/* Shadow Card 1 */
+
+box-shadow: 0px 9px 20px rgba(0, 0, 0, 0.05);
+border-radius: 45px;
+}
+
+.datepicker{
+ width: 100%;
+height: 60px;
+padding-left: 50px;
+
+background: rgba(125, 125, 125, 0.1);
+border: 0.5px solid rgba(0, 0, 0, 0.1);
+box-sizing: border-box;
+border-radius: 5px;
+}
+
+
+
+@media (max-width: 786px) {
+  .title{
+    padding-top: 80px;
+  }
+  .body-section{
+    padding-top: 80px;
+  }
 }
  
-
+@media (max-width: 576px) {
+  h2{
+    font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+  
+  
+  color: #000000;
+  }
+}
 
 
 

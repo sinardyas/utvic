@@ -244,10 +244,12 @@ In their brief time on the agricultural market, drones have made a substantial i
           <img src={CommentPhoto} alt=".." width="72" height="72" className='comment-foto'/>
           
         <div >
-          <div className='flex flex-row md:gap-4'>
-            <div className='flex lg:w-2/12 md:w-5/12'> <span className='font-semibold'>Fariz Sumarjo</span></div>
+          <div className='flex flex-row'>
+            <div className='padding-comment flex'> <span className='font-semibold'>Fariz Sumarjo</span></div>
             <div className='flex flex-row'>
+              <div>
             <img src={Calendar} alt="..." width="24" height="24"/>
+            </div>
             <span className='date text-slate-500'>19 Jan, 2022</span>
 
           </div>
@@ -268,13 +270,15 @@ In their brief time on the agricultural market, drones have made a substantial i
           
         
         <div>
-          <div className='flex flex-row'>
-            <div className='flex w-2/12'> 
+          <div className='col-comment flex flex-row'>
+            <div className='flex padding-comment'> 
             <span className='font-semibold'>Fariz Sumarjo</span>
             </div>
             
             <div className='flex flex-row'>
+              <div>
             <img src={Calendar} alt="..." width="24" height="24"/>
+            </div>
             <span className='date text-slate-500'>19 Jan, 2022</span>
 
           </div>
