@@ -21,6 +21,7 @@ import Prestasi from './views/prestasi'
 import Certifikat from './views/certificate'
 import Article from './views/article/_index'
 import InnovationProfile from './views/submit-innovation/innovation-profile'
+import Analysis from './views/submit-innovation/analysis'
 
 
 
@@ -151,6 +152,15 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <InnovationProfile />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={'/submit-innovation/analysis'}
+              element={
+                <PrivateRoute>
+                  <Analysis />
                 </PrivateRoute>
               }
             />

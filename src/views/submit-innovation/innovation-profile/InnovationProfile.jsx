@@ -1,8 +1,6 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react'
 import Header from '../../../components/Header'
 import DrawerNav from '../../../components/menu/DrawerNav'
-import Breadcrumbs from '@mui/material/Breadcrumbs'
-import { Link } from '@mui/material'
 import TextInput from '../_shared/TextInput'
 import PageHeader from '../_shared/PageHeader'
 import SelectInput from '../_shared/SelectInput'
@@ -11,6 +9,9 @@ import Button from '../_shared/Button'
 import { GlobalContext } from '../../../store/global/Provider'
 import PageSpinner from '../../../components/Spinner-1'
 import { api } from '../../../boot/axios'
+import BreadcrumbsSection
+  from '../_shared/BreadcrumbsSection/BreadcrumbsSection'
+import useInputForm from '../_helpers/useInputForm'
 
 function transformToOptions (list, idKey, labelKey) {
   if (!list) {
@@ -31,7 +32,7 @@ function transformToOptions (list, idKey, labelKey) {
 function Form () {
   const globalContext = useContext(GlobalContext)
   const [responses, setResponses] = useState([])
-  const [formValues, setFormValues] = useState({})
+  const [formValues, , handleChange] = useInputForm({})
   const [isLoading, setIsLoading] = useState(true)
 
   const {
@@ -117,27 +118,6 @@ function Form () {
     masterTipeProyekRes,
     masterTipeInovasiRes,
   ] = responses
-
-  const handleChange = useCallback((e) => {
-    const { id, value, type } = e.target
-
-    if (type === 'file') {
-      const { files } = e.target
-      const [file] = files
-
-      setFormValues(prevState => ({
-        ...prevState,
-        [id]: file,
-      }))
-
-      return
-    }
-
-    setFormValues(prevState => ({
-      ...prevState,
-      [id]: value,
-    }))
-  }, [])
 
   if (isLoading) {
     return <PageSpinner/>
@@ -381,29 +361,7 @@ function InnovationProfile () {
         <DrawerNav/>
       </React.Fragment>
 
-      <section className="space-from-header py-[1rem] bg-slate-200">
-        <div className={'container'}>
-          <div role="presentation" className="pt-3">
-            <Breadcrumbs aria-label="breadcrumb">
-              <Link
-                underline="hover"
-                color="inherit"
-                href="/"
-                className="font-bold"
-              >
-                Home
-              </Link>
-              <Link
-                underline="hover"
-                color="text.primary"
-                className="font-bold"
-              >
-                Submit Inovasi
-              </Link>
-            </Breadcrumbs>
-          </div>
-        </div>
-      </section>
+     <BreadcrumbsSection />
 
       <PageHeader/>
 

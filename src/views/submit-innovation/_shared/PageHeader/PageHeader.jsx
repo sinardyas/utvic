@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom'
 
-function PageHeader(props) {
+function PageHeader() {
     return (
       <section className="md:flex md:my-12 my-6">
         <nav className={'container'} aria-label={'Submit Innovation'}>
@@ -14,19 +14,19 @@ function PageHeader(props) {
                 },
                 {
                   title: 'Analisis',
-                  url: '/submit-innovation/analysis-profile',
+                  url: '/submit-innovation/analysis',
                 },
                 {
                   title: 'Ide',
-                  url: '/submit-innovation/idea-profile',
+                  url: '/submit-innovation/idea',
                 },
                 {
                   title: 'Result',
-                  url: '/submit-innovation/result-profile',
+                  url: '/submit-innovation/result',
                 },
                 {
                   title: 'Dokumen',
-                  url: '/submit-innovation/document-profile',
+                  url: '/submit-innovation/document',
                 },
               ].map(({ title, url }) => {
                 const isActive = document.location.pathname === url

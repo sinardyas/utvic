@@ -1,7 +1,10 @@
 import React from 'react'
+import InfoIcon from '../../_shared/icons/info.png'
 
-export function Label ({ className, ...props }) {
-  return <label className={`inline-flex mb-4 font-semibold ${className ||
+export function Label ({ className, emptyLabel, ...props }) {
+  const defaultClassName = emptyLabel ? '' : 'inline-flex mb-4 font-semibold'
+
+  return <label className={`${defaultClassName} ${className ||
   ''}`} {...props} />
 }
 
@@ -11,6 +14,8 @@ const filterProps = (props) => {
     labelText,
     labelId,
     element,
+    showInfoIcon,
+    info,
     ...restProps
   } = props
 
@@ -24,6 +29,8 @@ function LabelWrapper (props) {
     labelId,
     required,
     element,
+    showInfoIcon,
+    info
   } = props
 
   const requiredSign = required ?
@@ -32,10 +39,20 @@ function LabelWrapper (props) {
 
   return (
     <div className={containerClassName}>
-      <Label htmlFor={labelId}>
-        {labelText}
-        {requiredSign}
-      </Label>
+      <div className={'flex justify-between'}>
+        <div>
+          <Label className={`${showInfoIcon ? 'mb-2' : ''}`} htmlFor={labelId}>
+            {labelText}
+            {requiredSign}
+          </Label>
+          {
+            showInfoIcon &&
+            <img className={'inline-block ml-2 w-8 h-8'} src={InfoIcon} alt={'info'}/>
+          }
+        </div>
+
+        {info && info}
+      </div>
       {element}
 
       {/*<span className={'text-red-600 text-sm'}>*/}
