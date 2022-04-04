@@ -36,10 +36,11 @@ function PageHeader() {
 
                 return (
                   <li
-                    className={`p-5 first:ml-auto last:!mr-auto whitespace-nowrap ${activeStyle}`}
+                    className={`first:ml-auto last:!mr-auto`}
                     key={url}
                   >
                     <RouterLink
+                      className={`block p-5 whitespace-nowrap ${activeStyle}`}
                       to={url}
                     >
                       {title}

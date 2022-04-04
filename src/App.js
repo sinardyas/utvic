@@ -22,6 +22,7 @@ import Certifikat from './views/certificate'
 import Article from './views/article/_index'
 import InnovationProfile from './views/submit-innovation/innovation-profile'
 import Analysis from './views/submit-innovation/analysis'
+import Idea from './views/submit-innovation/idea'
 
 
 
@@ -161,6 +162,15 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <Analysis />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={'/submit-innovation/idea'}
+              element={
+                <PrivateRoute>
+                  <Idea />
                 </PrivateRoute>
               }
             />
