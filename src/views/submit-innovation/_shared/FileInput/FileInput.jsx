@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import Upload from '../../../../assets/images/upload.png'
 import { Label } from '../LabelWrapper'
+import InfoIcon from '../icons/info.png'
 
 function filterProps (props) {
   const {
@@ -11,6 +12,8 @@ function filterProps (props) {
     extensions,
     file,
     hideLabelInfo,
+    showInfoIcon,
+    extensionInfo,
     ...restProps
   } = props
   return restProps
@@ -25,6 +28,8 @@ function FileLabelWrapper ({
   extensions,
   file,
   hideLabelInfo,
+  showInfoIcon,
+  extensionInfo,
 }) {
   const requiredSign = required ?
     <span className={'text-red-700'}>*</span> :
@@ -36,10 +41,21 @@ function FileLabelWrapper ({
     <div className={containerClassName}>
       {
         <div className={'flex justify-between'}>
-          <Label emptyLabel={!labelText} htmlFor={labelId}>
-            {labelText}
-            {requiredSign}
-          </Label>
+          <div>
+            <Label
+              className={`${showInfoIcon ? 'mb-2' : ''}`}
+              emptyLabel={!labelText}
+              htmlFor={labelId}
+            >
+              {labelText}
+              {requiredSign}
+            </Label>
+            {
+              showInfoIcon &&
+              <img className={'inline-block ml-2 w-8 h-8'} src={InfoIcon}
+                   alt={'info'}/>
+            }
+          </div>
 
           {
             !hideLabelInfo &&
@@ -53,10 +69,18 @@ function FileLabelWrapper ({
       {element}
 
       {
-        extensions &&
+        (extensionInfo || extensions) &&
         <span className={'text-gray-500 text-sm'}>
-          *Upload file dalam format gambar ( <span
-          className={'text-red-600'}>{extensions.join(', ')}</span> )
+          {extensionInfo || '*Upload file dalam format gambar'} {
+          extensions &&
+          (
+            <span
+              className={'text-red-600'}
+            >
+                ( {extensions.join(', ')} )
+              </span>
+          )
+        }
         </span>
       }
     </div>
@@ -72,6 +96,8 @@ function FileInput ({
   hideLabelInfo = false,
   placeholderClassName,
   localStateHandler,
+  showInfoIcon,
+  extensionInfo,
   ...props
 }) {
   const internalState = useState()
@@ -87,6 +113,8 @@ function FileInput ({
       labelId={labelId}
       extensions={extensions}
       hideLabelInfo={hideLabelInfo}
+      showInfoIcon={showInfoIcon}
+      extensionInfo={extensionInfo}
       element={
         <div
           className={`relative w-full ${containerClassName}`}
@@ -104,7 +132,8 @@ function FileInput ({
           />
           <div className="flex flex-row items-center space-x-4">
             <img src={Upload} alt="upload-icon" className={'w-5 h-5'}/>
-            <div className={`text-gray-400 ${placeholderClassName} md:max-w-[150px] text-ellipsis overflow-hidden whitespace-nowrap`}>
+            <div
+              className={`text-gray-400 ${placeholderClassName}`}>
               <span>{file ? file.name : placeholder}</span>
             </div>
           </div>

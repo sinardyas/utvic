@@ -24,7 +24,7 @@ function TextAndFileInput ({
         placeholder={'Upload foto'}
         isStyledContainer={false}
         hideLabelInfo={true}
-        placeholderClassName={'!text-black'}
+        placeholderClassName={'!text-black md:max-w-[150px] text-ellipsis overflow-hidden whitespace-nowrap'}
         onChange={onChange}
         localStateHandler={fileState}
       />

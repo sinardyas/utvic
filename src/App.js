@@ -24,6 +24,7 @@ import InnovationProfile from './views/submit-innovation/innovation-profile'
 import Analysis from './views/submit-innovation/analysis'
 import Idea from './views/submit-innovation/idea'
 import Result from './views/submit-innovation/result'
+import Document from './views/submit-innovation/document'
 
 
 
@@ -181,6 +182,15 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <Result />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={'/submit-innovation/document'}
+              element={
+                <PrivateRoute>
+                  <Document />
                 </PrivateRoute>
               }
             />

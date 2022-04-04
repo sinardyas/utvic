@@ -28,6 +28,20 @@ const StyledInputElement = styled('input')(
   width: 100%;
   line-height: 1.5;
   color: ${grey[900]};
+  background: #f2f2f2;
+
+  &:focus {
+    outline: none;
+  }
+`,
+)
+
+const StyledRootElement = styled('div')(
+  () => `
+  display: flex;
+  width: 100%;
+  line-height: 1.5;
+  color: ${grey[900]};
   background: rgba(125, 125, 125, 0.1);
   border: 0.5px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -42,7 +56,6 @@ const StyledInputElement = styled('input')(
   }
 `,
 )
-
 const StyledTextAreaElement = styled('textarea')(
   () => `
   width: 100%;
@@ -72,9 +85,15 @@ const TextInput = React.forwardRef(function CustomInput (props, ref) {
           components={{
             Input: StyledInputElement,
             Textarea: StyledTextAreaElement,
+            Root: StyledRootElement,
           }}
           id={labelId}
           {...LabelWrapper.filterProps(props)}
+          componentsProps={{
+            root: {
+              className: 'space-x-3'
+            }
+          }}
           ref={ref}
         />
       }
