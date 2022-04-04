@@ -23,6 +23,7 @@ import Article from './views/article/_index'
 import InnovationProfile from './views/submit-innovation/innovation-profile'
 import Analysis from './views/submit-innovation/analysis'
 import Idea from './views/submit-innovation/idea'
+import Result from './views/submit-innovation/result'
 
 
 
@@ -120,7 +121,7 @@ export default function AppFunc() {
                 '/profile',
                 '/profile/:type',
                 '/profile/:type/:option'
-              ].map((path, index) => 
+              ].map((path, index) =>
                 <Route key={index} path={path}
                   element={
                     <PrivateRoute>
@@ -136,7 +137,7 @@ export default function AppFunc() {
                 '/botbstar',
                 '/botbstar/:type',
                 '/botbstar/:type/:option'
-              ].map((path, index) => 
+              ].map((path, index) =>
                 <Route key={index} path={path}
                   element={
                     <PrivateRoute>
@@ -171,6 +172,15 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <Idea />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={'/submit-innovation/result'}
+              element={
+                <PrivateRoute>
+                  <Result />
                 </PrivateRoute>
               }
             />
