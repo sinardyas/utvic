@@ -122,6 +122,22 @@ const StyledPopper = styled(PopperUnstyled)`
   transform: translate(0, 96px) !important;
 `
 
+export function transformToOptions (list, idKey, labelKey) {
+  if (!list) {
+    return null
+  }
+
+  return list.map((item) => {
+    const id = item[idKey]
+    const label = item[labelKey]
+    return (
+      <SelectInput.Option key={id} value={id}>
+        {label}
+      </SelectInput.Option>
+    )
+  })
+}
+
 const SelectInput = React.forwardRef(function CustomSelect (props, ref) {
   const components = {
     Root: StyledButton,
