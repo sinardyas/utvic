@@ -21,6 +21,7 @@ import Prestasi from './views/prestasi'
 import Certifikat from './views/certificate'
 import Article from './views/article/_index'
 import InnovationProfile from './views/submit-innovation/innovation-profile'
+import InnovastraInnovationProfile from './views/submit-innovation/innovastra/innovation-profile'
 import Analysis from './views/submit-innovation/analysis'
 import Idea from './views/submit-innovation/idea'
 import Result from './views/submit-innovation/result'
@@ -247,6 +248,15 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <Document />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={'/submit-innovation/innovastra/innovation-profile'}
+              element={
+                <PrivateRoute>
+                  <InnovastraInnovationProfile />
                 </PrivateRoute>
               }
             />
