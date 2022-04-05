@@ -23,6 +23,7 @@ import Article from './views/article/_index'
 import InnovationProfile from './views/submit-innovation/innovation-profile'
 import InnovastraInnovationProfile from './views/submit-innovation/innovastra/innovation-profile'
 import InnovastraDocument from './views/submit-innovation/innovastra/document'
+import InnovastraAchievement from './views/submit-innovation/innovastra/achievement'
 import Analysis from './views/submit-innovation/analysis'
 import Idea from './views/submit-innovation/idea'
 import Result from './views/submit-innovation/result'
@@ -268,6 +269,15 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <InnovastraDocument />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={'/submit-innovation/innovastra/achievement'}
+              element={
+                <PrivateRoute>
+                  <InnovastraAchievement />
                 </PrivateRoute>
               }
             />
