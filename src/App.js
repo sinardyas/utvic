@@ -20,6 +20,11 @@ import BotbStar from './views/botbstar/_index'
 import Prestasi from './views/prestasi'
 import Certifikat from './views/certificate'
 import Article from './views/article/_index'
+import InnovationProfile from './views/submit-innovation/innovation-profile'
+import Analysis from './views/submit-innovation/analysis'
+import Idea from './views/submit-innovation/idea'
+import Result from './views/submit-innovation/result'
+import Document from './views/submit-innovation/document'
 
 
 
@@ -28,8 +33,8 @@ const PrivateRoute = function({ children, ...rest }) {
   const History = createBrowserHistory()
 
   return (
-    !!localStorage.getItem('Token') 
-    ? (children) 
+    !!localStorage.getItem('Token')
+    ? (children)
     : (
       History.push('/login'),
       History.go()
@@ -43,8 +48,8 @@ export default function AppFunc() {
   return (
     <GlobalProvider>
       <BrowserRouter>
-      
-  
+
+
         <main>
           <Routes>
 
@@ -101,7 +106,7 @@ export default function AppFunc() {
                 '/article',
                 '/article/:type',
                 '/article/:type/:option'
-              ].map((path, index) => 
+              ].map((path, index) =>
                 <Route key={index} path={path}
                   element={
                     <PrivateRoute>
@@ -117,7 +122,7 @@ export default function AppFunc() {
                 '/profile',
                 '/profile/:type',
                 '/profile/:type/:option'
-              ].map((path, index) => 
+              ].map((path, index) =>
                 <Route key={index} path={path}
                   element={
                     <PrivateRoute>
@@ -133,7 +138,7 @@ export default function AppFunc() {
                 '/botbstar',
                 '/botbstar/:type',
                 '/botbstar/:type/:option'
-              ].map((path, index) => 
+              ].map((path, index) =>
                 <Route key={index} path={path}
                   element={
                     <PrivateRoute>
@@ -143,6 +148,52 @@ export default function AppFunc() {
                 />
               )
             }
+
+            <Route
+              exact
+              path={'/submit-innovation/innovation-profile'}
+              element={
+                <PrivateRoute>
+                  <InnovationProfile />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={'/submit-innovation/analysis'}
+              element={
+                <PrivateRoute>
+                  <Analysis />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={'/submit-innovation/idea'}
+              element={
+                <PrivateRoute>
+                  <Idea />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={'/submit-innovation/result'}
+              element={
+                <PrivateRoute>
+                  <Result />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={'/submit-innovation/document'}
+              element={
+                <PrivateRoute>
+                  <Document />
+                </PrivateRoute>
+              }
+            />
 
             <Route
               path='*'
