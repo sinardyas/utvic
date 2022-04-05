@@ -28,24 +28,26 @@ function Form () {
         >
           <div
             className={'grid grid-cols-1 gap-x-3 gap-y-8'}>
-            <FileInput
-              labelText={'Upload Makalah Inovasi'}
-              labelId={'makalah-inovasi'}
-              placeholder={'Upload file'}
-              onChange={handleChange}
-              showInfoIcon
-              extensions={['pdf', 'ppt']}
-              extensionInfo={'*File dapat berupa dokumen seperti'}
-            />
+            <div className={'grid grid-cols-1 xl:grid-cols-2 gap-x-5 gap-y-8'}>
+              <FileInput
+                labelText={'Upload Makalah Inovasi'}
+                labelId={'makalah-inovasi'}
+                placeholder={'Upload file'}
+                onChange={handleChange}
+                showInfoIcon
+                extensions={['pdf', 'ppt']}
+                extensionInfo={'*File dapat berupa dokumen seperti'}
+              />
 
-            <FileInput
-              labelText={'Upload Dokumen Pendukung'}
-              labelId={'dokumen-pendukung'}
-              placeholder={'Upload file'}
-              onChange={handleChange}
-              showInfoIcon
-              extensionInfo={'*Upload file dengan semua format'}
-            />
+              <FileInput
+                labelText={'Upload Dokumen Pendukung'}
+                labelId={'dokumen-pendukung'}
+                placeholder={'Upload file'}
+                onChange={handleChange}
+                showInfoIcon
+                extensionInfo={'*Upload file dengan semua format'}
+              />
+            </div>
 
             <ul className={'flex flex-col divide-y'}>
               {
@@ -105,7 +107,7 @@ function Form () {
               </Button>
             </div>
 
-            <Button className={'bg-blue-500'}>
+            <Button className={'!bg-blue-500'}>
               <img
                 className={'min-w-[24px] w-[24px] h-[24px] sm:hidden'}
                 src={PreviewIcon}
