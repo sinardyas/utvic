@@ -61,23 +61,19 @@ const StyledTextAreaElement = styled('textarea')(
   width: 100%;
   line-height: 1.5;
   color: ${grey[900]};
-  background: rgba(125, 125, 125, 0.1);
-  border: 0.5px solid rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 20px 20px;
-
-  &:hover {
-    border-color: ${grey[400]};
-  }
+  background: #f2f2f2;
 
   &:focus {
-    outline: 3px solid ${blue[100]};
+    outline: none;
   }
 `,
 )
 
 const TextInput = React.forwardRef(function CustomInput (props, ref) {
-  const { labelId } = props
+  const { labelId, componentsProps } = props
+
+  const { root, ...restComponentProps} = componentsProps || {}
+
   return (
     <LabelWrapper
       element={
@@ -91,8 +87,10 @@ const TextInput = React.forwardRef(function CustomInput (props, ref) {
           {...LabelWrapper.filterProps(props)}
           componentsProps={{
             root: {
-              className: 'space-x-3'
-            }
+              className: 'space-x-3',
+              ...root,
+            },
+            ...restComponentProps
           }}
           ref={ref}
         />

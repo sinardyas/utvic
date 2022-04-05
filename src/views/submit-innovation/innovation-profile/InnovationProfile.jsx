@@ -269,7 +269,7 @@ function Form () {
               containerClassName={'md:row-span-2 md:col-span-2'}
               componentsProps={{
                 input: {
-                  className: 'h-[200px]',
+                  className: 'h-[170px]',
                 },
               }}
               labelText={'Deskripsi'}
