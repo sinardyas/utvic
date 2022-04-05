@@ -10,7 +10,7 @@ import { GlobalContext } from '../../../store/global/Provider'
 import PageSpinner from '../../../components/Spinner-1'
 import { api } from '../../../boot/axios'
 import BreadcrumbsSection
-  from '../_shared/BreadcrumbsSection/BreadcrumbsSection'
+  from '../../../components/BreadcrumbsSection/BreadcrumbsSection'
 import useInputForm from '../_helpers/useInputForm'
 
 function Form () {
@@ -345,7 +345,17 @@ function InnovationProfile () {
         <DrawerNav/>
       </React.Fragment>
 
-     <BreadcrumbsSection />
+      <BreadcrumbsSection
+        items={[
+          {
+            title: 'Home',
+            href: '/'
+          },
+          {
+            title: 'Submit Innovation',
+          },
+        ]}
+      />
 
       <PageHeader/>
 

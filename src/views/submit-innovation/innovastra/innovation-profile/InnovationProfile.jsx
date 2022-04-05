@@ -8,11 +8,9 @@ import FileInput from '../../_shared/FileInput'
 import Button from '../../_shared/Button'
 import { GlobalContext } from '../../../../store/global/Provider'
 import PageSpinner from '../../../../components/Spinner-1'
-import { api } from '../../../../boot/axios'
 import BreadcrumbsSection
-  from '../../_shared/BreadcrumbsSection/BreadcrumbsSection'
+  from '../../../../components/BreadcrumbsSection/BreadcrumbsSection'
 import useInputForm from '../../_helpers/useInputForm'
-
 
 function Form () {
   const globalContext = useContext(GlobalContext)
@@ -116,11 +114,12 @@ function Form () {
           onSubmit={(e) => {
             e.preventDefault()
 
-            function validate(formValues, labelIds) {
+            function validate (formValues, labelIds) {
               for (let i = 0; i < labelIds.length; i++) {
                 const label = labelIds[i]
-                if(!formValues[label]) {
-                  const labelText = document.querySelector(`label[for="${label}"]`)
+                if (!formValues[label]) {
+                  const labelText = document.querySelector(
+                    `label[for="${label}"]`)
                     .textContent
                     .replace(/\*$/, '')
                     .replace(/^pilih/i, '')
@@ -131,7 +130,8 @@ function Form () {
               return true
             }
 
-            if(!validate(formValues, ['tipe-proyek', 'tipe-inovasi', 'member'])) {
+            if (!validate(formValues,
+              ['tipe-proyek', 'tipe-inovasi', 'member'])) {
               return
             }
 
@@ -330,7 +330,17 @@ function InnovationProfile () {
         <DrawerNav/>
       </React.Fragment>
 
-      <BreadcrumbsSection />
+      <BreadcrumbsSection
+        items={[
+          {
+            title: 'Home',
+            href: '/'
+          },
+          {
+            title: 'Submit Innovation',
+          },
+        ]}
+      />
 
       <PageHeader/>
 

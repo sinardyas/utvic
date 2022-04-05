@@ -4,7 +4,7 @@ import DrawerNav from '../../../components/menu/DrawerNav'
 import PageHeader from '../_shared/PageHeader'
 import Button from '../_shared/Button'
 import BreadcrumbsSection
-  from '../_shared/BreadcrumbsSection/BreadcrumbsSection'
+  from '../../../components/BreadcrumbsSection/BreadcrumbsSection'
 import useInputForm from '../_helpers/useInputForm'
 import TextAndFileInput from '../_shared/TextAndFileInput/TextAndFileInput'
 
@@ -72,7 +72,18 @@ function Idea () {
         <DrawerNav/>
       </React.Fragment>
 
-      <BreadcrumbsSection/>
+      <BreadcrumbsSection
+        items={[
+          {
+            title: 'Home',
+            href: '/',
+          },
+          {
+            title: 'Submit Innovation',
+          },
+        ]}
+      />
+
 
       <PageHeader/>
 

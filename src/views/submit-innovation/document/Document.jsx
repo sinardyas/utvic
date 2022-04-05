@@ -4,7 +4,7 @@ import DrawerNav from '../../../components/menu/DrawerNav'
 import PageHeader from '../_shared/PageHeader'
 import Button from '../_shared/Button'
 import BreadcrumbsSection
-  from '../_shared/BreadcrumbsSection/BreadcrumbsSection'
+  from '../../../components/BreadcrumbsSection/BreadcrumbsSection'
 import useInputForm from '../_helpers/useInputForm'
 import FileInput from '../_shared/FileInput'
 import TextInput from '../_shared/TextInput'
@@ -114,7 +114,8 @@ function Form () {
                 alt={'link'}
               />
 
-              <span className={'hidden sm:block text-white font-semibold text-lg'}>
+              <span
+                className={'hidden sm:block text-white font-semibold text-lg'}>
                 Preview Inovasi
               </span>
             </Button>
@@ -136,7 +137,18 @@ function Document () {
         <DrawerNav/>
       </React.Fragment>
 
-      <BreadcrumbsSection/>
+      <BreadcrumbsSection
+        items={[
+          {
+            title: 'Home',
+            href: '/',
+          },
+          {
+            title: 'Submit Innovation',
+          },
+        ]}
+      />
+
 
       <PageHeader/>
 

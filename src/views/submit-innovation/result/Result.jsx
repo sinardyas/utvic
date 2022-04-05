@@ -4,7 +4,7 @@ import DrawerNav from '../../../components/menu/DrawerNav'
 import PageHeader from '../_shared/PageHeader'
 import Button from '../_shared/Button'
 import BreadcrumbsSection
-  from '../_shared/BreadcrumbsSection/BreadcrumbsSection'
+  from '../../../components/BreadcrumbsSection/BreadcrumbsSection'
 import useInputForm from '../_helpers/useInputForm'
 import TextAndFileInput from '../_shared/TextAndFileInput/TextAndFileInput'
 import TextInput from '../_shared/TextInput'
@@ -25,7 +25,8 @@ function Form () {
           <div
             className={'grid grid-cols-1 gap-x-3 gap-y-8'}
           >
-            <div className={'flex flex-wrap md:flex-nowrap items-end md:space-x-3'}>
+            <div
+              className={'flex flex-wrap md:flex-nowrap items-end md:space-x-3'}>
               <TextInput
                 containerClassName={'basis-full md:basis-1/4'}
                 labelText={'Benefit'}
@@ -35,8 +36,8 @@ function Form () {
                 showInfoIcon
                 componentsProps={{
                   input: {
-                    pattern: '[0-9]*'
-                  }
+                    pattern: '[0-9]*',
+                  },
                 }}
               />
 
@@ -49,7 +50,8 @@ function Form () {
               />
             </div>
 
-            <div className={'flex flex-wrap md:flex-nowrap items-end md:space-x-3'}>
+            <div
+              className={'flex flex-wrap md:flex-nowrap items-end md:space-x-3'}>
               <TextInput
                 containerClassName={'basis-full md:basis-1/4'}
                 labelText={'Cost'}
@@ -59,8 +61,8 @@ function Form () {
                 showInfoIcon
                 componentsProps={{
                   input: {
-                    pattern: '[0-9]*'
-                  }
+                    pattern: '[0-9]*',
+                  },
                 }}
               />
 
@@ -115,7 +117,18 @@ function Result () {
         <DrawerNav/>
       </React.Fragment>
 
-      <BreadcrumbsSection/>
+      <BreadcrumbsSection
+        items={[
+          {
+            title: 'Home',
+            href: '/',
+          },
+          {
+            title: 'Submit Innovation',
+          },
+        ]}
+      />
+
 
       <PageHeader/>
 
