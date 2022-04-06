@@ -4,6 +4,7 @@ import Upload from '../../assets/images/upload.png'
 import { styled } from '@mui/material/styles';
 import LinkLogo from '../../assets/images/link.png'
 import Radio from '@mui/material/Radio';
+import '../../styles/stars.scss';
 
 const Input2 = () => {
     const [inputList, setInputList] = useState([]);
@@ -35,29 +36,34 @@ const Input2 = () => {
        <div className="flex flex-col w-full">
          <label className='font-bold'>Pertanyaan</label>
          <textarea className="form-control mt-3 pt-3" placeholder="Isi judul kamu" rows="3"></textarea>
-         <div className="flex flex-row gap-5 pt-5">
-           <div className="flex flex-col w-full">
-             <div className="flex flex-row justify-between">
-               <span className='pb-3 font-semibold'>Upload Banner</span>
-               <span className='text-upload'>Belum ada file dipilih</span>
-             </div>
-             <label htmlFor="icon-button-file">
-               <div class="p-1 bg-slate-100 rounded-lg border-solid border border-slate-300 w-full">
-                 <Input accept="image/*" id="icon-button-file" type="file" />
-                 <div className="flex flex-row">
-                   <IconButton color="primary" aria-label="upload picture" component="span">
-                     <img src={Upload} alt=".." />
-                   </IconButton>
-                   <div className='flex items-center'>
-                     <span className='upload-placeholder'>Upload Image Banner Artikel</span>
-                   </div>
-                 </div>
-               </div>
-             </label>
-             <div className='pt-3'>
-               <div className='text-upload'>*Upload file dalam format gambar ( <span className='text-upload2'>jpeg, png</span> ) </div>
-             </div>
-           </div>
+         <div className="col-upload flex flex-row  gap-5 pt-5">
+             
+         <div className='flex flex-col w-full'>
+        <div className="col-upload2 flex flex-row justify-between">
+            <span className='pb-3 font-semibold'>Header Image</span>
+            <span className='text-upload'>Belum ada file dipilih</span>
+            </div>
+           
+            <label htmlFor="icon-button-file">
+        
+        <div class="p-1 bg-slate-100 rounded-lg border-solid border border-slate-300 w-full">
+        <Input accept="image/*" id="icon-button-file" type="file" />
+        <div className="upload-form flex flex-row">
+        <IconButton color="primary" aria-label="upload picture" component="span">
+        <img src={Upload} alt=".." width="20" height="20"/>
+        </IconButton>
+        <div className='upload-placeholder flex items-center'>
+        <span className="text-slate-400">Upload Image Banner Artikel</span>
+        </div>
+        </div>
+                  </div>
+
+        
+      </label>
+            <div className='pt-3'>
+              <div className='text-upload'>*Upload file dalam format gambar ( <span className='text-upload2'>jpeg, png</span> )</div>
+            </div>
+            </div>
            <div className='flex flex-col  w-full'>
              <span className='pb-3 font-semibold'>Link</span>
              <div>
@@ -69,6 +75,7 @@ const Input2 = () => {
                </div>
              </div>
            </div>
+          
          </div>
          <div className="flex flex-col pt-5">
            <strong>Jawaban</strong>
@@ -199,29 +206,34 @@ const Form = () => {
        <div className="flex flex-col w-full">
          <label className='font-bold'>Pertanyaan</label>
          <textarea className="form-control mt-3 pt-3" placeholder="Isi judul kamu" rows="3"></textarea>
-         <div className="flex flex-row gap-5 pt-5">
-           <div className="flex flex-col w-full">
-             <div className="flex flex-row justify-between">
-               <span className='pb-3 font-semibold'>Upload Banner</span>
-               <span className='text-upload'>Belum ada file dipilih</span>
-             </div>
-             <label htmlFor="icon-button-file">
-               <div class="p-1 bg-slate-100 rounded-lg border-solid border border-slate-300 w-full">
-                 <Input accept="image/*" id="icon-button-file" type="file" />
-                 <div className="flex flex-row">
-                   <IconButton color="primary" aria-label="upload picture" component="span">
-                     <img src={Upload} alt=".." />
-                   </IconButton>
-                   <div className='flex items-center'>
-                     <span className='upload-placeholder'>Upload Image Banner Artikel</span>
-                   </div>
-                 </div>
-               </div>
-             </label>
-             <div className='pt-3'>
-               <div className='text-upload'>*Upload file dalam format gambar ( <span className='text-upload2'>jpeg, png</span> ) </div>
-             </div>
-           </div>
+         <div className="col-upload flex flex-row  gap-5 pt-5">
+             
+         <div className='flex flex-col w-full'>
+        <div className="col-upload2 flex flex-row justify-between">
+            <span className='pb-3 font-semibold'>Header Image</span>
+            <span className='text-upload'>Belum ada file dipilih</span>
+            </div>
+           
+            <label htmlFor="icon-button-file">
+        
+        <div class="p-1 bg-slate-100 rounded-lg border-solid border border-slate-300 w-full">
+        <Input accept="image/*" id="icon-button-file" type="file" />
+        <div className="upload-form flex flex-row">
+        <IconButton color="primary" aria-label="upload picture" component="span">
+        <img src={Upload} alt=".." width="20" height="20"/>
+        </IconButton>
+        <div className='upload-placeholder flex items-center'>
+        <span className="text-slate-400">Upload Image Banner Artikel</span>
+        </div>
+        </div>
+                  </div>
+
+        
+      </label>
+            <div className='pt-3'>
+              <div className='text-upload'>*Upload file dalam format gambar ( <span className='text-upload2'>jpeg, png</span> )</div>
+            </div>
+            </div>
            <div className='flex flex-col  w-full'>
              <span className='pb-3 font-semibold'>Link</span>
              <div>
@@ -233,6 +245,7 @@ const Form = () => {
                </div>
              </div>
            </div>
+          
          </div>
          <div className="flex flex-col pt-5">
            <strong>Jawaban</strong>
