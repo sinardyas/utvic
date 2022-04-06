@@ -5,7 +5,7 @@ import TextInput from '../../../../components/TextInput'
 import PageHeader from '../_shared/PageHeader'
 import SelectInput, { transformToOptions } from '../../_shared/SelectInput'
 import FileInput from '../../../../components/FileInput'
-import Button from '../../_shared/Button'
+import Button from '../../../../components/Button'
 import { GlobalContext } from '../../../../store/global/Provider'
 import PageSpinner from '../../../../components/Spinner-1'
 import BreadcrumbsSection

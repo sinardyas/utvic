@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../../../../components/Header'
 import DrawerNav from '../../../../components/menu/DrawerNav'
 import PageHeader from '../_shared/PageHeader'
-import Button from '../../_shared/Button'
+import Button from '../../../../components/Button'
 import BreadcrumbsSection
   from '../../../../components/BreadcrumbsSection/BreadcrumbsSection'
 import useInputForm from '../../_helpers/useInputForm'
@@ -41,14 +41,20 @@ function Form () {
               </Button>
 
               <Button
-                className={'!bg-white !text-black !border-black'}
+                backgroundCss={'bg-white'}
+                colorCss={'text-black'}
+                className={'!border-black'}
                 type={'submit'}
               >
                 Save a Draft
               </Button>
             </div>
 
-            <Button className={'!bg-amber-300 !text-black'} type={'submit'}>
+            <Button
+              backgroundCss={'bg-amber-300'}
+              colorCss={'text-black'}
+              type={'submit'}
+            >
               Submit Inovasi
             </Button>
 

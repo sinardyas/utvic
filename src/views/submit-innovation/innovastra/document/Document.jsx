@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../../../../components/Header'
 import DrawerNav from '../../../../components/menu/DrawerNav'
 import PageHeader from '../_shared/PageHeader'
-import Button from '../../_shared/Button'
+import Button from '../../../../components/Button'
 import BreadcrumbsSection
   from '../../../../components/BreadcrumbsSection/BreadcrumbsSection'
 import useInputForm from '../../_helpers/useInputForm'
@@ -98,12 +98,16 @@ function Form () {
                 Save a Draft
               </Button>
 
-              <Button className={'!bg-amber-300 text-black'} type={'submit'}>
+              <Button
+                backgroundCss={'bg-amber-300'}
+                colorCss={'text-black'}
+                type={'submit'}
+              >
                 Submit
               </Button>
             </div>
 
-            <Button className={'!bg-blue-500'}>
+            <Button backgroundCss={'bg-blue-500'} >
               <img
                 className={'min-w-[24px] w-[24px] h-[24px] sm:hidden'}
                 src={PreviewIcon}
