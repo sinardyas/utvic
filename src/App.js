@@ -20,10 +20,11 @@ import BotbStar from './views/botbstar/_index'
 import Prestasi from './views/prestasi'
 import Certifikat from './views/certificate'
 import Article from './views/article/_index'
-import Stars from './views/stars'
+import Stars from './views/stars/_index'
 import Champion from './views/champion'
 import PenjuarianLokal from './views/penjurianlokal'
 import Perjuangan from './views/perjuangan/_index'
+
 
 
 const PrivateRoute = function({ children, ...rest }) {
@@ -98,14 +99,7 @@ export default function AppFunc() {
                 </PrivateRoute>
               }
             />
-            <Route exact
-              path='/stars'
-              element={
-                <PrivateRoute>
-                  <Stars/>
-                </PrivateRoute>
-              }
-            />
+            
 
 <Route exact
               path='/certifikat'
@@ -164,7 +158,7 @@ export default function AppFunc() {
               )
             }
 
-{
+            {
               [
                 '/perjuangan',
                 '/perjuangan/:type',
@@ -174,6 +168,22 @@ export default function AppFunc() {
                   element={
                     <PrivateRoute>
                       <Perjuangan/>
+                    </PrivateRoute>
+                  }
+                />
+              )
+            }
+
+            {
+              [
+                '/stars',
+                '/stars/:type',
+                '/stars/:type/:option'
+              ].map((path, index) => 
+                <Route key={index} path={path}
+                  element={
+                    <PrivateRoute>
+                      <Stars/>
                     </PrivateRoute>
                   }
                 />
