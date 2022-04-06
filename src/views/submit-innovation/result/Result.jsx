@@ -7,7 +7,7 @@ import BreadcrumbsSection
   from '../../../components/BreadcrumbsSection/BreadcrumbsSection'
 import useInputForm from '../_helpers/useInputForm'
 import TextAndFileInput from '../_shared/TextAndFileInput/TextAndFileInput'
-import TextInput from '../_shared/TextInput'
+import TextInput from '../../../components/TextInput'
 
 function Form () {
   const [formValues, , handleChange] = useInputForm()

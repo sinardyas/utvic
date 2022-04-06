@@ -1,7 +1,7 @@
 import React from 'react'
 import InputUnstyled from '@mui/base/InputUnstyled'
 import { styled } from '@mui/system'
-import LabelWrapper from '../LabelWrapper'
+import LabelWrapper from '../../views/submit-innovation/_shared/LabelWrapper'
 
 const blue = {
   100: '#DAECFF',

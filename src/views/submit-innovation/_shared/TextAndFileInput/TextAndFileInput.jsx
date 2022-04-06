@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import FileInput from '../FileInput'
-import TextInput from '../TextInput'
+import FileInput from '../../../../components/FileInput'
+import TextInput from '../../../../components/TextInput'
 import { useMediaQuery } from '@mui/material'
 
 function TextAndFileInput ({
