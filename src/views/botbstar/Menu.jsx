@@ -23,7 +23,7 @@ import SearchLogo from '../../assets/images/search-form.png'
   
     render() {
       return <>
-         <section>
+         <section className='section-body'>
              <div className="container">
              <div className='flex flex-row gap-20 justify-center pt-10'>
                    

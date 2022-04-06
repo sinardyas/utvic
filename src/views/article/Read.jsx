@@ -105,7 +105,7 @@ class Child extends React.Component {
           )
           : <></>
         }
-    <section className='space-from-header py-[1rem] bg-slate-200 hidden md:flex'>
+    <section className='section-body space-from-header py-[1rem] bg-slate-200 hidden md:flex'>
   <div className="container">
   <div role="presentation" className='pt-3'>
     <Breadcrumbs aria-label="breadcrumb" >
@@ -151,10 +151,10 @@ class Child extends React.Component {
      
     </div>
   </section>
-  <section className='p-0 mt-5'>
+  <section className='section-body p-0 mt-5'>
     <img src={BannerArtikel} alt=".." width="1440" height="740"/>
   </section>
-      <section className='pt-10'>
+      <section className='section-body pt-10'>
         <div className="container">
           <article className='article-content'>
             <p>
@@ -302,7 +302,7 @@ In their brief time on the agricultural market, drones have made a substantial i
         </div>
       </section>
 
-      <section className='pb-16 pt-10'>
+      <section className='section-body pb-16 pt-10'>
         <div className="container">
 
         <h3 className='font-semibold pb-5'>Komentar</h3>
@@ -326,13 +326,13 @@ In their brief time on the agricultural market, drones have made a substantial i
         </div>
       </section>
 
-      <section>
+      <section className='section-body'>
         <div className="container">
         <h3 className='font-semibold'>Artikel Lainnya</h3>
         </div>
       </section>
 
-      <section className='pb-16 pt-5 hidden md:flex'>
+      <section className='section-body pb-16 pt-5 hidden md:flex'>
 
         <Swiper
   slidesPerView={2.5}
@@ -382,7 +382,7 @@ onSwiper={(swiper) => console.log(swiper)}>
       </section>
 
 
-      <section className='block md:hidden'>
+      <section className='section-body block md:hidden'>
         <div className="container">
         <div className='list-artikel'>
           {

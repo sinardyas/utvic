@@ -1,0 +1,52 @@
+.list-task{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 10px;
+}
+.list-quiz{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+   column-gap: 10px;
+   row-gap: 10px;
+}
+.date-card{
+    font-family: 'SF Pro Display';
+font-style: italic;
+font-weight: 300;
+font-size: 14px;
+line-height: 17px;
+
+
+color: rgba(0, 0, 0, 0.5);
+
+}
+@media (max-width: 992px) {
+    .list-task{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 10px;
+    }
+  
+}
+
+@media (max-width: 768px) {
+    .list-task{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 10px;
+    }
+    .list-quiz{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+       column-gap: 10px;
+       row-gap: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .list-task{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 10px;
+    }
+}

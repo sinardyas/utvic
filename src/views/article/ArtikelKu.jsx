@@ -290,7 +290,7 @@ class Child extends React.Component {
           )
           : <></>
         }
-   <section className='space-from-header py-[1rem] bg-slate-200 hidden md:flex'>
+   <section className='section-body space-from-header py-[1rem] bg-slate-200 hidden md:flex'>
   <div className="container">
   <div role="presentation" className='pt-3'>
     <Breadcrumbs aria-label="breadcrumb" >
@@ -312,7 +312,7 @@ class Child extends React.Component {
   </div>
   </section>
 
-  <section className="hidden md:flex pt-10">
+  <section className="section-body hidden md:flex pt-10">
           <div className="container">
             <div className="flex lg:flex-row sm:flex-col gap-3">
             <Search/>
@@ -333,7 +333,7 @@ class Child extends React.Component {
           </div>
         </section>
 
-    <section className="block md:hidden pt-20">
+    <section className="section-body block md:hidden pt-20">
           
           <div className="container">
           
@@ -379,7 +379,7 @@ Artikel Ku
           </div>
         </section>
 
-      <section className=' pt-12'>
+      <section className='section-body pt-12'>
       
        <div className="container">
          

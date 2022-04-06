@@ -68,7 +68,7 @@
     }
   }
 }
-section{
+.section-body{
   padding-left: 100px;
   padding-right: 100px;
 }
@@ -136,7 +136,7 @@ border-radius: 5px;
 }
 
 @media (max-width: 1024px) {
-  section{
+  .section-body{
     padding: 0px;
   
   }

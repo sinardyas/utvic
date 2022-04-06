@@ -1,0 +1,14 @@
+.list-setting{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+   column-gap: 10px;
+ 
+}
+.verikal_center{
+    width: 70px;
+    
+    
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transform: rotate(-90deg);
+    
+}

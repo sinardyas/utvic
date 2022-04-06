@@ -185,7 +185,7 @@ const CustomSelect = React.forwardRef(function CustomSelect(props, ref) {
       return <>
       
     
-        <section className=" pt-10 pb-10">
+        <section className="section-body pt-10 pb-10">
           
           <div className="container">
             <div className="col-search flex lg:flex-row gap-3">
