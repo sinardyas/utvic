@@ -25,6 +25,10 @@ import Analysis from './views/submit-innovation/analysis'
 import Idea from './views/submit-innovation/idea'
 import Result from './views/submit-innovation/result'
 import Document from './views/submit-innovation/document'
+import Stars from './views/stars/_index'
+import Champion from './views/champion'
+import PenjuarianLokal from './views/penjurianlokal'
+import Perjuangan from './views/perjuangan/_index'
 
 
 
@@ -93,6 +97,16 @@ export default function AppFunc() {
             />
 
 <Route exact
+              path='/champion'
+              element={
+                <PrivateRoute>
+                  <Champion/>
+                </PrivateRoute>
+              }
+            />
+            
+
+<Route exact
               path='/certifikat'
               element={
                 <PrivateRoute>
@@ -148,6 +162,48 @@ export default function AppFunc() {
                 />
               )
             }
+
+            {
+              [
+                '/perjuangan',
+                '/perjuangan/:type',
+                '/perjuangan/:type/:option'
+              ].map((path, index) => 
+                <Route key={index} path={path}
+                  element={
+                    <PrivateRoute>
+                      <Perjuangan/>
+                    </PrivateRoute>
+                  }
+                />
+              )
+            }
+
+            {
+              [
+                '/stars',
+                '/stars/:type',
+                '/stars/:type/:option'
+              ].map((path, index) => 
+                <Route key={index} path={path}
+                  element={
+                    <PrivateRoute>
+                      <Stars/>
+                    </PrivateRoute>
+                  }
+                />
+              )
+            }
+
+
+            <Route exact
+              path='/penjurianlokal'
+              element={
+                <PrivateRoute>
+                  <PenjuarianLokal/>
+                </PrivateRoute>
+              }
+            />
 
             <Route
               exact
