@@ -12,7 +12,7 @@ import DocumentIcon from '../../../assets/images/document.png'
 import FileInput from '../../../components/FileInput'
 import TextInput from '../../../components/TextInput'
 import AlertModal from '../../../components/AlertModal/AlertModal'
-import DocumentItem from './_shared/DocumentItem'
+import DocumentItem from '../_shared/DocumentItem'
 import { api } from '../../../boot/axios'
 
 function Layout () {

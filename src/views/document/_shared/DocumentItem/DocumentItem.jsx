@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import MoreIcon from '../../../../../assets/images/more.png'
+import MoreIcon from '../../../../assets/images/more.png'
 import { Backdrop } from '@mui/material'
-import Dropdown from '../../../../../components/Dropdown/Dropdown'
+import Dropdown from '../../../../components/Dropdown/Dropdown'
 
 function DocumentItem ({
   containerClassName,

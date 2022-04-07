@@ -35,5 +35,6 @@ window.processEnv = {
     createInnovation: `${baseUrl}create-innovation` + ext,
     permissionDocument: `${baseUrl}permission-document` + ext,
     deleteDocument: `${baseUrl}delete-document` + ext,
+    getDocument: `${baseUrl}get-document` + ext,
   }
 }

@@ -29,6 +29,7 @@ import Idea from './views/submit-innovation/idea'
 import Result from './views/submit-innovation/result'
 import Document from './views/submit-innovation/document'
 import MyDocument from './views/document/my-document'
+import AllDocument from './views/document/all-document'
 import Stars from './views/stars/_index'
 import Champion from './views/champion'
 import PenjuarianLokal from './views/penjurianlokal'
@@ -283,13 +284,21 @@ export default function AppFunc() {
               }
             />
 
-
             <Route
               exact
               path={'/document/my-document'}
               element={
                 <PrivateRoute>
                   <MyDocument />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={'/document/all-document'}
+              element={
+                <PrivateRoute>
+                  <AllDocument />
                 </PrivateRoute>
               }
             />
