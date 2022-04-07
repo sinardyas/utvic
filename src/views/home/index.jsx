@@ -119,7 +119,7 @@ class Child extends React.Component {
           : <></>
         }
    
-          <section className='banner '>
+          <section className='section-body banner '>
             <div className="container ">
               <div className="lg:grid lg:grid-cols-4 gap-4">
 
@@ -298,7 +298,7 @@ class Child extends React.Component {
             </div>
           </section>
 
-          <section className='features block lg:hidden pt-5'>
+          <section className='section-body features block lg:hidden pt-5'>
             <div className="container">
               <div className="flex flex-col">
 
@@ -342,7 +342,7 @@ class Child extends React.Component {
 
          
 
-          <section className='article-list py-[2rem]'>
+          <section className='section-body article-list py-[2rem]'>
             <div className="container">
               <div className="flex justify-between items-center">
                 <div className='flex items-center'>
@@ -430,7 +430,7 @@ class Child extends React.Component {
 
          
 
-          <section className='features hidden lg:flex'>
+          <section className='section-body features hidden lg:flex'>
             <div className="container">
 
             <div class="py-8 min-w-lg mx-auto bg-white rounded-xl shadow-lg items-center">
@@ -472,7 +472,7 @@ class Child extends React.Component {
 
          
 
-          <section className='events py-5'>
+          <section className='section-body events py-5'>
             <div className="container">
 
             <div className="flex justify-between items-center mt-5">

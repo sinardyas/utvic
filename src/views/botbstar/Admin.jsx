@@ -14,7 +14,7 @@ import EditPen from "../../assets/images/edit-pen.png";
 import Header from '../../components/Header'
 import DrawerNav from '../../components/menu/DrawerNav'
 import Menus from './Menu.jsx'
-import Tables from './Table.jsx'
+import Tables from './Table2.jsx'
 
 const { 
   api: {
@@ -114,7 +114,7 @@ class Child extends React.Component {
           : <></>
         }
       
-<section className='space-from-header py-[1rem] bg-slate-200 hidden md:flex'>
+<section className='section-body space-from-header py-[1rem] bg-slate-200 hidden md:flex'>
   <div className="container ">
   <div role="presentation" className='pt-3'>
     <Breadcrumbs aria-label="breadcrumb" >
@@ -145,7 +145,7 @@ class Child extends React.Component {
   </section>
 
      <Menus/>
-     <section className='pt-10'>
+     <section className='section-body pt-10'>
        <div className="container">
          <Tables/>
 
