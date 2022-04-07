@@ -28,6 +28,7 @@ import Analysis from './views/submit-innovation/analysis'
 import Idea from './views/submit-innovation/idea'
 import Result from './views/submit-innovation/result'
 import Document from './views/submit-innovation/document'
+import MyDocument from './views/document/my-document'
 import Stars from './views/stars/_index'
 import Champion from './views/champion'
 import PenjuarianLokal from './views/penjurianlokal'
@@ -107,7 +108,7 @@ export default function AppFunc() {
                 </PrivateRoute>
               }
             />
-            
+
 
 <Route exact
               path='/certifikat'
@@ -171,7 +172,7 @@ export default function AppFunc() {
                 '/perjuangan',
                 '/perjuangan/:type',
                 '/perjuangan/:type/:option'
-              ].map((path, index) => 
+              ].map((path, index) =>
                 <Route key={index} path={path}
                   element={
                     <PrivateRoute>
@@ -187,7 +188,7 @@ export default function AppFunc() {
                 '/stars',
                 '/stars/:type',
                 '/stars/:type/:option'
-              ].map((path, index) => 
+              ].map((path, index) =>
                 <Route key={index} path={path}
                   element={
                     <PrivateRoute>
@@ -278,6 +279,17 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <InnovastraAchievement />
+                </PrivateRoute>
+              }
+            />
+
+
+            <Route
+              exact
+              path={'/document/my-document'}
+              element={
+                <PrivateRoute>
+                  <MyDocument />
                 </PrivateRoute>
               }
             />

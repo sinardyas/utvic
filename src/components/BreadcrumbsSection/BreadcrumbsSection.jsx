@@ -18,6 +18,7 @@ function BreadcrumbsSection({ items }) {
                         color="text.primary"
                         className="font-bold"
                         href={item.href}
+                        key={index}
                       >
                         {item.title}
                       </Link>
@@ -30,6 +31,7 @@ function BreadcrumbsSection({ items }) {
                       color="inherit"
                       href={item.href}
                       className="font-bold"
+                      key={index}
                     >
                       {item.title}
                     </Link>
