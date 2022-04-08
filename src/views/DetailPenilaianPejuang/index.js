@@ -1,1 +1,1 @@
-export { default as DetailPenilaianPejuang } from "./DetailPenilaianPejuang";
+export { default } from "./DetailPenilaianPejuang";
