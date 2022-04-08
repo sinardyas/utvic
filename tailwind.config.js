@@ -1,18 +1,13 @@
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  mode: "jit",
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     container: {
       center: true,
-      padding: '1rem',
+      padding: "1rem",
+    },
 
-    },
-   
-   
-    extend: {
-      
-    },
+    extend: {},
   },
   plugins: [],
-}
+};
