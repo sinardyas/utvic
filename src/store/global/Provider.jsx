@@ -26,7 +26,7 @@ class GlobalProvider extends React.Component {
     })
   }
 
-  FetchGet({url, errorText = `Error - fetch API`}) {
+  FetchGet({url, errorText = `Error - fetch API`, ...axiosRequestConfig}) {
     return new Promise((resolve, reject) => {
       api({
         method: 'GET',
@@ -34,7 +34,8 @@ class GlobalProvider extends React.Component {
 
         headers: {
           Auth: localStorage.getItem('Token')
-        }
+        },
+        ...axiosRequestConfig
       })
       .then(response => {
         const { Status, Message, Data } = response.data
@@ -51,7 +52,7 @@ class GlobalProvider extends React.Component {
   }
 
   componentDidMount() {
-    
+
   }
 
   render() {

@@ -36,5 +36,6 @@ window.processEnv = {
     permissionDocument: `${baseUrl}permission-document` + ext,
     deleteDocument: `${baseUrl}delete-document` + ext,
     getDocument: `${baseUrl}get-document` + ext,
+    getDokumenku: `${baseUrl}get-dokumenku` + ext,
   }
 }

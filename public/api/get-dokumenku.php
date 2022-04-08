@@ -18,58 +18,57 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
   "Message": "Sukses",
   "Data": [
     {
-        "DocumentId": 1,
-      "name": "Makalah",
+        "DocumentId": 123,
+      "name": "Folder Makalah",
       "ImageUrl": "{DOMAIN}/upload/folder.png",
       "Type": "folder",
       "IsPublic": true,
       "IsActive": true,
       "Children": [
         {
-            "DocumentId": 2,
-          "name": "makalah.doc",
+            "DocumentId": 1,
+          "name": "Folder Makalah.docx",
           "ImageUrl": "{DOMAIN}/upload/file.png",
-          "Type": ".doc",
+          "Type": ".docx",
           "IsPublic": true,
           "IsActive": true,
-          "PathUrl": "{DOMAIL}/upload/dokumen/makalah.doc"
+          "PathUrl": "{DOMAIL}/upload/dokumen/folder-makalah.docx"
+        },
+        {
+            "DocumentId": 2,
+          "name": "Data Perhitungan.docx",
+          "ImageUrl": "{DOMAIN}/upload/file.png",
+          "Type": ".docx",
+          "IsPublic": true,
+          "IsActive": true,
+          "PathUrl": "{DOMAIL}/upload/dokumen/data-perhitungan.docx"
         },
         {
             "DocumentId": 3,
-          "name": "makalah.doc",
+          "name": "Inovasi AI.pdf",
           "ImageUrl": "{DOMAIN}/upload/file.png",
-          "Type": ".doc",
+          "Type": ".pdf",
           "IsPublic": true,
           "IsActive": true,
-          "PathUrl": "{DOMAIL}/upload/dokumen/makalah.doc"
-        }
-      ]
-    },
-    {
-        "DocumentId": 4,
-      "name": "Makalah",
-      "ImageUrl": "{DOMAIN}/upload/folder.png",
-      "Type": "folder",
-      "IsPublic": true,
-      "IsActive": true,
-      "Children": [
-        {
-            "DocumentId": 5,
-          "name": "makalah.doc",
-          "ImageUrl": "{DOMAIN}/upload/file.png",
-          "Type": ".doc",
-          "IsPublic": true,
-          "IsActive": true,
-          "PathUrl": "{DOMAIL}/upload/dokumen/makalah.doc"
+          "PathUrl": "{DOMAIL}/upload/dokumen/inovasi-ai.pdf"
         },
         {
-            "DocumentId": 6,
-          "name": "makalah.doc",
+            "DocumentId": 4,
+          "name": "Data AI.pdf",
           "ImageUrl": "{DOMAIN}/upload/file.png",
-          "Type": ".doc",
+          "Type": ".pdf",
           "IsPublic": true,
           "IsActive": true,
-          "PathUrl": "{DOMAIL}/upload/dokumen/makalah.doc"
+          "PathUrl": "{DOMAIL}/upload/dokumen/data-ai.pdf"
+        },
+        {
+            "DocumentId": 5,
+          "name": "Inovasi AI2.pdf",
+          "ImageUrl": "{DOMAIN}/upload/file.png",
+          "Type": ".pdf",
+          "IsPublic": true,
+          "IsActive": true,
+          "PathUrl": "{DOMAIL}/upload/dokumen/inovasi-ai2.pdf"
         }
       ]
     }
