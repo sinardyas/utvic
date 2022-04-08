@@ -1,0 +1,71 @@
+.form-pekerjaan-container {
+  @apply container space-y-8 py-6 lg:px-40;
+}
+
+.form-pekerjaan-header {
+  @apply flex items-center justify-between;
+
+  > img {
+    @apply w-8;
+  }
+
+  > .__title {
+    @apply md:text-2xl space-x-4 items-center flex text-lg font-bold;
+  }
+}
+
+.back-button {
+  @apply items-center justify-center px-4 py-2 border text-sm md:text-xl font-bold rounded-md border-black cursor-pointer  transition-all duration-300 ease-in-out;
+
+  &:hover {
+    @apply bg-[#FFCD00] border-[#FFCD00] text-white;
+  }
+}
+
+.info-section-container {
+  @apply flex items-center justify-start md:justify-between flex-wrap;
+}
+
+.info-section {
+  @apply flex flex-col items-start justify-center flex-[0_1_100%] md:flex-[0_1_30%] mb-6 lg:mb-0;
+
+  > .info-section-title {
+    @apply flex md:text-xl font-bold space-x-6;
+  }
+
+  > .info-section-icon {
+    @apply w-8 h-8;
+  }
+
+  > .info-section-content {
+    @apply text-sm md:text-base;
+  }
+}
+
+.form-user-container {
+  @apply flex flex-wrap items-baseline md:justify-between;
+
+  .form-user-field {
+    @apply p-4 bg-gray-100 rounded-md mb-4;
+  }
+
+  .form-user-input {
+    @apply focus:outline-none bg-gray-100;
+  }
+}
+
+.form-pekerjaan-footer {
+  @apply flex items-center justify-between;
+
+  .base-button {
+    @apply flex w-24 h-[2.35rem] md:w-28 md:h-12 items-center justify-center text-sm md:text-base font-bold rounded-md border-black cursor-pointer transition-all duration-300 ease-in-out;
+  }
+
+  .cancel-button {
+    @apply bg-red-500  text-white hover:bg-red-600;
+  }
+
+  .submit-button {
+    @apply bg-[#FFCD00] border-black text-black hover:bg-[#e8bf1c];
+  }
+}
