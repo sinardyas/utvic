@@ -36,28 +36,28 @@ export default function Settings() {
 
   return (
     <div className='flex flex-row gap-5'>
+       <div>
         <img src={Date} alt=".." width="48" height="48"/>
-      
+        </div>
+      <div className="col-button flex gap-5">
       <button onClick={handleOpen} className='bg-yellow-400 px-4 py-2  text-black font-semibold disabled:opacity-75'> 
-      <div className="flex flex-row  gap-3 items-center">
-      <div>
-      <img src={Setting} alt=".." width="20" height="20" className='setting-img'/>
-      </div>
-      Setting Jumlah Seasonal Task 
-      </div>
+        <div className="flex flex-row  gap-3 items-center">
+            <div>
+                <img src={Setting} alt=".." width="20" height="20" className='setting-img'/>
+            </div>
+            Setting Jumlah Seasonal Task 
+        </div>
       </button>
 
       <button onClick={handleOpen2} className='bg-yellow-400 px-4 py-2  text-black font-semibold disabled:opacity-75'> 
-      <div className="flex flex-row gap-3 items-center">
-      <div>
-      <img src={Setting} alt=".." width="20" height="20" className='setting-img'/>
-      </div>
-      Setting Point Basic Task 
-      </div>
-
-      
-      
+        <div className="flex flex-row gap-3 items-center">
+            <div>
+                <img src={Setting} alt=".." width="20" height="20" className='setting-img'/>
+            </div>
+            Setting Point Basic Task 
+        </div>
       </button>
+      </div>
 
       <Modal
         open={open}

@@ -66,14 +66,14 @@ class Child extends React.Component {
          
 <div className="flex flex-col w-full">
 
-<section className='pl-20 pt-20 w-full'>
+<section className='section-second pt-20 w-full'>
        <div className="container">
        
             <Settings/>
        </div>
      </section>
 
- <section className='pl-20 pt-10 w-full'>
+ <section className='section-second pt-10 w-full'>
        <div className="container">
        
             <Tabs/>
