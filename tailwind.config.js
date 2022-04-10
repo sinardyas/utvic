@@ -8,11 +8,15 @@ module.exports = {
       padding: '1rem',
 
     },
-   
-   
+
+
     extend: {
-      
+
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant('child', '& > *')
+    },
+  ],
 }

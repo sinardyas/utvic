@@ -34,6 +34,7 @@ import Stars from './views/stars/_index'
 import Champion from './views/champion'
 import PenjuarianLokal from './views/penjurianlokal'
 import Perjuangan from './views/perjuangan/_index'
+import CalendarEvent from './views/event/calendar'
 
 
 
@@ -299,6 +300,16 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <AllDocument />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              exact
+              path={'/event/calendar'}
+              element={
+                <PrivateRoute>
+                  <CalendarEvent />
                 </PrivateRoute>
               }
             />
