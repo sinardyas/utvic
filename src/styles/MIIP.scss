@@ -1,0 +1,65 @@
+.miip-container {
+  @apply container md:px-24 xl:px-36 space-y-6 py-4;
+
+  .title {
+    @apply flex md:text-3xl font-bold items-center space-x-4;
+
+    > img {
+      @apply md:h-14 h-10;
+    }
+  }
+
+  .hapus-makalah {
+    @apply px-4 py-2 bg-red-500 hover:bg-red-700 text-sm md:text-base text-white font-bold rounded-md cursor-pointer transition-all duration-300 ease-in-out;
+  }
+
+  .export {
+    @apply px-4 py-2 cursor-pointer rounded-md border-2 text-sm md:text-base border-black font-bold;
+  }
+
+  .filter-form-container {
+    @apply flex items-center md:justify-between flex-wrap;
+
+    .filter-field-container {
+      @apply space-y-3 flex-[0_1_100%] md:flex-[0_1_31%] mb-4;
+
+      .filter-select {
+        @apply focus:outline-none bg-inherit w-full placeholder:italic;
+      }
+
+      .filter-field {
+        @apply flex items-center space-x-2 bg-gray-200 rounded h-12 rounded px-2;
+
+        > input {
+          @apply w-full p-2 bg-inherit focus:outline-none placeholder:italic;
+        }
+      }
+    }
+  }
+
+  .card-section-container {
+    @apply flex flex-wrap w-full  justify-between;
+
+    .card-section {
+      @apply flex shadow-md items-center space-x-4 flex-[0_1_100%] md:flex-[0_1_48%] mb-4 p-4 border-l-2 border-[#FFCD00];
+
+      > .card-section-image {
+        > img {
+          @apply w-28 h-28 object-cover rounded-xl;
+        }
+      }
+
+      .card-section-content {
+        @apply w-full flex flex-col justify-between h-full;
+
+        > .card-section-content-top {
+          @apply w-full flex items-center justify-between;
+
+          .card-status {
+            @apply w-10 h-10 rounded-md;
+          }
+        }
+      }
+    }
+  }
+}
