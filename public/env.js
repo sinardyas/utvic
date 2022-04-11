@@ -38,5 +38,6 @@ window.processEnv = {
     getDocument: `${baseUrl}get-document` + ext,
     getDokumenku: `${baseUrl}get-dokumenku` + ext,
     listEvent: `${baseUrl}list-event` + ext,
+    addEvent: `${baseUrl}add-event` + ext,
   }
 }

@@ -35,6 +35,7 @@ import Champion from './views/champion'
 import PenjuarianLokal from './views/penjurianlokal'
 import Perjuangan from './views/perjuangan/_index'
 import CalendarEvent from './views/event/calendar'
+import CreateEvent from './views/event/create-event'
 
 
 
@@ -310,6 +311,16 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <CalendarEvent />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              exact
+              path={'/event/create-event'}
+              element={
+                <PrivateRoute>
+                  <CreateEvent />
                 </PrivateRoute>
               }
             />

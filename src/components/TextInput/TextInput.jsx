@@ -87,8 +87,8 @@ const TextInput = React.forwardRef(function CustomInput (props, ref) {
           {...LabelWrapper.filterProps(props)}
           componentsProps={{
             root: {
-              className: 'space-x-3',
               ...root,
+              className: `space-x-3 ${root?.className}`,
             },
             ...restComponentProps
           }}
