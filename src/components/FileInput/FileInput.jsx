@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Upload from '../../../../assets/images/upload.png'
-import { Label } from '../LabelWrapper'
-import InfoIcon from '../icons/info.png'
+import Upload from '../../assets/images/upload.png'
+import { Label } from '../../views/submit-innovation/_shared/LabelWrapper'
+import InfoIcon from '../../views/submit-innovation/_shared/icons/info.png'
 
 function filterProps (props) {
   const {

@@ -1,17 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react'
-import Header from '../../../components/Header'
-import DrawerNav from '../../../components/menu/DrawerNav'
-import TextInput from '../../../components/TextInput'
+import Header from '../../../../components/Header'
+import DrawerNav from '../../../../components/menu/DrawerNav'
+import TextInput from '../../../../components/TextInput'
 import PageHeader from '../_shared/PageHeader'
-import SelectInput, { transformToOptions } from '../_shared/SelectInput'
-import FileInput from '../../../components/FileInput'
-import Button from '../../../components/Button'
-import { GlobalContext } from '../../../store/global/Provider'
-import PageSpinner from '../../../components/Spinner-1'
-import { api } from '../../../boot/axios'
+import SelectInput, { transformToOptions } from '../../_shared/SelectInput'
+import FileInput from '../../../../components/FileInput'
+import Button from '../../../../components/Button'
+import { GlobalContext } from '../../../../store/global/Provider'
+import PageSpinner from '../../../../components/Spinner-1'
 import BreadcrumbsSection
-  from '../../../components/BreadcrumbsSection/BreadcrumbsSection'
-import useInputForm from '../_helpers/useInputForm'
+  from '../../../../components/BreadcrumbsSection/BreadcrumbsSection'
+import useInputForm from '../../_helpers/useInputForm'
 
 function Form () {
   const globalContext = useContext(GlobalContext)
@@ -115,12 +114,12 @@ function Form () {
           onSubmit={(e) => {
             e.preventDefault()
 
-
-            function validate(formValues, labelIds) {
+            function validate (formValues, labelIds) {
               for (let i = 0; i < labelIds.length; i++) {
                 const label = labelIds[i]
-                if(!formValues[label]) {
-                  const labelText = document.querySelector(`label[for="${label}"]`)
+                if (!formValues[label]) {
+                  const labelText = document.querySelector(
+                    `label[for="${label}"]`)
                     .textContent
                     .replace(/\*$/, '')
                     .replace(/^pilih/i, '')
@@ -131,26 +130,12 @@ function Form () {
               return true
             }
 
-            if(!validate(formValues, ['tipe-proyek', 'tipe-inovasi', 'member'])) {
+            if (!validate(formValues,
+              ['tipe-proyek', 'tipe-inovasi', 'member'])) {
               return
             }
 
-            api({
-              method: 'POST',
-              url: createInnovationApi,
-              data: JSON.stringify(formValues),
-            })
-              .then(response => {
-                const { Status, Message } = response.data
-                if (Status === 200) {
-                  alert(Message)
-                } else {
-                  alert('error')
-                }
-              })
-              .catch((error) => {
-                console.error(error)
-              })
+            alert(JSON.stringify(formValues))
           }}
         >
           <div

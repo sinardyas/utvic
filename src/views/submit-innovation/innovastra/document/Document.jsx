@@ -1,17 +1,17 @@
 import React from 'react'
-import Header from '../../../components/Header'
-import DrawerNav from '../../../components/menu/DrawerNav'
+import Header from '../../../../components/Header'
+import DrawerNav from '../../../../components/menu/DrawerNav'
 import PageHeader from '../_shared/PageHeader'
-import Button from '../../../components/Button'
+import Button from '../../../../components/Button'
 import BreadcrumbsSection
-  from '../../../components/BreadcrumbsSection/BreadcrumbsSection'
-import useInputForm from '../_helpers/useInputForm'
-import FileInput from '../../../components/FileInput'
-import TextInput from '../../../components/TextInput'
-import DocumentIcon from '../_shared/icons/document.png'
-import TrashIcon from '../_shared/icons/trash.png'
-import PreviewIcon from '../_shared/icons/preview.png'
-import LinkIcon from '../../../assets/images/link.png'
+  from '../../../../components/BreadcrumbsSection/BreadcrumbsSection'
+import useInputForm from '../../_helpers/useInputForm'
+import FileInput from '../../../../components/FileInput'
+import TextInput from '../../../../components/TextInput'
+import DocumentIcon from '../../_shared/icons/document.png'
+import TrashIcon from '../../_shared/icons/trash.png'
+import PreviewIcon from '../../_shared/icons/preview.png'
+import LinkIcon from '../../../../assets/images/link.png'
 
 function Form () {
   const [formValues, , handleChange] = useInputForm()
@@ -23,7 +23,7 @@ function Form () {
           className={'flex flex-col space-y-8 my-7'}
           onSubmit={(e) => {
             e.preventDefault()
-            console.log(formValues)
+            alert(JSON.stringify(formValues))
           }}
         >
           <div
@@ -95,19 +95,19 @@ function Form () {
             <div
               className={'flex flex-wrap gap-x-3 gap-y-4 auto-cols-min items-end'}>
               <Button>
-                Cancel
-              </Button>
-
-              <Button className={'!border-black'} backgroundCss={'bg-white'} colorCss={'text-black'} type={'submit'}>
                 Save a Draft
               </Button>
 
-              <Button backgroundCss={'bg-amber-300'} colorCss={'text-black'} type={'submit'}>
-                Submit Inovasi
+              <Button
+                backgroundCss={'bg-amber-300'}
+                colorCss={'text-black'}
+                type={'submit'}
+              >
+                Submit
               </Button>
             </div>
 
-            <Button backgroundCss={'bg-blue-500'}>
+            <Button backgroundCss={'bg-blue-500'} >
               <img
                 className={'min-w-[24px] w-[24px] h-[24px] sm:hidden'}
                 src={PreviewIcon}
