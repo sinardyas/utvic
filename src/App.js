@@ -20,6 +20,7 @@ import Article from "./views/article/_index";
 import DetailPenilaianPejuang from "./views/DetailPenilaianPejuang";
 import FormPekerjaan from "./views/FormPekerjaan";
 import MIIP from "./views/MIIP/MIIP";
+import Report from "./views/Report";
 
 const PrivateRoute = function ({ children, ...rest }) {
   const History = createBrowserHistory();
@@ -85,6 +86,7 @@ export default function AppFunc() {
 
             <Route exact path="/form-pekerjaan" element={<FormPekerjaan />} />
             <Route exact path="/makalahku" element={<MIIP />} />
+            <Route exact path="/laporan" element={<Report />} />
 
             <Route
               exact
