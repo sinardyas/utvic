@@ -38,8 +38,8 @@ function ListMakalah ({ filterData }) {
       method: 'POST',
       data: {
         IsAll: false,
-        IsMe: true,
-        Area: '',
+        IsMe: false,
+        Area: 'Jakarta',
         PageStart: 0,
         SearchKeyword,
         Filter,
@@ -88,7 +88,7 @@ function ListMakalah ({ filterData }) {
   )
 }
 
-function Makalahku () {
+function MakalahArea () {
   const [formValues, setFormValus, handleChange] = useInputForm({
     Category: null,
     Filter: null,
@@ -113,7 +113,7 @@ function Makalahku () {
             href: '/gallery',
           },
           {
-            title: 'Makalahku',
+            title: 'Makalah Area',
           },
         ]}
       />
@@ -224,13 +224,22 @@ function Makalahku () {
           </button>
         </div>
 
-        <div className={'flex justify-between mb-8'}>
-          <Button>
-            Hapus Makalah
-          </Button>
+        <div className={'flex flex-wrap gap-x-5 gap-y-10 justify-between mb-8'}>
+          <div className={'flex flex-wrap gap-x-5 gap-y-5'}>
+            <Button>
+              Hapus Makalah
+            </Button>
+            <Button backgroundCss={'bg-green-500'}>
+              MIIP
+            </Button>
+            <Button backgroundCss={'bg-amber-400'}>
+              Setting
+            </Button>
+
+          </div>
 
           <Button
-            className={'border-2 border-black'}
+            className={'border-2 border-black ml-auto md:ml-none'}
             backgroundCss={'bg-white'}
             colorCss={'text-black'}
           >
@@ -261,4 +270,4 @@ function Makalahku () {
   )
 }
 
-export default Makalahku
+export default MakalahArea

@@ -37,6 +37,7 @@ import Perjuangan from './views/perjuangan/_index'
 import CalendarEvent from './views/event/calendar'
 import CreateEvent from './views/event/create-event'
 import Makalahku from './views/gallery/makalah/makalahku'
+import MakalahArea from './views/gallery/makalah/makalah-area'
 
 
 
@@ -331,6 +332,15 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <Makalahku />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={'/gallery/makalah-area'}
+              element={
+                <PrivateRoute>
+                  <MakalahArea />
                 </PrivateRoute>
               }
             />
