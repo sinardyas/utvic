@@ -1,6 +1,6 @@
 import React from "react";
 import searchIcon from "../../../assets/images/search-form.png";
-import trash from "../../../assets/images/trash.svg";
+import trash from "../../../assets/images/trash1.svg";
 
 const Filter = (props) => {
   const { onChange, filterData, value, reset } = props;
