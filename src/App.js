@@ -13,10 +13,6 @@ import Login from "./views/auth/Login";
 import Error404 from "./views/error/404";
 
 import Home from "./views/home";
-// import Profile from "./views/profile";
-import Prestasi from "./views/prestasi";
-import Certifikat from "./views/certificate";
-import Article from "./views/article/_index";
 
 //import Profile from './views/profile'
 import Profile from "./views/profile/_index";
@@ -32,6 +28,15 @@ import PenjuarianLokal from "./views/penjurianlokal";
 import Perjuangan from "./views/perjuangan/_index";
 import Penjurian from "./views/penjurian/Penjurian";
 import Penilaian from "./views/penilaian/Penilaian";
+
+import Prestasi from "./views/prestasi";
+import Certifikat from "./views/certificate";
+import Article from "./views/article/_index";
+import DetailPenilaianPejuang from "./views/DetailPenilaianPejuang";
+import FormPekerjaan from "./views/FormPekerjaan";
+import MIIP from "./views/MIIP/MIIP";
+import Report from "./views/Report";
+import SettingSubmit from "./views/SettingSubmit";
 
 const PrivateRoute = function ({ children, ...rest }) {
   const History = createBrowserHistory();
@@ -91,6 +96,16 @@ export default function AppFunc() {
 
             <Route
               exact
+              path="/"
+              element={
+                <PrivateRoute>
+                  <Home />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              exact
               path="/penjurian"
               element={
                 <PrivateRoute>
@@ -115,6 +130,21 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <Champion />
+                </PrivateRoute>
+              }
+            />
+
+            <Route exact path="/form-pekerjaan" element={<FormPekerjaan />} />
+            <Route exact path="/makalahku" element={<MIIP />} />
+            <Route exact path="/laporan" element={<Report />} />
+            <Route exact path="/setting-submit" element={<SettingSubmit />} />
+
+            <Route
+              exact
+              path="/certifikat"
+              element={
+                <PrivateRoute>
+                  <Certifikat />
                 </PrivateRoute>
               }
             />
@@ -253,6 +283,15 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <Document />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path="*"
+              element={
+                <PrivateRoute>
+                  <Error404 />
                 </PrivateRoute>
               }
             />
