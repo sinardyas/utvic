@@ -39,5 +39,6 @@ window.processEnv = {
     getDokumenku: `${baseUrl}get-dokumenku` + ext,
     listEvent: `${baseUrl}list-event` + ext,
     addEvent: `${baseUrl}add-event` + ext,
+    galeriMakalah: `${baseUrl}galeri-makalah` + ext,
   }
 }
