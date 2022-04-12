@@ -2,12 +2,12 @@ import React from 'react'
 import Header from '../../../components/Header'
 import DrawerNav from '../../../components/menu/DrawerNav'
 import PageHeader from '../_shared/PageHeader'
-import Button from '../_shared/Button'
+import Button from '../../../components/Button'
 import BreadcrumbsSection
-  from '../_shared/BreadcrumbsSection/BreadcrumbsSection'
+  from '../../../components/BreadcrumbsSection/BreadcrumbsSection'
 import useInputForm from '../_helpers/useInputForm'
-import FileInput from '../_shared/FileInput'
-import TextInput from '../_shared/TextInput'
+import FileInput from '../../../components/FileInput'
+import TextInput from '../../../components/TextInput'
 import DocumentIcon from '../_shared/icons/document.png'
 import TrashIcon from '../_shared/icons/trash.png'
 import PreviewIcon from '../_shared/icons/preview.png'
@@ -28,24 +28,26 @@ function Form () {
         >
           <div
             className={'grid grid-cols-1 gap-x-3 gap-y-8'}>
-            <FileInput
-              labelText={'Upload Makalah Inovasi'}
-              labelId={'makalah-inovasi'}
-              placeholder={'Upload file'}
-              onChange={handleChange}
-              showInfoIcon
-              extensions={['pdf', 'ppt']}
-              extensionInfo={'*File dapat berupa dokumen seperti'}
-            />
+            <div className={'grid grid-cols-1 xl:grid-cols-2 gap-x-5 gap-y-8'}>
+              <FileInput
+                labelText={'Upload Makalah Inovasi'}
+                labelId={'makalah-inovasi'}
+                placeholder={'Upload file'}
+                onChange={handleChange}
+                showInfoIcon
+                extensions={['pdf', 'ppt']}
+                extensionInfo={'*File dapat berupa dokumen seperti'}
+              />
 
-            <FileInput
-              labelText={'Upload Dokumen Pendukung'}
-              labelId={'dokumen-pendukung'}
-              placeholder={'Upload file'}
-              onChange={handleChange}
-              showInfoIcon
-              extensionInfo={'*Upload file dengan semua format'}
-            />
+              <FileInput
+                labelText={'Upload Dokumen Pendukung'}
+                labelId={'dokumen-pendukung'}
+                placeholder={'Upload file'}
+                onChange={handleChange}
+                showInfoIcon
+                extensionInfo={'*Upload file dengan semua format'}
+              />
+            </div>
 
             <ul className={'flex flex-col divide-y'}>
               {
@@ -93,26 +95,27 @@ function Form () {
             <div
               className={'flex flex-wrap gap-x-3 gap-y-4 auto-cols-min items-end'}>
               <Button>
-                Save a Draft
-              </Button>
-
-              <Button className={'!bg-white border text-black'} type={'submit'}>
                 Cancel
               </Button>
 
-              <Button className={'!bg-amber-300 text-black'} type={'submit'}>
-                Submit
+              <Button className={'!border-black'} backgroundCss={'bg-white'} colorCss={'text-black'} type={'submit'}>
+                Save a Draft
+              </Button>
+
+              <Button backgroundCss={'bg-amber-300'} colorCss={'text-black'} type={'submit'}>
+                Submit Inovasi
               </Button>
             </div>
 
-            <Button className={'bg-blue-500'}>
+            <Button backgroundCss={'bg-blue-500'}>
               <img
                 className={'min-w-[24px] w-[24px] h-[24px] sm:hidden'}
                 src={PreviewIcon}
                 alt={'link'}
               />
 
-              <span className={'hidden sm:block text-white font-semibold text-lg'}>
+              <span
+                className={'hidden sm:block text-white font-semibold text-lg'}>
                 Preview Inovasi
               </span>
             </Button>
@@ -134,7 +137,18 @@ function Document () {
         <DrawerNav/>
       </React.Fragment>
 
-      <BreadcrumbsSection/>
+      <BreadcrumbsSection
+        items={[
+          {
+            title: 'Home',
+            href: '/',
+          },
+          {
+            title: 'Submit Innovation',
+          },
+        ]}
+      />
+
 
       <PageHeader/>
 

@@ -2,6 +2,9 @@ import {useState, useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import TaskList from './index'
 import AddTask from './AddTask'
+import Respone from './ResponeQuiz'
+import Setting from './SettingAdmin'
+import SettingAdmin from './SettingAdmin'
 
 
 const Profile = function() {
@@ -29,6 +32,18 @@ const Profile = function() {
           
           <AddTask />
         ))
+
+        case 'respone':
+          return SetChild((
+            
+            <Respone />
+          ))
+
+          case 'setting':
+            return SetChild((
+              
+              <SettingAdmin />
+            ))
     
 
       // CREATE

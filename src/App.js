@@ -21,11 +21,19 @@ import Article from "./views/article/_index";
 //import Profile from './views/profile'
 import Profile from "./views/profile/_index";
 import BotbStar from "./views/botbstar/_index";
+import Prestasi from "./views/prestasi";
+import Certifikat from "./views/certificate";
+import Article from "./views/article/_index";
 import InnovationProfile from "./views/submit-innovation/innovation-profile";
+import InnovastraInnovationProfile from "./views/submit-innovation/innovastra/innovation-profile";
+import InnovastraDocument from "./views/submit-innovation/innovastra/document";
+import InnovastraAchievement from "./views/submit-innovation/innovastra/achievement";
 import Analysis from "./views/submit-innovation/analysis";
 import Idea from "./views/submit-innovation/idea";
 import Result from "./views/submit-innovation/result";
 import Document from "./views/submit-innovation/document";
+import MyDocument from "./views/document/my-document";
+import AllDocument from "./views/document/all-document";
 import Stars from "./views/stars/_index";
 import Champion from "./views/champion";
 import PenjuarianLokal from "./views/penjurianlokal";
@@ -253,6 +261,53 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <Document />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              exact
+              path={"/submit-innovation/innovastra/innovation-profile"}
+              element={
+                <PrivateRoute>
+                  <InnovastraInnovationProfile />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={"/submit-innovation/innovastra/document"}
+              element={
+                <PrivateRoute>
+                  <InnovastraDocument />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={"/submit-innovation/innovastra/achievement"}
+              element={
+                <PrivateRoute>
+                  <InnovastraAchievement />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              exact
+              path={"/document/my-document"}
+              element={
+                <PrivateRoute>
+                  <MyDocument />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={"/document/all-document"}
+              element={
+                <PrivateRoute>
+                  <AllDocument />
                 </PrivateRoute>
               }
             />

@@ -6,7 +6,7 @@ import DrawerNav from '../../components/menu/DrawerNav'
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 
-import Sensational from './SensationalTask'
+import Sensational from './TabSetting'
 import { styled } from '@mui/system';
 import TabsUnstyled from '@mui/base/TabsUnstyled';
 import TabsListUnstyled from '@mui/base/TabsListUnstyled';

@@ -33,5 +33,8 @@ window.processEnv = {
     masterUser: `${baseUrl}master-user` + ext,
     masterTipeInovasi: `${baseUrl}master-tipe-inovasi` + ext,
     createInnovation: `${baseUrl}create-innovation` + ext,
+    permissionDocument: `${baseUrl}permission-document` + ext,
+    deleteDocument: `${baseUrl}delete-document` + ext,
+    getDocument: `${baseUrl}get-document` + ext,
   }
 }

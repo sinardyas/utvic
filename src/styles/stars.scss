@@ -105,6 +105,54 @@ color: rgba(0, 0, 0, 0.5);
     flex-direction: row;
  }
 
+ .dot {
+    width: 101px;
+    height: 101px;
+    left: 890px;
+    top: 270px;
+    
+    background: #D70C27;
+    border-radius: 50%;
+    display: inline-block;
+    h2{
+        font-family: 'SF Pro Display';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 27px;
+/* or 96% */
+
+text-align: center;
+
+color: #FFFFFF;
+    }
+  }
+
+.accordion-summary{
+    width: 1024px;
+height: 67px;
+
+
+background: #FFCD00;
+}
+
+.list-settingadmin{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.setting-img{
+    width: 20px;
+    height: 20px;
+}
+.col-button{
+    display: flex;
+    flex-direction: row;
+    row-gap: 30px;
+}
+
 @media (max-width: 992px) {
     .list-task{
         display: grid;
@@ -149,6 +197,19 @@ color: rgba(0, 0, 0, 0.5);
      .col-date{
         display: flex;
         flex-direction: column;
+    }
+
+    .list-settingadmin{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 10px;
+        column-gap: 10px;
+    }
+
+    .col-button{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
     }
  
 }

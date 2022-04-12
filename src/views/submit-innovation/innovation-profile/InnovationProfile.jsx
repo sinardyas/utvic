@@ -1,33 +1,17 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Header from '../../../components/Header'
 import DrawerNav from '../../../components/menu/DrawerNav'
-import TextInput from '../_shared/TextInput'
+import TextInput from '../../../components/TextInput'
 import PageHeader from '../_shared/PageHeader'
-import SelectInput from '../_shared/SelectInput'
-import FileInput from '../_shared/FileInput'
-import Button from '../_shared/Button'
+import SelectInput, { transformToOptions } from '../_shared/SelectInput'
+import FileInput from '../../../components/FileInput'
+import Button from '../../../components/Button'
 import { GlobalContext } from '../../../store/global/Provider'
 import PageSpinner from '../../../components/Spinner-1'
 import { api } from '../../../boot/axios'
 import BreadcrumbsSection
-  from '../_shared/BreadcrumbsSection/BreadcrumbsSection'
+  from '../../../components/BreadcrumbsSection/BreadcrumbsSection'
 import useInputForm from '../_helpers/useInputForm'
-
-function transformToOptions (list, idKey, labelKey) {
-  if (!list) {
-    return null
-  }
-
-  return list.map((item) => {
-    const id = item[idKey]
-    const label = item[labelKey]
-    return (
-      <SelectInput.Option key={id} value={id}>
-        {label}
-      </SelectInput.Option>
-    )
-  })
-}
 
 function Form () {
   const globalContext = useContext(GlobalContext)
@@ -141,13 +125,13 @@ function Form () {
                     .replace(/\*$/, '')
                     .replace(/^pilih/i, '')
                   alert(`Pilih ${labelText} terlebih dahulu`)
-                  return true
+                  return false
                 }
               }
-              return false
+              return true
             }
 
-            if(validate(formValues, ['tipe-proyek', 'tipe-inovasi', 'member'])) {
+            if(!validate(formValues, ['tipe-proyek', 'tipe-inovasi', 'member'])) {
               return
             }
 
@@ -269,7 +253,7 @@ function Form () {
               containerClassName={'md:row-span-2 md:col-span-2'}
               componentsProps={{
                 input: {
-                  className: 'h-[200px]',
+                  className: 'h-[170px]',
                 },
               }}
               labelText={'Deskripsi'}
@@ -361,7 +345,17 @@ function InnovationProfile () {
         <DrawerNav/>
       </React.Fragment>
 
-     <BreadcrumbsSection />
+      <BreadcrumbsSection
+        items={[
+          {
+            title: 'Home',
+            href: '/'
+          },
+          {
+            title: 'Submit Innovation',
+          },
+        ]}
+      />
 
       <PageHeader/>
 
