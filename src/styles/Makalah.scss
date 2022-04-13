@@ -1,0 +1,109 @@
+.form-select{
+    @apply appearance-none block px-4 py-6 bg-gray-100 border rounded shadow-sm after:absolute after:right-4 text-slate-500 border-slate-400 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500;
+    &::after{   
+        @apply w-4 h-4 bg-red-500 absolute;
+    }
+}
+
+.form-select::after{
+    @apply w-4 h-4 bg-red-500 absolute;
+    // content: '\25BC';
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    // bottom: 0;
+    // font-size: 25px;
+    // height: 20px;
+    // width: 20px;
+    // border: 1px solid #565656;
+    // background: #0e7b53;
+    // color: red;
+    // padding: 11px 15px;
+    // pointer-events: none;
+    // content: "\e669";
+    // color:#fff;
+    // font-family:icons;
+    // // @include rem-px(font-size,(13px));
+    // // display: block;
+    // float: right;
+    // height: 0;
+    // @apply h-8 right-0 ; 
+}
+
+
+
+.tabs{
+    @apply px-10 py-4 text-xl rounded-md bg-transparent text-slate-800;
+}
+
+.active-tab{
+    @apply bg-yellow-400 text-black;
+}
+
+.tab-content{
+    @apply hidden;
+}
+
+.tab-content-active{
+    @apply block;
+}
+
+.top-tooltip::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #60A5F8 transparent transparent transparent;
+}
+
+.left-tooltip-green::after{
+    content: "";
+    position: absolute;
+    right: 92%;
+    top: 50%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #66DE81 transparent transparent;
+}
+
+.left-tooltip-yellow::after{
+    content: "";
+    position: absolute;
+    right: 92%;
+    top: 50%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #FACC48 transparent transparent;
+}
+
+.left-tooltip-red::after{
+    content: "";
+    position: absolute;
+    right: 92%;
+    top: 50%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #EF7070 transparent transparent;
+}
+
+ .scroll-menu {
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.scroll-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.side-menu{
+    @apply text-slate-700 py-2 px-4 w-full text-left;
+}
+.side-menu-active{
+    @apply bg-yellow-400 text-black font-semibold px-4 py-2 w-full;
+}
