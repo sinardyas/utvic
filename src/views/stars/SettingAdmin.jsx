@@ -5,16 +5,7 @@ import Header from '../../components/Header'
 import DrawerNav from '../../components/menu/DrawerNav'
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
-
-import Sensational from './TabSetting'
-import { styled } from '@mui/system';
-import TabsUnstyled from '@mui/base/TabsUnstyled';
-import TabsListUnstyled from '@mui/base/TabsListUnstyled';
-import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
-import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
-import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
-import Task from "./CardSetting"
-import Respone from "./TableRespone"
+import '../../styles/stars.scss';
 import Typography from '@mui/material/Typography';
 import SideBar from "../../components/SideBar"
 import Tabs from './TabsSetting'
