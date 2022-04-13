@@ -14,6 +14,7 @@ import PopperUnstyled from '@mui/base/PopperUnstyled';
 import Delete from '../../assets/images/delete_search.png';
 import { styled } from '@mui/system';
 import SearchLogo from '../../assets/images/search-form.png'
+import Search2 from "../../assets/images/search.png"
 
 const blue = {
   100: '#DAECFF',
@@ -185,7 +186,7 @@ const CustomSelect = React.forwardRef(function CustomSelect(props, ref) {
       return <>
       
     
-        <section className="pt-10 pb-10 pl-20">
+        <section className="section-main pt-10 pb-10">
           
           <div className="container">
             <div className="col-search flex lg:flex-row gap-3">
@@ -198,6 +199,8 @@ const CustomSelect = React.forwardRef(function CustomSelect(props, ref) {
     <input type="text" class="form-control" placeholder="Ketik yang ingin dicari"/>
   </div>
             </div>
+
+<div className="flex flex-row gap-2">
             <div className='flex flex-col w-full'>
             <span className='pb-3 font-semibold'>Pilih Filter</span>
             <div>
@@ -208,6 +211,12 @@ const CustomSelect = React.forwardRef(function CustomSelect(props, ref) {
       </CustomSelect>
       </div>
       </div>
+      <div className='flex block md:hidden items-center pt-8'>
+           <img src={Search2} alt=".." />
+           </div>
+      </div>
+
+
       <div className="flex flex-row gap-3 w-full">
       <div className='flex flex-col w-full'>
                     <span className='pb-3 font-semibold'>Select Tipe Proyek</span>
