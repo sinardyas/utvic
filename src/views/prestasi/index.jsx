@@ -24,7 +24,7 @@ import PopperUnstyled from '@mui/base/PopperUnstyled';
 import Delete from '../../assets/images/delete_search.png';
 import { styled } from '@mui/system';
 
-const { 
+const {
   api: {
     homeBanner: apiHomeBanner,
     homeArticle: apiHomeArticle,
@@ -177,7 +177,7 @@ const CustomSelect = React.forwardRef(function CustomSelect(props, ref) {
 
 
 class Child extends React.Component {
-  
+
   constructor(props) {
     super(props)
 
@@ -222,14 +222,14 @@ class Child extends React.Component {
           errorText: 'Error while fetch Home Article'
         }),
 
-        
+
       ])
-      .then(response => {
-        this.setState({
-          response,
-          pageIsLoading: false
+        .then(response => {
+          this.setState({
+            response,
+            pageIsLoading: false
+          })
         })
-      })
     });
   }
 
@@ -250,232 +250,245 @@ class Child extends React.Component {
       ]
     } = this.state
 
-    return pageIsLoading
-      ? <PageSpinner/>
-      : <>
-  {
-          !!localStorage.getItem('Token')
+    //   return pageIsLoading
+    //     ? <PageSpinner/>
+    //     : <>
+    // {
+    //         !!localStorage.getItem('Token')
+    //         ? (
+    //           <>
+    //             <Header/>
+    //             <DrawerNav/>
+    //           </>
+    //         )
+    //         : <></>
+    //       }
+
+
+    return <>
+      {
+        !!localStorage.getItem('Token')
           ? (
             <>
-              <Header/>
-              <DrawerNav/>
+              <Header />
+              <DrawerNav />
             </>
           )
           : <></>
-        }
-      
-<section className='space-from-header py-[1rem] bg-slate-200'>
-  <div className="container">
-  <div role="presentation" className='pt-3'>
-    <Breadcrumbs aria-label="breadcrumb" >
-      <Link underline="hover" color="inherit" href="/" className='font-bold'>
-        Home
-      
-      </Link>
-      <Link
-        underline="hover"
-        color="inherit"
-       
-        className='font-bold'
-      >
-         List Prestasi
-      </Link>
-    
-    </Breadcrumbs>
-  </div>
-  </div>
-  </section>
-     <section className='hidden md:flex'>
-       <div className="container">
+      }
 
-         <div className="flex flex-row pt-5">
-           <div className='px-5'>
-           <img src={PrestasiLogo} alt="..." />
-           </div>
-           <div className='flex items-center'>
-             <h2>
-            Prestasi
-            </h2>
-           </div>
-         </div>
-        
-       </div>
-      
-     </section>
+      <section className='space-from-header py-[1rem] bg-slate-200'>
+        <div className="container">
+          <div role="presentation" className='pt-3'>
+            <Breadcrumbs aria-label="breadcrumb" >
+              <Link underline="hover" color="inherit" href="/" className='font-bold'>
+                Home
 
-     <SearchForm/>
+              </Link>
+              <Link
+                underline="hover"
+                color="inherit"
 
-      <section className='profile-body lg:pt-10 pb-40 sm:pt-20 w-full'>
+                className='font-bold'
+              >
+                List Prestasi
+              </Link>
+
+            </Breadcrumbs>
+          </div>
+        </div>
+      </section>
+      <section className='hidden md:flex'>
         <div className="container">
 
-      <div className="flex flex-col">
-        <div className="flex flex-row pb-5 justify-between">
-          <div className="flex flex-row">
-          <img src={PrestasiLogo} alt="..." width="40" height="47"/>
-          <div className='flex items-center pl-5'>
-          <h2>Total certificate (4)</h2>
-          </div>
-          </div>
-
-          <CustomSelect defaultValue={10}>
-        <StyledOption value={10}>2019</StyledOption>
-        <StyledOption value={20}>2020</StyledOption>
-        <StyledOption value={30}>2021</StyledOption>
-        <StyledOption value={30}>2022</StyledOption>
-      </CustomSelect>
-        </div>
-
-        <div className="col-prestasi flex flex-row  gap-5 justify-between  ">
-       
-        <div class="lg:p-6 sm:p-3  bg-white rounded-xl border-solid border-2 border-slate-200 border-l-orange-300 w-full">
-                <div className='flex flex-row'>
-                  <div>
-                <img src={PrestasiLogo} alt="..." width="40" height="47"/>
-                </div>
-                <div className='list-content1'>
-                <div className="flex flex-col pl-5 pr-20">
-                  <div className="flex flex-col ">
-                  <div className="content-prestasi flex flex-row ">
-                    <span className='pr-5 font-content'>Prestasi :</span>
-                   
-                    <span className='font-subcontent'>Juara&nbsp;2&nbsp;Grand&nbsp;Final</span>
-                  </div>
-                  <div className="content-prestasi flex flex-row  pt-2">
-                    <span className='pr-9 font-content'> Judul :</span>
-                  
-                    <span className='font-subcontent'>STAR</span>
-                  </div>
-                  </div>
-                  <div className="flex flex-row pt-2 hidden md:flex ">
-                    <span className='pr-10 font-content'>Role :</span>
-                   
-                    <span className='font-subcontent'> member</span>
-                  </div>
-
-                </div>
-              
-                <div className=' col-downloadpres'>
-                <img src={Download} alt=".." width="105" height="25"/>
-                </div>
-                </div>
-
-                <div className="flex flex-col pt-2 block md:hidden ">
-                    <span className='pr-10 font-content'>Role :</span>
-                    <span className='font-subcontent'> member</span>
-                  </div>
-                </div>
-          </div>
-          <div class="p-6   bg-white rounded-xl border-solid border-2 border-slate-200 border-l-orange-300 w-full">
-                <div className='flex flex-row'>
-                  <div>
-                <img src={PrestasiLogo} alt="..." width="40" height="47"/>
-                </div>
-                <div className='list-content1'>
-                <div className="flex flex-col pl-5 pr-20">
-                  <div className="flex flex-row">
-                    <span className='pr-5 font-content'>Prestasi :</span>
-                    <span className='font-subcontent'>Juara&nbsp;2&nbsp;Grand&nbsp;Final</span>
-                  </div>
-                  <div className="flex flex-row pt-2">
-                    <span className='pr-9 font-content'>Judul :</span>
-                    <span> STAR</span>
-                  </div>
-                  <div className="flex flex-row pt-2">
-                    <span className='pr-10 font-content'>Role :</span>
-                    <span> member</span>
-                  </div>
-
-                </div>
-                <div className='col-downloadpres'>
-                <img src={Download} alt=".." width="105" height="25"/>
-                </div>
-                </div>
-
-                </div>
-          </div>
-         
+          <div className="flex flex-row pt-5">
+            <div className='px-5'>
+              <img src={PrestasiLogo} alt="..." />
+            </div>
+            <div className='flex items-center'>
+              <h2>
+                Prestasi
+              </h2>
+            </div>
           </div>
 
-
-          <div className="col-prestasi flex lg:flex-row sm:flex-col justify-between gap-5 pt-5">
-
-<div class="p-6   bg-white rounded-xl border-solid border-2 border-slate-200 border-l-orange-300 w-full">
-        <div className='flex flex-row'>
-          <div>
-        <img src={PrestasiLogo} alt="..." width="40" height="47"/>
-        </div>
-        <div className='list-content1'>
-        <div className="flex flex-col pl-5 pr-20">
-          <div className="flex flex-row">
-            <span className='pr-5 font-content'>Prestasi :</span>
-            <span>Juara&nbsp;2&nbsp;Grand&nbsp;Final</span>
-          </div>
-          <div className="flex flex-row pt-2">
-            <span className='pr-9 font-content'>Judul :</span>
-            <span> STAR</span>
-          </div>
-          <div className="flex flex-row pt-2">
-            <span className='pr-10 font-content'>Role :</span>
-            <span> member</span>
-          </div>
-
-        </div>
-        <div className='col-downloadpres'>
-        <img src={Download} alt=".." width="105" height="25"/>
-        </div>
-        </div>
-        </div>
-  </div>
-  <div class="p-6   bg-white rounded-xl border-solid border-2 border-slate-200 border-l-orange-300 w-full">
-        <div className='flex flex-row'>
-          <div>
-        <img src={PrestasiLogo} alt="..." width="40" height="47"/>
-        </div>
-        <div className='list-content1'>
-        <div className="flex flex-col pl-5 pr-20">
-          <div className="flex flex-row">
-            <span className='pr-5 font-content'>Prestasi :</span>
-            <span>Juara&nbsp;2&nbsp;Grand&nbsp;Final</span>
-          </div>
-          <div className="flex flex-row pt-2">
-            <span className='pr-9 font-content'>Judul :</span>
-            <span> STAR</span>
-          </div>
-          <div className="flex flex-row pt-2">
-            <span className='pr-10 font-content'>Role :</span>
-            <span> member</span>
-          </div>
-
-        </div>
-        <div className='col-downloadpres'>
-        <img src={Download} alt=".." width="105" height="25"/>
-        </div>
-        </div>
-        </div>
-  </div>
-  </div>
-        </div>
-        
-        <div className='flex justify-center py-12 hidden md:flex'><Pagination/></div>
         </div>
 
       </section>
-       
-        </>
+
+      <SearchForm />
+
+      <section className='w-full pb-40 profile-body lg:pt-10 sm:pt-20'>
+        <div className="container">
+
+          <div className="flex flex-col">
+            <div className="flex flex-row justify-between pb-5">
+              <div className="flex flex-row">
+                <img src={PrestasiLogo} alt="..." width="40" height="47" />
+                <div className='flex items-center pl-5'>
+                  <h2>Total certificate (4)</h2>
+                </div>
+              </div>
+
+              <CustomSelect defaultValue={10}>
+                <StyledOption value={10}>2019</StyledOption>
+                <StyledOption value={20}>2020</StyledOption>
+                <StyledOption value={30}>2021</StyledOption>
+                <StyledOption value={30}>2022</StyledOption>
+              </CustomSelect>
+            </div>
+
+            <div className="flex flex-row justify-between gap-5 col-prestasi ">
+
+              <div class="lg:p-6 sm:p-3  bg-white rounded-xl border-solid border-2 border-slate-200 border-l-orange-300 w-full">
+                <div className='flex flex-row'>
+                  <div>
+                    <img src={PrestasiLogo} alt="..." width="40" height="47" />
+                  </div>
+                  <div className='list-content1'>
+                    <div className="flex flex-col pl-5 pr-20">
+                      <div className="flex flex-col ">
+                        <div className="flex flex-row content-prestasi ">
+                          <span className='pr-5 font-content'>Prestasi :</span>
+
+                          <span className='font-subcontent'>Juara&nbsp;2&nbsp;Grand&nbsp;Final</span>
+                        </div>
+                        <div className="flex flex-row pt-2 content-prestasi">
+                          <span className='pr-9 font-content'> Judul :</span>
+
+                          <span className='font-subcontent'>STAR</span>
+                        </div>
+                      </div>
+                      <div className="flex flex-row hidden pt-2 md:flex ">
+                        <span className='pr-10 font-content'>Role :</span>
+
+                        <span className='font-subcontent'> member</span>
+                      </div>
+
+                    </div>
+
+                    <div className=' col-downloadpres'>
+                      <img src={Download} alt=".." width="105" height="25" />
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col block pt-2 md:hidden ">
+                    <span className='pr-10 font-content'>Role :</span>
+                    <span className='font-subcontent'> member</span>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6   bg-white rounded-xl border-solid border-2 border-slate-200 border-l-orange-300 w-full">
+                <div className='flex flex-row'>
+                  <div>
+                    <img src={PrestasiLogo} alt="..." width="40" height="47" />
+                  </div>
+                  <div className='list-content1'>
+                    <div className="flex flex-col pl-5 pr-20">
+                      <div className="flex flex-row">
+                        <span className='pr-5 font-content'>Prestasi :</span>
+                        <span className='font-subcontent'>Juara&nbsp;2&nbsp;Grand&nbsp;Final</span>
+                      </div>
+                      <div className="flex flex-row pt-2">
+                        <span className='pr-9 font-content'>Judul :</span>
+                        <span> STAR</span>
+                      </div>
+                      <div className="flex flex-row pt-2">
+                        <span className='pr-10 font-content'>Role :</span>
+                        <span> member</span>
+                      </div>
+
+                    </div>
+                    <div className='col-downloadpres'>
+                      <img src={Download} alt=".." width="105" height="25" />
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+
+            <div className="flex justify-between gap-5 pt-5 col-prestasi lg:flex-row sm:flex-col">
+
+              <div class="p-6   bg-white rounded-xl border-solid border-2 border-slate-200 border-l-orange-300 w-full">
+                <div className='flex flex-row'>
+                  <div>
+                    <img src={PrestasiLogo} alt="..." width="40" height="47" />
+                  </div>
+                  <div className='list-content1'>
+                    <div className="flex flex-col pl-5 pr-20">
+                      <div className="flex flex-row">
+                        <span className='pr-5 font-content'>Prestasi :</span>
+                        <span>Juara&nbsp;2&nbsp;Grand&nbsp;Final</span>
+                      </div>
+                      <div className="flex flex-row pt-2">
+                        <span className='pr-9 font-content'>Judul :</span>
+                        <span> STAR</span>
+                      </div>
+                      <div className="flex flex-row pt-2">
+                        <span className='pr-10 font-content'>Role :</span>
+                        <span> member</span>
+                      </div>
+
+                    </div>
+                    <div className='col-downloadpres'>
+                      <img src={Download} alt=".." width="105" height="25" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6   bg-white rounded-xl border-solid border-2 border-slate-200 border-l-orange-300 w-full">
+                <div className='flex flex-row'>
+                  <div>
+                    <img src={PrestasiLogo} alt="..." width="40" height="47" />
+                  </div>
+                  <div className='list-content1'>
+                    <div className="flex flex-col pl-5 pr-20">
+                      <div className="flex flex-row">
+                        <span className='pr-5 font-content'>Prestasi :</span>
+                        <span>Juara&nbsp;2&nbsp;Grand&nbsp;Final</span>
+                      </div>
+                      <div className="flex flex-row pt-2">
+                        <span className='pr-9 font-content'>Judul :</span>
+                        <span> STAR</span>
+                      </div>
+                      <div className="flex flex-row pt-2">
+                        <span className='pr-10 font-content'>Role :</span>
+                        <span> member</span>
+                      </div>
+
+                    </div>
+                    <div className='col-downloadpres'>
+                      <img src={Download} alt=".." width="105" height="25" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className='flex justify-center hidden py-12 md:flex'><Pagination /></div>
+        </div>
+
+      </section>
+
+    </>
   }
 }
 
-const Profile = function() {
+const Profile = function () {
   let { page } = useParams()
   const navigate = useNavigate()
   return (
     <GlobalContext.Consumer>
       {context => (
-        <Child 
+        <Child
           context={context}
           page={page}
           navigate={navigate}
-          />
+        />
       )}
     </GlobalContext.Consumer>
   )

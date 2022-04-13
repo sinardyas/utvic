@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { createBrowserHistory } from "history"
 
-import {GlobalProvider, GlobalContext} from './store/global/Provider'
+import { GlobalProvider, GlobalContext } from './store/global/Provider'
 
 import Header from './components/Header'
 import DrawerNav from './components/menu/DrawerNav'
@@ -20,18 +20,27 @@ import Certifikat from './views/certificate'
 import Article from './views/article/_index'
 
 
+import Makalah from './views/makalah/'
+import Dasboard from './views/dashboard/'
+import Settings from './views/settings'
+import FormMadatory from './views/settings/FormMandatory'
+import AddSessionPenjurian from './views/settings/session-penjurian/AddSessionPenjurian';
 
-const PrivateRoute = function({ children, ...rest }) {
+
+
+
+
+const PrivateRoute = function ({ children, ...rest }) {
 
   const History = createBrowserHistory()
 
   return (
-    !!localStorage.getItem('Token') 
-    ? (children) 
-    : (
-      History.push('/login'),
-      History.go()
-    )
+    !!localStorage.getItem('Token')
+      ? (children)
+      : (
+        History.push('/login'),
+        History.go()
+      )
   )
 }
 
@@ -41,19 +50,19 @@ export default function AppFunc() {
   return (
     <GlobalProvider>
       <BrowserRouter>
-      
-  
+
+
         <main>
           <Routes>
 
             <Route exact
               path='/login'
               element={
-              localStorage.getItem('Token')
-                ? <Navigate
-                    to={{ pathname: `/`}}
+                localStorage.getItem('Token')
+                  ? <Navigate
+                    to={{ pathname: `/` }}
                   />
-                :<Login />
+                  : <Login />
               }
             />
 
@@ -61,34 +70,26 @@ export default function AppFunc() {
               path='/'
               element={
                 <PrivateRoute>
-                  <Home/>
+                  <Home />
                 </PrivateRoute>
               }
             />
 
-<Route exact
+            <Route exact
               path='/profile'
               element={
                 <PrivateRoute>
-                  <Profile/>
+                  <Profile />
                 </PrivateRoute>
               }
             />
 
-<Route exact
-              path='/prestasi'
-              element={
-                <PrivateRoute>
-                  <Prestasi/>
-                </PrivateRoute>
-              }
-            />
 
-<Route exact
+            <Route exact
               path='/certifikat'
               element={
                 <PrivateRoute>
-                  <Certifikat/>
+                  <Certifikat />
                 </PrivateRoute>
               }
             />
@@ -98,22 +99,68 @@ export default function AppFunc() {
                 '/article',
                 '/article/:type',
                 '/article/:type/:option'
-              ].map((path, index) => 
+              ].map((path, index) =>
                 <Route key={index} path={path}
                   element={
                     <PrivateRoute>
-                      <Article/>
+                      <Article />
                     </PrivateRoute>
                   }
                 />
               )
             }
 
+
+            <Route exact
+              path='/dashboard'
+              element={
+                <PrivateRoute>
+                  <Dasboard />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path='/makalah'
+              element={
+                <PrivateRoute>
+                  <Makalah />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path='/setting/mandatory'
+              element={
+                <PrivateRoute>
+                  <FormMadatory />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path='/settings'
+              element={
+                <PrivateRoute>
+                  <Settings />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path='setting/add-session-penjurian'
+              element={
+                <PrivateRoute>
+                  <AddSessionPenjurian />
+                </PrivateRoute>
+              }
+            />
+
             <Route
               path='*'
               element={
                 <PrivateRoute>
-                  <Error404/>
+                  <Error404 />
                 </PrivateRoute>
               }
             />
