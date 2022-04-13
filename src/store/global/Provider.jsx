@@ -7,7 +7,6 @@ const GlobalContext = React.createContext();
 
 const {
   api: {
-
   }
 } = window.processEnv
 
@@ -16,6 +15,7 @@ class GlobalProvider extends React.Component {
   state = {
     auth: null,
     drawer: false,
+    kamu:"aku"
   }
 
   UpdateContextValue = (key, val) => {
@@ -57,7 +57,8 @@ class GlobalProvider extends React.Component {
   render() {
     const {
       auth,
-      drawer
+      drawer,
+      kamu
     } = this.state
 
     return (
@@ -65,6 +66,7 @@ class GlobalProvider extends React.Component {
         value={{
           auth,
           drawer,
+          kamu,
           UpdateContextValue: this.UpdateContextValue,
           FetchGet: this.FetchGet,
         }}

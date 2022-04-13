@@ -38,13 +38,30 @@ import MIIP from "./views/MIIP/MIIP";
 import Report from "./views/Report";
 import SettingSubmit from "./views/SettingSubmit";
 
-const PrivateRoute = function ({ children, ...rest }) {
-  const History = createBrowserHistory();
+import Makalah from './views/makalah/'
+import Dasboard from './views/dashboard/'
+import Settings from './views/settings'
+import FormMadatory from './views/settings/FormMandatory'
+import AddSessionPenjurian from './views/settings/session-penjurian/AddSessionPenjurian';
 
-  return !!localStorage.getItem("Token")
-    ? children
-    : (History.push("/login"), History.go());
-};
+
+
+
+
+const PrivateRoute = function ({ children, ...rest }) {
+
+  const History = createBrowserHistory()
+
+  return (
+    !!localStorage.getItem('Token')
+      ? (children)
+      : (
+        History.push('/login'),
+        History.go()
+      )
+  )
+}
+
 
 export default function AppFunc() {
   return (
@@ -230,6 +247,52 @@ export default function AppFunc() {
                 />
               )
             )}
+
+
+            <Route exact
+              path='/dashboard'
+              element={
+                <PrivateRoute>
+                  <Dasboard />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path='/makalah'
+              element={
+                <PrivateRoute>
+                  <Makalah />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path='/setting/mandatory'
+              element={
+                <PrivateRoute>
+                  <FormMadatory />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path='/settings'
+              element={
+                <PrivateRoute>
+                  <Settings />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path='setting/add-session-penjurian'
+              element={
+                <PrivateRoute>
+                  <AddSessionPenjurian />
+                </PrivateRoute>
+              }
+            />
 
             <Route
               exact

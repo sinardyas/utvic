@@ -12,8 +12,7 @@ module.exports = {
         primary: "#FFCD00",
       },
     },
-
-    extend: {},
   },
-  plugins: [],
-};
+  plugins: [
+  ],
+}
