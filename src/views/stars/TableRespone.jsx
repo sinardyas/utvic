@@ -14,7 +14,7 @@ import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 import Edit from "../../assets/images/edit-setting.png"
 import Delete from "../../assets/images/delete.png"
-import Table from "./Table2"
+import Table from "./Table3"
 
 const { 
   api: {

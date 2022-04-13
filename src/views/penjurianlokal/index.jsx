@@ -25,7 +25,7 @@ import SelectUnstyled, { selectUnstyledClasses } from '@mui/base/SelectUnstyled'
 import OptionUnstyled, { optionUnstyledClasses } from '@mui/base/OptionUnstyled';
 import PopperUnstyled from '@mui/base/PopperUnstyled';
 import Search from "../../assets/images/search.png"
-import Table from './Table2'
+import Table from './Table3'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Keyboard, Mousewheel } from "swiper/core";
 import List from '@mui/material/List';
