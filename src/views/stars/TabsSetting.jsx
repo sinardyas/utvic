@@ -18,7 +18,11 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 
 export default function CustomizedAccordions() {
  
-   
+    const Accordion = styled((props) => (
+        <MuiAccordion disableGutters elevation={0} square {...props} />
+      ))(({ theme }) => ({
+        borderRadius:'8px'
+      }));
       
       const AccordionSummary = styled((props) => (
         <MuiAccordionSummary
@@ -47,7 +51,7 @@ export default function CustomizedAccordions() {
         borderTop: '1px solid rgba(0, 0, 0, 0.1)',
       }));
   return (
-    <div>
+    <div >
        
       <Accordion className='mt-3'>
         <AccordionSummary
