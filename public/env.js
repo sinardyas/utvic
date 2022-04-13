@@ -36,5 +36,9 @@ window.processEnv = {
     permissionDocument: `${baseUrl}permission-document` + ext,
     deleteDocument: `${baseUrl}delete-document` + ext,
     getDocument: `${baseUrl}get-document` + ext,
+    getDokumenku: `${baseUrl}get-dokumenku` + ext,
+    listEvent: `${baseUrl}list-event` + ext,
+    addEvent: `${baseUrl}add-event` + ext,
+    galeriMakalah: `${baseUrl}galeri-makalah` + ext,
   }
 }

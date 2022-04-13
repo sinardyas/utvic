@@ -34,6 +34,10 @@ import Stars from './views/stars/_index'
 import Champion from './views/champion'
 import PenjuarianLokal from './views/penjurianlokal'
 import Perjuangan from './views/perjuangan/_index'
+import CalendarEvent from './views/event/calendar'
+import CreateEvent from './views/event/create-event'
+import Makalahku from './views/gallery/makalah/makalahku'
+import MakalahArea from './views/gallery/makalah/makalah-area'
 
 
 
@@ -299,6 +303,44 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <AllDocument />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              exact
+              path={'/event/calendar'}
+              element={
+                <PrivateRoute>
+                  <CalendarEvent />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={'/event/create-event'}
+              element={
+                <PrivateRoute>
+                  <CreateEvent />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              exact
+              path={'/gallery/makalahku'}
+              element={
+                <PrivateRoute>
+                  <Makalahku />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={'/gallery/makalah-area'}
+              element={
+                <PrivateRoute>
+                  <MakalahArea />
                 </PrivateRoute>
               }
             />

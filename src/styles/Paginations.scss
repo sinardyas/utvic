@@ -1,0 +1,24 @@
+#custom-pagination {
+  ul li:first-child button:disabled, ul li:last-child button:disabled, {
+    color: black;
+    opacity: 1;
+  }
+
+  ul li:first-child button, ul li:last-child button {
+    color: #FFCD00;
+    border: 1px solid black;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+  }
+
+  ul li:not(:first-child):not(:last-child) button {
+    border: none;
+    @apply font-extrabold text-lg
+  }
+
+  ul li:not(:first-child):not(:last-child) button.Mui-selected {
+    background: transparent;
+    @apply text-orange-500
+  }
+}
