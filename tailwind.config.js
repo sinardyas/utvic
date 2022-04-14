@@ -1,4 +1,5 @@
 module.exports = {
+  mode: "jit",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     container: {
@@ -12,5 +13,6 @@ module.exports = {
       },
     },
   },
-  plugins: [],
-};
+  plugins: [
+  ],
+}

@@ -13,10 +13,6 @@ import Login from "./views/auth/Login";
 import Error404 from "./views/error/404";
 
 import Home from "./views/home";
-// import Profile from "./views/profile";
-import Prestasi from "./views/prestasi";
-import Certifikat from "./views/certificate";
-import Article from "./views/article/_index";
 
 //import Profile from './views/profile'
 import Profile from "./views/profile/_index";
@@ -41,13 +37,39 @@ import Perjuangan from "./views/perjuangan/_index";
 import Penjurian from "./views/penjurian/Penjurian";
 import Penilaian from "./views/penilaian/Penilaian";
 
-const PrivateRoute = function ({ children, ...rest }) {
-  const History = createBrowserHistory();
+import Prestasi from "./views/prestasi";
+import Certifikat from "./views/certificate";
+import Article from "./views/article/_index";
+import DetailPenilaianPejuang from "./views/DetailPenilaianPejuang";
+import FormPekerjaan from "./views/FormPekerjaan";
+import MIIP from "./views/MIIP/MIIP";
+import Report from "./views/Report";
+import SettingSubmit from "./views/SettingSubmit";
 
-  return !!localStorage.getItem("Token")
-    ? children
-    : (History.push("/login"), History.go());
-};
+import Makalah from './views/makalah/'
+import Dasboard from './views/dashboard/'
+import Settings from './views/settings'
+import FormMadatory from './views/settings/FormMandatory'
+import AddSessionPenjurian from './views/settings/session-penjurian/AddSessionPenjurian';
+
+
+
+
+
+const PrivateRoute = function ({ children, ...rest }) {
+
+  const History = createBrowserHistory()
+
+  return (
+    !!localStorage.getItem('Token')
+      ? (children)
+      : (
+        History.push('/login'),
+        History.go()
+      )
+  )
+}
+
 
 export default function AppFunc() {
   return (
@@ -99,6 +121,16 @@ export default function AppFunc() {
 
             <Route
               exact
+              path="/"
+              element={
+                <PrivateRoute>
+                  <Home />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              exact
               path="/penjurian"
               element={
                 <PrivateRoute>
@@ -123,6 +155,21 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <Champion />
+                </PrivateRoute>
+              }
+            />
+
+            <Route exact path="/form-pekerjaan" element={<FormPekerjaan />} />
+            <Route exact path="/makalahku" element={<MIIP />} />
+            <Route exact path="/laporan" element={<Report />} />
+            <Route exact path="/setting-submit" element={<SettingSubmit />} />
+
+            <Route
+              exact
+              path="/certifikat"
+              element={
+                <PrivateRoute>
+                  <Certifikat />
                 </PrivateRoute>
               }
             />
@@ -208,6 +255,52 @@ export default function AppFunc() {
                 />
               )
             )}
+
+
+            <Route exact
+              path='/dashboard'
+              element={
+                <PrivateRoute>
+                  <Dasboard />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path='/makalah'
+              element={
+                <PrivateRoute>
+                  <Makalah />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path='/setting/mandatory'
+              element={
+                <PrivateRoute>
+                  <FormMadatory />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path='/settings'
+              element={
+                <PrivateRoute>
+                  <Settings />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path='setting/add-session-penjurian'
+              element={
+                <PrivateRoute>
+                  <AddSessionPenjurian />
+                </PrivateRoute>
+              }
+            />
 
             <Route
               exact
@@ -308,6 +401,15 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <AllDocument />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path="*"
+              element={
+                <PrivateRoute>
+                  <Error404 />
                 </PrivateRoute>
               }
             />
