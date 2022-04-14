@@ -42,7 +42,6 @@ import Makalah from './views/makalah/'
 import Dasboard from './views/dashboard/'
 import Settings from './views/settings'
 import FormMadatory from './views/settings/FormMandatory'
-import AddSessionPenjurian from './views/settings/session-penjurian/AddSessionPenjurian';
 
 
 
@@ -261,9 +260,9 @@ export default function AppFunc() {
             <Route
               path='/makalah'
               element={
-                <PrivateRoute>
+                // <PrivateRoute>
                   <Makalah />
-                </PrivateRoute>
+                // </PrivateRoute>
               }
             />
 
@@ -281,15 +280,6 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <Settings />
-                </PrivateRoute>
-              }
-            />
-
-            <Route
-              path='setting/add-session-penjurian'
-              element={
-                <PrivateRoute>
-                  <AddSessionPenjurian />
                 </PrivateRoute>
               }
             />

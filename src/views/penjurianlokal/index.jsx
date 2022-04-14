@@ -322,7 +322,7 @@ class Child extends React.Component {
     
 
          <div className="flex flex-row justify-between pt-5">
-           <div className="title flex flex-row">
+           <div className="flex flex-row title">
          
            <div className='flex items-center'>
              
@@ -346,11 +346,11 @@ class Child extends React.Component {
 
      <SearchForm/>
 
-     <section className='profile-body lg:pt-10 pb-40 sm:pt-20 w-full pl-20'>
+     <section className='w-full pb-40 pl-20 profile-body lg:pt-10 sm:pt-20'>
        <div className="container">
 
       <div className="flex flex-col">
-        <div className="flex flex-row pb-5 justify-end">
+        <div className="flex flex-row justify-end pb-5">
             <button class="border-solid border border-slate-800    font-bold rounded-md p-3" >
             Export
             </button>

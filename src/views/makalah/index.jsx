@@ -31,11 +31,9 @@ export default class index extends Component {
       }
     ];
 
-    const toggleTabButton = (i, e) => {
-      // console.log(e.target.getAttribute("data-target"));
+    const toggleTabButton = (i) => {
       this.setState(
         {
-          // setToggleTab(i);
           toggleTab: i
         }
       )
@@ -71,7 +69,7 @@ export default class index extends Component {
 
                   className='font-bold'
                 >
-                  Mandatory
+                  {this.state.toggleTab ? 'Other' : 'Mandatory'}
                 </Link>
 
               </Breadcrumbs>
