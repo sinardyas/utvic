@@ -37,6 +37,9 @@ import FormPekerjaan from "./views/FormPekerjaan";
 import MIIP from "./views/MIIP/MIIP";
 import Report from "./views/Report";
 import SettingSubmit from "./views/SettingSubmit";
+import ReImplementasi, {
+  AddNewReimplementation,
+} from "./views/re-implementasi";
 
 const PrivateRoute = function ({ children, ...rest }) {
   const History = createBrowserHistory();
@@ -138,6 +141,12 @@ export default function AppFunc() {
             <Route exact path="/makalahku" element={<MIIP />} />
             <Route exact path="/laporan" element={<Report />} />
             <Route exact path="/setting-submit" element={<SettingSubmit />} />
+            <Route exact path="/reimplementasi" element={<ReImplementasi />} />
+            <Route
+              exact
+              path="/reimplementasi/add"
+              element={<AddNewReimplementation />}
+            />
 
             <Route
               exact

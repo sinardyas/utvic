@@ -1,0 +1,31 @@
+.form-add {
+  @apply flex flex-col space-y-3 mb-4;
+
+  label {
+    @apply font-bold;
+  }
+
+  .form-add-field {
+    @apply bg-gray-200 rounded h-16  px-4 focus:outline-none  placeholder:italic;
+  }
+}
+
+.table-container {
+  @apply flex flex-col mb-4 border border-gray-200 rounded-md;
+
+  .table-header {
+    @apply flex bg-black rounded-t-lg;
+
+    .table-header-field {
+      @apply h-16 text-white font-bold border-l border-white flex items-center justify-center;
+    }
+  }
+
+  .table-body {
+    @apply flex;
+
+    .table-body-field {
+      @apply h-16 font-bold  flex items-center justify-center;
+    }
+  }
+}
