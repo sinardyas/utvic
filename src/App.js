@@ -41,13 +41,29 @@ import ReImplementasi, {
   AddNewReimplementation,
 } from "./views/re-implementasi";
 
-const PrivateRoute = function ({ children, ...rest }) {
-  const History = createBrowserHistory();
+import Makalah from './views/makalah/'
+import Dasboard from './views/dashboard/'
+import Settings from './views/settings'
+import FormMadatory from './views/settings/FormMandatory'
 
-  return !!localStorage.getItem("Token")
-    ? children
-    : (History.push("/login"), History.go());
-};
+
+
+
+
+const PrivateRoute = function ({ children, ...rest }) {
+
+  const History = createBrowserHistory()
+
+  return (
+    !!localStorage.getItem('Token')
+      ? (children)
+      : (
+        History.push('/login'),
+        History.go()
+      )
+  )
+}
+
 
 export default function AppFunc() {
   return (
@@ -239,6 +255,43 @@ export default function AppFunc() {
                 />
               )
             )}
+
+
+            <Route exact
+              path='/dashboard'
+              element={
+                <PrivateRoute>
+                  <Dasboard />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path='/makalah'
+              element={
+                // <PrivateRoute>
+                  <Makalah />
+                // </PrivateRoute>
+              }
+            />
+
+            <Route
+              path='/setting/mandatory'
+              element={
+                <PrivateRoute>
+                  <FormMadatory />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path='/settings'
+              element={
+                <PrivateRoute>
+                  <Settings />
+                </PrivateRoute>
+              }
+            />
 
             <Route
               exact
