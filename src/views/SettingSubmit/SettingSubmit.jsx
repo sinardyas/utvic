@@ -1,29 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import InovationModal from "./components/Modal";
-import InovasiTab from "./tabs/InovasiTab";
+import SettingTab from "./tabs/SettingTab";
 import Header from "../../components/Header";
 
 const SettingSubmitInovasi = () => {
-  const response = {
-    Status: 200,
-    Message: "Success",
-    Data: [
-      {
-        SettingInnovationId: 1,
-        SettingInnovationName: "Inovasi Baru",
-        StartDate: "2021-12-23",
-        EndDate: "2021-12-23",
-      },
-      {
-        SettingInnovationId: 2,
-        SettingInnovationName: "Innovastra",
-        StartDate: "2021-12-23",
-        EndDate: "2021-12-23",
-      },
-    ],
-  };
-
   const navigate = useNavigate();
   const [tab, setTab] = React.useState(false);
   const [modalInovation, setModalInovation] = React.useState(false);
@@ -31,7 +12,7 @@ const SettingSubmitInovasi = () => {
   const activeTabStyle = "bg-[#FFCD00] rounded-lg";
 
   const onClickAddNew = () => {
-    tab ? console.log("USER ADD NEW CLICKED") : setModalInovation(true);
+    setModalInovation(true);
   };
 
   return (
@@ -66,10 +47,10 @@ const SettingSubmitInovasi = () => {
             Add New
           </div>
         </div>
-        {tab === false && <InovasiTab data={response.Data} />}
-        {tab === true && <div />}
+        <SettingTab activeTab={tab} />
         <InovationModal
           open={modalInovation}
+          activeTab={tab}
           handleClose={() => setModalInovation(false)}
           data={"INI MODAL"}
         />

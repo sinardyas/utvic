@@ -5,13 +5,18 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const InovationModal = (props) => {
-  const { open, handleClose } = props;
+  const { open, handleClose, activeTab } = props;
+
   const initialState = {
-    SettingInovationName: "",
     StartDate: null,
     EndDate: null,
   };
+
   const [body, setBody] = useState(initialState);
+
+  const onChangeName = (e) => {
+    setBody({ ...body, [e.target.name]: e.target.value });
+  };
 
   const endDateOnChange = (date) => {
     if (date.getTime() < body.StartDate.getTime()) {
@@ -21,7 +26,23 @@ const InovationModal = (props) => {
     setBody({ ...body, EndDate: date });
   };
 
+  const checkIfObjectKeysAreEmpty = (obj) => {
+    if (
+      (obj.NamaPejuang !== undefined &&
+        obj.NamaPejuang !== null &&
+        obj.NamaPejuang !== "") ||
+      (obj.SettingInnovationName !== undefined &&
+        obj.SettingInnovationName !== null &&
+        obj.SettingInnovationName !== "")
+    ) {
+      return Object.values(obj).every((x) => !!x);
+    }
+  };
+
   const handleSubmit = () => {
+    if (!checkIfObjectKeysAreEmpty(body)) {
+      return alert("Please fill all the fields");
+    }
     console.log(body);
   };
 
@@ -34,25 +55,25 @@ const InovationModal = (props) => {
     <Modal open={open} onClose={handleCloseModal}>
       <div className="container md:max-w-2xl md:px-6 md:py-6 bg-white py-4 shadow-neutral-300 outline-none absolute top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] rounded-lg">
         <div className="space-y-4 md:space-y-8">
-          <div className="text-lg font-bold">Session Submit Inovasi</div>
+          <div className="text-lg font-bold">{`Session ${
+            activeTab ? "Pejuang" : "Submit Inovasi"
+          }`}</div>
 
           <div className="flex flex-wrap md:justify-between space-y-3 px-2">
             <div className="flex flex-col w-full">
               <label htmlFor="tipe-inovasi" className="font-bold ">
-                Masukkan Tipe Inovasi
+                {activeTab ? "Nama Pejuang" : "Masukkan Tipe Inovasi"}
               </label>
               <div className="p-4 bg-gray-200 rounded-md">
                 <input
                   type="text"
-                  value={body.SettingInovationName}
-                  onChange={(e) => {
-                    setBody({
-                      ...body,
-                      SettingInovationName: e.target.value,
-                    });
-                  }}
+                  name={activeTab ? "NamaPejuang" : "SettingInnovationName"}
+                  value={
+                    activeTab ? body?.NamaPejuang : body?.SettingInnovationName
+                  }
+                  onChange={onChangeName}
                   id="tipe-inovasi"
-                  placeholder="Masukkan Tipe Inovasi"
+                  placeholder="Masukkan Tipe "
                   className="focus:outline-none bg-inherit w-full placeholder:text-gray-600 text-sm"
                 />
               </div>

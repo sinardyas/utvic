@@ -41,29 +41,18 @@ import ReImplementasi, {
   AddNewReimplementation,
 } from "./views/re-implementasi";
 
-import Makalah from './views/makalah/'
-import Dasboard from './views/dashboard/'
-import Settings from './views/settings'
-import FormMadatory from './views/settings/FormMandatory'
-
-
-
-
+import Makalah from "./views/makalah/";
+import Dasboard from "./views/dashboard/";
+import Settings from "./views/settings";
+import FormMadatory from "./views/settings/FormMandatory";
 
 const PrivateRoute = function ({ children, ...rest }) {
+  const History = createBrowserHistory();
 
-  const History = createBrowserHistory()
-
-  return (
-    !!localStorage.getItem('Token')
-      ? (children)
-      : (
-        History.push('/login'),
-        History.go()
-      )
-  )
-}
-
+  return !!localStorage.getItem("Token")
+    ? children
+    : (History.push("/login"), History.go());
+};
 
 export default function AppFunc() {
   return (
@@ -133,15 +122,7 @@ export default function AppFunc() {
               }
             />
 
-            <Route
-              exact
-              path="/penilaian"
-              element={
-                <PrivateRoute>
-                  <Penilaian />
-                </PrivateRoute>
-              }
-            />
+            <Route exact path="/penilaian" element={<Penilaian />} />
 
             <Route
               exact
@@ -256,9 +237,9 @@ export default function AppFunc() {
               )
             )}
 
-
-            <Route exact
-              path='/dashboard'
+            <Route
+              exact
+              path="/dashboard"
               element={
                 <PrivateRoute>
                   <Dasboard />
@@ -267,16 +248,16 @@ export default function AppFunc() {
             />
 
             <Route
-              path='/makalah'
+              path="/makalah"
               element={
                 // <PrivateRoute>
-                  <Makalah />
+                <Makalah />
                 // </PrivateRoute>
               }
             />
 
             <Route
-              path='/setting/mandatory'
+              path="/setting/mandatory"
               element={
                 <PrivateRoute>
                   <FormMadatory />
@@ -285,7 +266,7 @@ export default function AppFunc() {
             />
 
             <Route
-              path='/settings'
+              path="/settings"
               element={
                 <PrivateRoute>
                   <Settings />
