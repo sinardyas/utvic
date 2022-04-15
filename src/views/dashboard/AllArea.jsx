@@ -1,5 +1,8 @@
 import React from 'react'
+import { TrashIcon } from '../../assets/images/icons';
 import FormSelect from '../../components/FormSelect';
+import PaginationSize from '../../components/Paginations';
+import Graph from './components/Graph';
 
 const AllArea = () => {
 
@@ -11,9 +14,9 @@ const AllArea = () => {
       {
         "No": 1,
         "Area": "Jakarta",
-        "Total": 100,
+        "Total": 128,
         "Analisis": {
-          "Total": 20,
+          "Total": 38,
           "Color": "#fff000",
           "data": [
             {
@@ -29,7 +32,7 @@ const AllArea = () => {
           ]
         },
         "Ide": {
-          "Total": 20,
+          "Total": 40,
           "Color": "#ffffff",
           "data": [
             {
@@ -45,7 +48,7 @@ const AllArea = () => {
           ]
         },
         "Result": {
-          "Total": 20,
+          "Total": 50,
           "Color": "#f00000",
           "data": [
             {
@@ -64,9 +67,9 @@ const AllArea = () => {
       {
         "No": 2,
         "Area": "Bandung",
-        "Total": 100,
+        "Total": 120,
         "Analisis": {
-          "Total": 20,
+          "Total": 46,
           "Color": "#fff000",
           "data": [
             {
@@ -82,7 +85,7 @@ const AllArea = () => {
           ]
         },
         "Ide": {
-          "Total": 20,
+          "Total": 24,
           "Color": "#ffffff",
           "data": [
             {
@@ -98,7 +101,166 @@ const AllArea = () => {
           ]
         },
         "Result": {
-          "Total": 20,
+          "Total": 50,
+          "Color": "#f00000",
+          "data": [
+            {
+              "Category": "Imut",
+              "SubCategory": "people & proses",
+              "total": 10
+            },
+            {
+              "Category": "Lisa",
+              "SubCategory": "Business Model",
+              "total": 10
+            }
+          ]
+        }
+      },
+      {
+        "No": 2,
+        "Area": "Sampit",
+        "Total": 112,
+        "Analisis": {
+          "Total": 79,
+          "Color": "#fff000",
+          "data": [
+            {
+              "Category": "Imut",
+              "SubCategory": "people & proses",
+              "total": 10
+            },
+            {
+              "Category": "Lisa",
+              "SubCategory": "Business Model",
+              "total": 10
+            }
+          ]
+        },
+        "Ide": {
+          "Total": 24,
+          "Color": "#ffffff",
+          "data": [
+            {
+              "Category": "Imut",
+              "SubCategory": "people & proses",
+              "total": 10
+            },
+            {
+              "Category": "Lisa",
+              "SubCategory": "Business Model",
+              "total": 10
+            }
+          ]
+        },
+        "Result": {
+          "Total": 35,
+          "Color": "#f00000",
+          "data": [
+            {
+              "Category": "Imut",
+              "SubCategory": "people & proses",
+              "total": 10
+            },
+            {
+              "Category": "Lisa",
+              "SubCategory": "Business Model",
+              "total": 10
+            }
+          ]
+        }
+      },
+      {
+        "No": 2,
+        "Area": "Medan",
+        "Total": 108,
+        "Analisis": {
+          "Total": 8,
+          "Color": "#fff000",
+          "data": [
+            {
+              "Category": "Imut",
+              "SubCategory": "people & proses",
+              "total": 10
+            },
+            {
+              "Category": "Lisa",
+              "SubCategory": "Business Model",
+              "total": 10
+            }
+          ]
+        },
+        "Ide": {
+          "Total": 65,
+          "Color": "#ffffff",
+          "data": [
+            {
+              "Category": "Imut",
+              "SubCategory": "people & proses",
+              "total": 10
+            },
+            {
+              "Category": "Lisa",
+              "SubCategory": "Business Model",
+              "total": 10
+            }
+          ]
+        },
+        "Result": {
+          "Total": 35,
+          "Color": "#f00000",
+          "data": [
+            {
+              "Category": "Imut",
+              "SubCategory": "people & proses",
+              "total": 10
+            },
+            {
+              "Category": "Lisa",
+              "SubCategory": "Business Model",
+              "total": 10
+            }
+          ]
+        }
+      },
+      {
+        "No": 2,
+        "Area": "Tegal",
+        "Total": 87,
+        "Analisis": {
+          "Total": 48,
+          "Color": "#fff000",
+          "data": [
+            {
+              "Category": "Imut",
+              "SubCategory": "people & proses",
+              "total": 10
+            },
+            {
+              "Category": "Lisa",
+              "SubCategory": "Business Model",
+              "total": 10
+            }
+          ]
+        },
+        "Ide": {
+          "Total": 4,
+          "Color": "#ffffff",
+          "data": [
+            {
+              "Category": "Imut",
+              "SubCategory": "people & proses",
+              "total": 10
+            },
+            {
+              "Category": "Lisa",
+              "SubCategory": "Business Model",
+              "total": 10
+            }
+          ]
+        },
+        "Result": {
+          "Total": 35,
           "Color": "#f00000",
           "data": [
             {
@@ -139,17 +301,9 @@ return (
         <label for="filter" class="text-xl font-semibold">Kategori</label>
         <div class="flex items-center justify-between gap-2">
           <input name="filter" type="text"
-            class="mt-2 w-full rounded border bg-gray-100 py-6 pl-2 pr-10 text-gray-400 focus:outline-none" />
+            class="mt-2 w-full rounded border bg-gray-100 py-4 pl-2 pr-10 text-gray-400 focus:outline-none" />
           <span class="hover:cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="feather feather-trash-2">
-              <polyline points="3 6 5 6 21 6"></polyline>
-              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
-              </path>
-              <line x1="10" y1="11" x2="10" y2="17"></line>
-              <line x1="14" y1="11" x2="14" y2="17"></line>
-            </svg>
+            <img src={TrashIcon} alt="" className='w-7 h-7' />
           </span>
         </div>
       </div>
@@ -180,54 +334,19 @@ return (
       </div>
 
       <div class="h-5"></div>
-      <div className="flex items-end flex-grow w-1/2 mx-auto space-x-2 sm:space-x-3">
-        {
-          respData.Data.map((v, i) =>
-            <div className="relative flex flex-col items-center flex-grow pb-5 group">
-              <span
-                className="absolute top-0 hidden px-4 py-2 -mt-6 text-sm text-white bg-blue-400 rounded-md top-tooltip group-hover:block">
-                {v.Total} </span>
-              <div className={`relative flex items-center justify-center w-1/5 bg-green-400 rounded-tl-full rounded-tr-full top-6 md:top-8 md:w-[1rem] hover:cursor-pointer hover:border hover:border-green-500 left-tooltip ${'h-[' + v.Analisis.Total * .4 + 'rem]'} `} data-target="tooltip-result-0">
-                <div className="absolute ml-16 left-tooltip-green tooltip-result-0 ">
-                  <span
-                    className="w-6 h-6 p-1 text-xs text-center text-white align-middle bg-green-400 rounded-full">{v.Result.Total}</span>
-                </div>
-              </div>
-              <div className={`relative flex items-center justify-center w-1/4 md:w-[1rem] bg-yellow-400 rounded-tl-full rounded-tr-full top-3 md:top-4 hover:cursor-pointer hover:border hover:border-yellow-500 left-tooltip ${'h-[' + v.Ide.Total * .4 + 'rem]'} `} data-target="tooltip-ide-0">
-                <div className="absolute ml-16 left-tooltip-yellow tooltip-ide-0 ">
-                  <span
-                    className="w-6 h-6 p-1 text-xs text-center text-white align-middle bg-yellow-400 rounded-full">{v.Ide.Total}</span>
-                </div>
-              </div>
-              <div
-                class={`relative flex w-1/4 md:w-[1rem] justify-center items-center rounded-tl-full
-                        rounded-tr-full bg-red-400 hover:cursor-pointer hover:border
-                        hover:border-yellow-500 left-tooltip ${'h-[' + v.Analisis.Total * .3 + 'rem]'} `} data-target="tooltip-analis-0">
-                <div className="absolute ml-16 left-tooltip-red tooltip-analis-0 ">
-                  <span
-                    className="w-6 h-6 p-1 text-xs text-center text-white align-middle bg-red-400 rounded-full">{v.Analisis.Total}</span>
-                </div>
-              </div>
-              <span className="absolute bottom-0 text-sm font-bold">{v.Area}</span>
-
-
-            </div>
-
-          )
-        }
-
-      </div>
+      <Graph data={respData.Data} />
 
 
     </div>
       <div className="flex items-center justify-center gap-5 mt-10 align-middle">
-        <span className="p-5 py-3 my-auto text-center bg-white border border-black rounded-full">&#10094;</span>
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-        <span>...</span>
-        <span>10</span>
-        <span className="p-5 py-3 my-auto text-yellow-400 bg-white border border-black rounded-full">&#10095;</span>
+        {/* <PaginationSize /> */}
+        <button className="p-5 py-3 my-auto text-center bg-white border border-black rounded-full">&#10094;</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>...</button>
+        <button>10</button>
+        <button className="p-5 py-3 my-auto text-yellow-400 bg-white border border-black rounded-full">&#10095;</button>
       </div>
   </section>
 )
