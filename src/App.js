@@ -45,31 +45,23 @@ import FormPekerjaan from "./views/FormPekerjaan";
 import MIIP from "./views/MIIP/MIIP";
 import Report from "./views/Report";
 import SettingSubmit from "./views/SettingSubmit";
+import ReImplementasi, {
+  AddNewReimplementation,
+} from "./views/re-implementasi";
 
-import Makalah from './views/makalah/'
-import Dasboard from './views/dashboard/'
-import Settings from './views/settings'
-import FormMadatory from './views/settings/FormMandatory'
-import AddSessionPenjurian from './views/settings/session-penjurian/AddSessionPenjurian';
-
-
-
-
+import Makalah from "./views/makalah/";
+import Dasboard from "./views/dashboard/";
+import Settings from "./views/settings";
+import FormMadatory from "./views/settings/FormMandatory";
+import MonitoringProject from "./views/MonitoringProject/";
 
 const PrivateRoute = function ({ children, ...rest }) {
+  const History = createBrowserHistory();
 
-  const History = createBrowserHistory()
-
-  return (
-    !!localStorage.getItem('Token')
-      ? (children)
-      : (
-        History.push('/login'),
-        History.go()
-      )
-  )
-}
-
+  return !!localStorage.getItem("Token")
+    ? children
+    : (History.push("/login"), History.go());
+};
 
 export default function AppFunc() {
   return (
@@ -139,15 +131,7 @@ export default function AppFunc() {
               }
             />
 
-            <Route
-              exact
-              path="/penilaian"
-              element={
-                <PrivateRoute>
-                  <Penilaian />
-                </PrivateRoute>
-              }
-            />
+            <Route exact path="/penilaian" element={<Penilaian />} />
 
             <Route
               exact
@@ -159,10 +143,27 @@ export default function AppFunc() {
               }
             />
 
+            <Route
+              exact
+              path="/detail-penilaian/:id"
+              element={<DetailPenilaianPejuang />}
+            />
             <Route exact path="/form-pekerjaan" element={<FormPekerjaan />} />
             <Route exact path="/makalahku" element={<MIIP />} />
             <Route exact path="/laporan" element={<Report />} />
             <Route exact path="/setting-submit" element={<SettingSubmit />} />
+            <Route exact path="/reimplementasi" element={<ReImplementasi />} />
+            <Route
+              exact
+              path="/project-monitoring"
+              element={<MonitoringProject />}
+            />
+
+            <Route
+              exact
+              path="/reimplementasi/add"
+              element={<AddNewReimplementation />}
+            />
 
             <Route
               exact
@@ -256,9 +257,9 @@ export default function AppFunc() {
               )
             )}
 
-
-            <Route exact
-              path='/dashboard'
+            <Route
+              exact
+              path="/dashboard"
               element={
                 <PrivateRoute>
                   <Dasboard />
@@ -267,16 +268,16 @@ export default function AppFunc() {
             />
 
             <Route
-              path='/makalah'
+              path="/makalah"
               element={
-                <PrivateRoute>
-                  <Makalah />
-                </PrivateRoute>
+                // <PrivateRoute>
+                <Makalah />
+                // </PrivateRoute>
               }
             />
 
             <Route
-              path='/setting/mandatory'
+              path="/setting/mandatory"
               element={
                 <PrivateRoute>
                   <FormMadatory />
@@ -285,19 +286,10 @@ export default function AppFunc() {
             />
 
             <Route
-              path='/settings'
+              path="/settings"
               element={
                 <PrivateRoute>
                   <Settings />
-                </PrivateRoute>
-              }
-            />
-
-            <Route
-              path='setting/add-session-penjurian'
-              element={
-                <PrivateRoute>
-                  <AddSessionPenjurian />
                 </PrivateRoute>
               }
             />

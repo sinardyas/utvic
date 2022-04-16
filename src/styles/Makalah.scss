@@ -7,27 +7,6 @@
 
 .form-select::after{
     @apply w-4 h-4 bg-red-500 absolute;
-    // content: '\25BC';
-    // position: absolute;
-    // top: 0;
-    // right: 0;
-    // bottom: 0;
-    // font-size: 25px;
-    // height: 20px;
-    // width: 20px;
-    // border: 1px solid #565656;
-    // background: #0e7b53;
-    // color: red;
-    // padding: 11px 15px;
-    // pointer-events: none;
-    // content: "\e669";
-    // color:#fff;
-    // font-family:icons;
-    // // @include rem-px(font-size,(13px));
-    // // display: block;
-    // float: right;
-    // height: 0;
-    // @apply h-8 right-0 ; 
 }
 
 
@@ -47,7 +26,17 @@
 .tab-content-active{
     @apply block;
 }
-
+.pin-tooltip::after{
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    right: 0;
+    top: 50%;
+    margin-top: -1.5px;
+    border-radius: 50%;
+    background-color: black;
+}
 .top-tooltip::after{
     content: "";
     position: absolute;
@@ -56,41 +45,41 @@
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: #60A5F8 transparent transparent transparent;
+    border-color: #4ABDF8 transparent transparent transparent;
 }
 
-.left-tooltip-green::after{
-    content: "";
-    position: absolute;
-    right: 90%;
-    top: 50%;
-    margin-top: -5px;
-    border-width: 7px;
-    border-style: solid;
-    border-color: transparent #66DE81 transparent transparent;
-}
+// .left-tooltip-green::after{
+//     content: "";
+//     position: absolute;
+//     right: 88.5%;
+//     top: 50%;
+//     margin-top: -7px;
+//     border-style: solid;
+//     border-width: 7px;
+//     border-color: transparent #66DE81 transparent transparent;
+// }
 
-.left-tooltip-yellow::after{
-    content: "";
-    position: absolute;
-    right: 90%;
-    top: 50%;
-    margin-top: -5px;
-    border-width: 7px;
-    border-style: solid;
-    border-color: transparent #FACC48 transparent transparent;
-}
+// .left-tooltip-yellow::after{
+//     content: "";
+//     position: absolute;
+//     right: 89.5%;
+//     top: 50%;
+//     margin-top: -7px;
+//     border-width: 7px;
+//     border-style: solid;
+//     border-color: transparent #FACC48 transparent transparent;
+// }
 
-.left-tooltip-red::after{
-    content: "";
-    position: absolute;
-    right: 90%;
-    top: 50%;
-    margin-top: -5px;
-    border-width: 7px;
-    border-style: solid;
-    border-color: transparent #EF7070 transparent transparent;
-}
+// .left-tooltip-red::after{
+//     content: "";
+//     position: absolute;
+//     right: 89.5%;
+//     top: 50%;
+//     margin-top: -7px;
+//     border-width: 7px;
+//     border-style: solid;
+//     border-color: transparent #EF7070 transparent transparent;
+// }
 
  .scroll-menu {
     -webkit-overflow-scrolling: touch;

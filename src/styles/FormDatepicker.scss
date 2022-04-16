@@ -1,0 +1,7 @@
+
+.datepicker, .react-datepicker-wrapper{
+    @apply appearance-none bg-transparent border-0 ring-0 outline-none;
+}
+.react-datepicker__input-container{
+    @apply mr-4;
+}

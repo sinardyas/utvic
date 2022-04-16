@@ -66,7 +66,7 @@ export default class index extends Component {
 
                                     className='font-bold'
                                 >
-                                    Dashboard
+                                    {this.state.toggleTab ? 'All Dashboard' : 'Top 5 Area'}
                                 </Link>
 
                             </Breadcrumbs>

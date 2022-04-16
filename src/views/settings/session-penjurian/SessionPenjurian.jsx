@@ -1,148 +1,143 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { CalendarIcon, EditIcon, TrashIcon } from '../../../assets/images/icons';
+import ButtonAdd from '../components/ButtonAdd';
+import DateFnsAdapter from "@date-io/date-fns";
+import { Modal } from '@mui/material';
+import { Box } from '@mui/system';
+import DatePickers from '../components/FormDatePickers';
 
-export default class SessionPenjurian extends Component {
-  render() {
+
+const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    bgcolor: "background.paper",
+    boxShadow: 24,
+    p: 2,
+};
+const ModalAddSession = ({ handleClose, open }) => {
+    return (
+        <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+        >
+            <Box sx={style} className='w-3/4 p-4 px-4 py-4 mx-auto bg-white border border-gray-200 rounded shadow md:rounded-none md:border-l-2 md:border-l-yellow-400'>
+                <div class="text-3xl font-semibold text-black">Add Session Penjurian</div>
+
+                <div class="mt-10 space-y-6">
+                    <div class="flex flex-col">
+                        <label for="atas" class="text-xl font-semibold">Masukan Tipe Penjurian</label>
+                        <input name="atas" placeholder="Masukan Tipe Penjurian" class="mt-2 rounded border bg-gray-100 py-4 pl-2 pr-10 text-gray-400 focus:outline-none md:pr-32" />
+                    </div>
+
+                    <div class="gap-4 md:flex md:justify-between">
+                        <div class="flex flex-col md:w-1/2">
+                            <DatePickers name="mulai" label="Mulai" />
+                        </div>
+
+                        <div class="flex flex-col md:w-1/2">
+
+                            <DatePickers name="selesai" label="Selesai" />
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 flex justify-start gap-3">
+                    <button class="rounded-md bg-red-500 px-8 py-3 font-sans text-xl text-white" onClick={handleClose}>Cancel</button>
+                    <button class="rounded-md bg-yellow-400 px-8 py-3 font-sans text-xl text-black">Save</button>
+                </div>
+
+            </Box>
+        </Modal>
+    );
+};
+
+
+const SessionPenjurian = () => {
+
+    const [open, setOpen] = React.useState(false);
+    const [openAddSession, setOpenAddSession] = React.useState(false);
+
+    const handleClose = () => setOpen(false);
+    const handleOpenAddSession = () => setOpenAddSession(true);
+    const handleCloseAddSession = () => setOpenAddSession(false);
+
+
+    const respData = {
+        "Status": 200,
+        "Message": "Sukses",
+        "Data": [
+            {
+                "JudgingSessionId": '001',
+                "JudgingSessionName": "Penjurian Lokal",
+                "StartDate": "2021-10-01",
+                "EndDate": "2021-12-01"
+            },
+            {
+                "JudgingSessionId": '002',
+                "JudgingSessionName": "Penjurian Nasional",
+                "StartDate": "2021-10-01",
+                "EndDate": "2021-12-01"
+            },
+            {
+                "JudgingSessionId": '003',
+                "JudgingSessionName": "Penjurian Grand Final",
+                "StartDate": "2021-10-01",
+                "EndDate": "2021-12-01"
+            }
+        ]
+    };
+
+    const getDateFormat = (date) => {
+        const dateFns = new DateFnsAdapter();
+        const initialDateFnsDate = dateFns.date(date);
+        const year = dateFns.format(initialDateFnsDate,'year');
+        const month = dateFns.format(initialDateFnsDate,'monthShort');
+        const day = dateFns.format(initialDateFnsDate,'dayOfMonth');
+        return day+' '+month+', '+year;
+    }
+
+
     return (
         <div>
-            <Link to={'/setting/add-session-penjurian'}>
-            <button
-                class="mt-10 flex justify-start rounded-md border border-black bg-transparent py-3 pr-8 pl-2 font-semibold text-black">
-                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="feather feather-plus">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg></span>
-                Add Session
-            </button>
-
-            </Link>
-
+            <ButtonAdd
+                onClick={handleOpenAddSession}
+                label="Add Session"
+            />
 
             <div class="mt-10 space-y-5">
-                <div
-                    class="flex items-center justify-between space-y-2 rounded border border-gray-200 bg-white py-6 px-4 shadow">
-                    <div class="flex flex-col gap-2">
-                        <div class="text-2xl text-black">Penjurian Lokal</div>
-                        <div class="flex items-center justify-start gap-2 font-sans text-xl text-gray-500">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-calendar">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                            </span>
-                            <span>19 Jan, 2022</span>
+                {
+                    respData.Data.map((v, i) =>
+                        <div
+                            class="flex items-center justify-between space-y-2 rounded border border-gray-200 bg-white py-6 px-4 shadow">
+                            <div class="flex flex-col gap-2">
+                                <div class="text-2xl text-black">{v.JudgingSessionName}</div>
+                                <div class="flex items-center justify-start gap-2 font-sans text-xl text-gray-500">
+                                    <span>
+                                        <img src={CalendarIcon} alt="calendar" className='w-6 h-6' />
+                                    </span>
+                                    <span>{getDateFormat(v.StartDate)}</span>
+                                </div>
+                            </div>
+                            <div class="flex md:flex-row flex-col gap-2">
+                                <button class="p-2">
+                                    <img src={EditIcon} alt="edit-icon" className='w-6 h-6' />
+                                </button>
+                                <button class="rounded-full bg-yellow-400 p-2 shadow hover:cursor-pointer">
+                                    <img src={TrashIcon} alt="delete" className='w-6 h-6' />
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="flex flex-col gap-2">
-                        <button class="p-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="feather feather-edit">
-                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                            </svg>
-                        </button>
-                        <button class="rounded-full bg-yellow-400 p-2 shadow hover:cursor-pointer">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="feather feather-trash-2">
-                                <polyline points="3 6 5  6 21 6"></polyline>
-                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
-                                </path>
-                                <line x1="10" y1="11" x2="10" y2="17"></line>
-                                <line x1="14" y1="11" x2="14" y2="17"></line>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div
-                    class="flex items-center justify-between space-y-2 rounded border border-gray-200 bg-white py-6 px-4 shadow">
-                    <div class="flex flex-col gap-2">
-                        <div class="text-2xl text-black">Penjurian Nasional</div>
-                        <div class="flex items-center justify-start gap-2 font-sans text-xl text-gray-500">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-calendar">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                            </span>
-                            <span>19 Jan, 2022</span>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-2">
-                        <button class="p-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="feather feather-edit">
-                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                            </svg>
-                        </button>
-                        <button class="rounded-full bg-yellow-400 p-2 shadow hover:cursor-pointer">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="feather feather-trash-2">
-                                <polyline points="3 6 5  6 21 6"></polyline>
-                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
-                                </path>
-                                <line x1="10" y1="11" x2="10" y2="17"></line>
-                                <line x1="14" y1="11" x2="14" y2="17"></line>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div
-                    class="flex items-center justify-between space-y-2 rounded border border-gray-200 bg-white py-6 px-4 shadow">
-                    <div class="flex flex-col gap-2">
-                        <div class="text-2xl text-black">Penjurian Grand Final</div>
-                        <div class="flex items-center justify-start gap-2 font-sans text-xl text-gray-500">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-calendar">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                            </span>
-                            <span>19 Jan, 2022</span>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-2">
-                        <button class="p-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="feather feather-edit">
-                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                            </svg>
-                        </button>
-                        <button class="rounded-full bg-yellow-400 p-2 shadow hover:cursor-pointer">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="feather feather-trash-2">
-                                <polyline points="3 6 5  6 21 6"></polyline>
-                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
-                                </path>
-                                <line x1="10" y1="11" x2="10" y2="17"></line>
-                                <line x1="14" y1="11" x2="14" y2="17"></line>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
+                    )
+                }
             </div>
-      </div>
+            <ModalAddSession
+                handleClose={handleCloseAddSession}
+                open={openAddSession}
+            />
+        </div>
     )
-  }
 }
+export default SessionPenjurian;

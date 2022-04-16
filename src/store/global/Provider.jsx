@@ -57,8 +57,7 @@ class GlobalProvider extends React.Component {
   render() {
     const {
       auth,
-      drawer,
-      kamu
+      drawer
     } = this.state
 
     return (
@@ -66,7 +65,6 @@ class GlobalProvider extends React.Component {
         value={{
           auth,
           drawer,
-          kamu,
           UpdateContextValue: this.UpdateContextValue,
           FetchGet: this.FetchGet,
         }}

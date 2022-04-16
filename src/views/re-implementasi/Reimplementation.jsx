@@ -1,11 +1,14 @@
 import React, { useCallback, useMemo } from "react";
 import project from "../../assets/images/project.svg";
+import "../../styles/Reimplementasi.scss";
 import "../../styles/MIIP.scss";
-import Filter from "./components/Filter";
+import Filter from "../MIIP/components/Filter";
 import Card from "./components/Card";
 import Header from "../../components/Header";
+import { useNavigate } from "react-router-dom";
 
-const MIIP = () => {
+const Reimplementation = () => {
+  const navigate = useNavigate();
   const initialState = {
     search: "",
     filter: "",
@@ -28,8 +31,6 @@ const MIIP = () => {
     },
   ];
 
-  console.log(filterParam);
-
   const onChangeFilter = useCallback(
     (e) => {
       const { name, value } = e.target;
@@ -50,7 +51,7 @@ const MIIP = () => {
       <div className="miip-container">
         <div className="title">
           <img src={project} alt="miip" />
-          <p className="text-xl md:text-2xl font-bold">MIIP</p>
+          <p className="text-xl md:text-2xl font-bold">Re-Implementasi</p>
         </div>
         <Filter
           onChange={onChangeFilter}
@@ -58,9 +59,11 @@ const MIIP = () => {
           value={filterParam}
           reset={resetFilter}
         />
-        <div className="flex justify-between items-center">
-          <p className="hapus-makalah">Hapus Makalah</p>
-          <p className="export">Export</p>
+        <div
+          className="flex justify-between items-center"
+          onClick={() => navigate("add")}
+        >
+          <p className="export">Tambah Inovasi</p>
         </div>
 
         <Card />
@@ -69,4 +72,4 @@ const MIIP = () => {
   );
 };
 
-export default MIIP;
+export default Reimplementation;

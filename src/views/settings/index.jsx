@@ -12,6 +12,8 @@ import SessionPenjurian from './session-penjurian/SessionPenjurian';
 import QuotaPenjurian from './session-penjurian/QuotaPenjurian';
 import JumlahMakalah from './session-penjurian/JumlahMakalah';
 import { GlobalContext } from '../../store/global/Provider';
+import JuriGroup from './group-juri/JuriGroup';
+import MakalahGroup from './group-juri/MakalahGroup';
 
 
 
@@ -26,7 +28,7 @@ export default class index extends Component {
         }
     }
 
-    static contextType = GlobalContext
+    // static contextType = GlobalContext
 
 
 render() {
@@ -85,28 +87,11 @@ render() {
     const toggleSideMenu = (i, e) => {
         this.setState(
             {
-                toggleSideMenu: i
+                toggleSideMenu: i, toggleTab: 0
             }
         )
     }
 
-
-    // const Profile =  () => {
-    //     let { page } = useParams()
-    //     const navigate = useNavigate()
-    //     return (
-    //         <GlobalContext.Consumer>
-    //             {context => (
-    //                 <Child
-    //                     context={context}
-    //                     page={page}
-    //                     navigate={navigate}
-    //                 />
-    //             )}
-    //         </GlobalContext.Consumer>
-    //     )
-    // }
-    console.log(this.context.kamu);
 
     return (
         <div>
@@ -130,7 +115,7 @@ render() {
                                 Home
                             </Link>
                             <Link underline="hover" color="inherit" href="/makalah" className='font-bold'>
-                                Pilih Makalah
+                                Penjurian
                             </Link>
                             <Link
                                 underline="hover"
@@ -151,7 +136,7 @@ render() {
                 <div className="md:hidden">
                     <FormSelect name="setting_type" placeholder="Setting Type" formheader="true" data={listType} />
                 </div>
-                <div className="scroll-menu mt-5 md:justify-center flex snap-x scroll-pl-6 gap-4 overflow-x-auto">
+                <div className="flex gap-4 mt-5 overflow-x-auto scroll-menu md:justify-center snap-x scroll-pl-6">
                     {tabItem.map((v, i) =>
                         <button type='button' onClick={(e) => toggleTabButton(i)} className={`snap-center whitespace-nowrap rounded-md bg-yellow-400 px-4 py-6 text-xl ${this.state.toggleTab === i ? 'tabs active-tab' : 'tabs'} `} data-target={"tab-content-" + v.name}>
                             {v.label}
@@ -161,7 +146,7 @@ render() {
                 </div>
 
                 <div className="md:flex md:justify-between md:gap-2">
-                    <div className='hidden md:block md:w-[15vw] mt-32 space-y-4 bg-white shadow h-fit'>
+                    <div className={`hidden md:block md:w-[15vw] space-y-4 bg-white shadow h-fit ${this.state.toggleSideMenu === 1 ? 'mt-10':'mt-32'}`}>
                         {listType.map((v, i) =>
                             <button className={this.state.toggleSideMenu === i ? 'side-menu-active' : 'side-menu'} onClick={() => toggleSideMenu(i)}>{v.label}</button>
                         )}
@@ -185,13 +170,10 @@ render() {
                                 <>
                                     {/* Group JUri */}
                                     <div className={this.state.toggleTab === 0 ? 'tab-content tab-content-active' : 'tab-content'}>
-                                        <SessionPenjurian />
+                                        <MakalahGroup />
                                     </div>
                                     <div className={this.state.toggleTab === 1 ? 'tab-content tab-content-active' : 'tab-content'}>
-                                        <QuotaPenjurian />
-                                    </div>
-                                    <div className={this.state.toggleTab === 2 ? 'tab-content tab-content-active' : 'tab-content'}>
-                                        <JumlahMakalah />
+                                        <JuriGroup />
                                     </div>
                                 </>
                             )

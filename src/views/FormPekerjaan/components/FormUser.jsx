@@ -1,5 +1,6 @@
 import React from "react";
 import upload from "../../../assets/images/upload.png";
+import link from "../../../assets/images/link.png";
 
 const FormUser = () => {
   const [value, setValue] = React.useState({
@@ -62,18 +63,20 @@ const FormUser = () => {
         </small>
       </div>
       <div className="space-y-2 flex-[0_1_100%] mb-4">
-        <label htmlFor="nama" className="font-bold">
-          Nama
+        <label htmlFor="link" className="font-bold">
+          Link
         </label>
-        <div className="form-user-field">
+        <div className="form-user-field flex space-x-4">
+          <img src={link} alt="link" />
           <input
             type="text"
             className="form-user-input w-full"
-            name="nama"
-            id="nama"
-            value={value.nama}
+            name="link"
+            id="link"
+            value={value.link}
             // defaultValue={password}
-            // onChange={this.OnChangeInput}
+            placeholder="Link"
+            onChange={(e) => setValue({ ...value, link: e.target.value })}
           />
           {/* {formIsDirty && !passwordIsValid && (
           <small className="text-red-500 italic">This field is required</small>
