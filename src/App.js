@@ -152,7 +152,7 @@ export default function AppFunc() {
               path="/champion/create"
               element={
                 <PrivateRoute>
-                  <Champion />
+                  <FormCreateInovasiChampion />
                 </PrivateRoute>
               }
             />
