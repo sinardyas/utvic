@@ -135,6 +135,11 @@ export default function AppFunc() {
               }
             />
 
+            <Route
+              exact
+              path="/detail-penilaian/:id"
+              element={<DetailPenilaianPejuang />}
+            />
             <Route exact path="/form-pekerjaan" element={<FormPekerjaan />} />
             <Route exact path="/makalahku" element={<MIIP />} />
             <Route exact path="/laporan" element={<Report />} />
