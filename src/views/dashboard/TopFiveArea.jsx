@@ -1,4 +1,5 @@
 import React from 'react'
+import Graph from './components/Graph';
 
 const TopFiveArea = () => {
 
@@ -9,9 +10,9 @@ const TopFiveArea = () => {
       {
         "No": 1,
         "Area": "Jakarta",
-        "Total": 100,
+        "Total": 128,
         "Analisis": {
-          "Total": 20,
+          "Total": 38,
           "Color": "#fff000",
           "data": [
             {
@@ -27,7 +28,7 @@ const TopFiveArea = () => {
           ]
         },
         "Ide": {
-          "Total": 20,
+          "Total": 40,
           "Color": "#ffffff",
           "data": [
             {
@@ -43,7 +44,7 @@ const TopFiveArea = () => {
           ]
         },
         "Result": {
-          "Total": 20,
+          "Total": 50,
           "Color": "#f00000",
           "data": [
             {
@@ -62,9 +63,9 @@ const TopFiveArea = () => {
       {
         "No": 2,
         "Area": "Bandung",
-        "Total": 100,
+        "Total": 120,
         "Analisis": {
-          "Total": 20,
+          "Total": 46,
           "Color": "#fff000",
           "data": [
             {
@@ -80,7 +81,7 @@ const TopFiveArea = () => {
           ]
         },
         "Ide": {
-          "Total": 20,
+          "Total": 24,
           "Color": "#ffffff",
           "data": [
             {
@@ -96,7 +97,166 @@ const TopFiveArea = () => {
           ]
         },
         "Result": {
-          "Total": 20,
+          "Total": 50,
+          "Color": "#f00000",
+          "data": [
+            {
+              "Category": "Imut",
+              "SubCategory": "people & proses",
+              "total": 10
+            },
+            {
+              "Category": "Lisa",
+              "SubCategory": "Business Model",
+              "total": 10
+            }
+          ]
+        }
+      },
+      {
+        "No": 2,
+        "Area": "Sampit",
+        "Total": 112,
+        "Analisis": {
+          "Total": 79,
+          "Color": "#fff000",
+          "data": [
+            {
+              "Category": "Imut",
+              "SubCategory": "people & proses",
+              "total": 10
+            },
+            {
+              "Category": "Lisa",
+              "SubCategory": "Business Model",
+              "total": 10
+            }
+          ]
+        },
+        "Ide": {
+          "Total": 24,
+          "Color": "#ffffff",
+          "data": [
+            {
+              "Category": "Imut",
+              "SubCategory": "people & proses",
+              "total": 10
+            },
+            {
+              "Category": "Lisa",
+              "SubCategory": "Business Model",
+              "total": 10
+            }
+          ]
+        },
+        "Result": {
+          "Total": 35,
+          "Color": "#f00000",
+          "data": [
+            {
+              "Category": "Imut",
+              "SubCategory": "people & proses",
+              "total": 10
+            },
+            {
+              "Category": "Lisa",
+              "SubCategory": "Business Model",
+              "total": 10
+            }
+          ]
+        }
+      },
+      {
+        "No": 2,
+        "Area": "Medan",
+        "Total": 108,
+        "Analisis": {
+          "Total": 8,
+          "Color": "#fff000",
+          "data": [
+            {
+              "Category": "Imut",
+              "SubCategory": "people & proses",
+              "total": 10
+            },
+            {
+              "Category": "Lisa",
+              "SubCategory": "Business Model",
+              "total": 10
+            }
+          ]
+        },
+        "Ide": {
+          "Total": 65,
+          "Color": "#ffffff",
+          "data": [
+            {
+              "Category": "Imut",
+              "SubCategory": "people & proses",
+              "total": 10
+            },
+            {
+              "Category": "Lisa",
+              "SubCategory": "Business Model",
+              "total": 10
+            }
+          ]
+        },
+        "Result": {
+          "Total": 35,
+          "Color": "#f00000",
+          "data": [
+            {
+              "Category": "Imut",
+              "SubCategory": "people & proses",
+              "total": 10
+            },
+            {
+              "Category": "Lisa",
+              "SubCategory": "Business Model",
+              "total": 10
+            }
+          ]
+        }
+      },
+      {
+        "No": 2,
+        "Area": "Tegal",
+        "Total": 87,
+        "Analisis": {
+          "Total": 48,
+          "Color": "#fff000",
+          "data": [
+            {
+              "Category": "Imut",
+              "SubCategory": "people & proses",
+              "total": 10
+            },
+            {
+              "Category": "Lisa",
+              "SubCategory": "Business Model",
+              "total": 10
+            }
+          ]
+        },
+        "Ide": {
+          "Total": 4,
+          "Color": "#ffffff",
+          "data": [
+            {
+              "Category": "Imut",
+              "SubCategory": "people & proses",
+              "total": 10
+            },
+            {
+              "Category": "Lisa",
+              "SubCategory": "Business Model",
+              "total": 10
+            }
+          ]
+        },
+        "Result": {
+          "Total": 35,
           "Color": "#f00000",
           "data": [
             {
@@ -143,41 +303,7 @@ const TopFiveArea = () => {
 
       <div className="h-5"></div>
 
-      <div className="flex items-end flex-grow w-1/2 mx-auto space-x-2 sm:space-x-3">
-        {
-          respData.Data.map((v, i) =>
-            <div className="relative flex flex-col items-center flex-grow pb-5 group">
-              <span
-                className="absolute top-0 hidden px-4 py-2 -mt-6 text-sm text-white bg-blue-400 rounded-md top-tooltip group-hover:block">
-                {v.Total} </span>
-              <div className={`relative flex items-center justify-center w-1/5 bg-green-400 rounded-tl-full rounded-tr-full top-6 md:top-8 md:w-[1rem] hover:cursor-pointer hover:border hover:border-green-500 left-tooltip ${'h-['+v.Analisis.Total*.4+'rem]'} `} data-target="tooltip-result-0">
-                <div className="absolute ml-16 left-tooltip-green tooltip-result-0 ">
-                  <span
-                    className="w-6 h-6 p-1 text-xs text-center text-white align-middle bg-green-400 rounded-full">{v.Result.Total}</span>
-                </div>
-              </div>
-              <div className={`relative flex items-center justify-center w-1/4 md:w-[1rem] bg-yellow-400 rounded-tl-full rounded-tr-full top-3 md:top-4 hover:cursor-pointer hover:border hover:border-yellow-500 left-tooltip ${'h-[' + v.Ide.Total * .4 + 'rem]'} `} data-target="tooltip-ide-0">
-                <div className="absolute ml-16 left-tooltip-yellow tooltip-ide-0 ">
-                  <span
-                    className="w-6 h-6 p-1 text-xs text-center text-white align-middle bg-yellow-400 rounded-full">{v.Ide.Total}</span>
-                </div>
-              </div>
-              <div
-                class={`relative flex w-1/4 md:w-[1rem] justify-center items-center rounded-tl-full
-                        rounded-tr-full bg-red-400 hover:cursor-pointer hover:border
-                        hover:border-yellow-500 left-tooltip ${'h-['+v.Analisis.Total*.3+'rem]'} `} data-target="tooltip-analis-0">
-                <div className="absolute ml-16 left-tooltip-red tooltip-analis-0 ">
-                  <span
-                    className="w-6 h-6 p-1 text-xs text-center text-white align-middle bg-red-400 rounded-full">{v.Analisis.Total}</span>
-                </div>
-              </div>
-              <span className="absolute bottom-0 text-sm font-bold">{v.Area}</span>
-            </div>
-
-          )
-        }
-
-      </div>
+      <Graph data={respData.Data} />
     </div>
   )
 }
