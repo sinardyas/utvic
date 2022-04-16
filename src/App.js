@@ -51,7 +51,8 @@ import Dasboard from "./views/dashboard/";
 import Settings from "./views/settings";
 import FormMadatory from "./views/settings/FormMandatory";
 import MonitoringProject from "./views/MonitoringProject/";
-// import AddSessionPenjurian from "./views/settings/session-penjurian/AddSessionPenjurian";
+import FormCreateInovasiChampion from "./views/champion/CreateForm";
+
 import Botb from "./views/botb";
 import AddCertificate from "./views/botb/AddCertificate";
 import AddCertificateManual from "./views/botb/AddCertificateManual";
@@ -139,6 +140,16 @@ export default function AppFunc() {
             <Route
               exact
               path="/champion"
+              element={
+                <PrivateRoute>
+                  <Champion />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/champion/create"
               element={
                 <PrivateRoute>
                   <Champion />
@@ -279,10 +290,10 @@ export default function AppFunc() {
             <Route
               path="/makalah"
               element={
-                // <PrivateRoute>
-                <Makalah />
-                // </PrivateRoute>
-              }
+                <PrivateRoute>
+                  <Makalah />
+                </PrivateRoute>
+              } 
             />
 
             <Route
@@ -303,14 +314,6 @@ export default function AppFunc() {
               }
             />
 
-            {/* <Route
-              path="setting/add-session-penjurian"
-              element={
-                <PrivateRoute>
-                  <AddSessionPenjurian />
-                </PrivateRoute>
-              }
-            /> */}
 
             <Route
               exact
