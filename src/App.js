@@ -45,6 +45,7 @@ import Makalah from "./views/makalah/";
 import Dasboard from "./views/dashboard/";
 import Settings from "./views/settings";
 import FormMadatory from "./views/settings/FormMandatory";
+import MonitoringProject from "./views/MonitoringProject/";
 
 const PrivateRoute = function ({ children, ...rest }) {
   const History = createBrowserHistory();
@@ -139,6 +140,12 @@ export default function AppFunc() {
             <Route exact path="/laporan" element={<Report />} />
             <Route exact path="/setting-submit" element={<SettingSubmit />} />
             <Route exact path="/reimplementasi" element={<ReImplementasi />} />
+            <Route
+              exact
+              path="/project-monitoring"
+              element={<MonitoringProject />}
+            />
+
             <Route
               exact
               path="/reimplementasi/add"
