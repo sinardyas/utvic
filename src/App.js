@@ -37,9 +37,6 @@ import Perjuangan from "./views/perjuangan/_index";
 import Penjurian from "./views/penjurian/Penjurian";
 import Penilaian from "./views/penilaian/Penilaian";
 
-import Prestasi from "./views/prestasi";
-import Certifikat from "./views/certificate";
-import Article from "./views/article/_index";
 import DetailPenilaianPejuang from "./views/DetailPenilaianPejuang";
 import FormPekerjaan from "./views/FormPekerjaan";
 import MIIP from "./views/MIIP/MIIP";
@@ -54,6 +51,12 @@ import Dasboard from "./views/dashboard/";
 import Settings from "./views/settings";
 import FormMadatory from "./views/settings/FormMandatory";
 import MonitoringProject from "./views/MonitoringProject/";
+// import AddSessionPenjurian from "./views/settings/session-penjurian/AddSessionPenjurian";
+import Botb from "./views/botb";
+import AddCertificate from "./views/botb/AddCertificate";
+import AddCertificateManual from "./views/botb/AddCertificateManual";
+import AddWinner from "./views/botb/AddWinner";
+import SettingSubmitPejuang from "./views/SettingSubmit/SettingSubmitPejuang";
 
 const PrivateRoute = function ({ children, ...rest }) {
   const History = createBrowserHistory();
@@ -163,6 +166,12 @@ export default function AppFunc() {
               exact
               path="/reimplementasi/add"
               element={<AddNewReimplementation />}
+            />
+
+            <Route
+              exact
+              path="/setting-submit-pejuang"
+              element={<SettingSubmitPejuang />}
             />
 
             <Route
@@ -294,6 +303,15 @@ export default function AppFunc() {
               }
             />
 
+            {/* <Route
+              path="setting/add-session-penjurian"
+              element={
+                <PrivateRoute>
+                  <AddSessionPenjurian />
+                </PrivateRoute>
+              }
+            /> */}
+
             <Route
               exact
               path="/penjurianlokal"
@@ -396,6 +414,76 @@ export default function AppFunc() {
                 </PrivateRoute>
               }
             />
+
+            <Route
+              exact
+              path="/penjurian"
+              element={
+                <PrivateRoute>
+                  <Penjurian />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/penilaian"
+              element={
+                <PrivateRoute>
+                  <Penilaian />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/botb-main"
+              element={
+                <PrivateRoute>
+                  <Botb />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/botb/add-certificate/:innovationId"
+              element={
+                <PrivateRoute>
+                  <AddCertificate />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/botb/add-certificate-manual"
+              element={
+                <PrivateRoute>
+                  <AddCertificateManual />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/botb/add-winner"
+              element={
+                <PrivateRoute>
+                  <AddWinner />
+                </PrivateRoute>
+              }
+            />
+
+            {/* <Route
+              exact
+              path="/setting-submit"
+              element={
+                <PrivateRoute>
+                  <SettingSubmitPejuang />
+                </PrivateRoute>
+              }
+            /> */}
 
             <Route
               path="*"

@@ -1,15 +1,15 @@
-window.localhost
-  = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
-  ? 'http://localhost:9000/'
-  : 'http://utcms.dipstrategy.com/'
+window.localhost =
+  location.hostname === "localhost" || location.hostname === "127.0.0.1"
+    ? "http://localhost:9000/"
+    : "http://utcms.dipstrategy.com/";
 
 // window.localhost = `http://mandomcms.dipstrategy.com/`
-window.baseUrl = `${localhost}api/`
+window.baseUrl = `${localhost}api/`;
 
-var ext
-  = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
-  ? '.php'
-  : ''
+var ext =
+  location.hostname === "localhost" || location.hostname === "127.0.0.1"
+    ? ".php"
+    : "";
 
 window.processEnv = {
   api: {
@@ -36,5 +36,18 @@ window.processEnv = {
     permissionDocument: `${baseUrl}permission-document` + ext,
     deleteDocument: `${baseUrl}delete-document` + ext,
     getDocument: `${baseUrl}get-document` + ext,
-  }
-}
+
+    getListDocking: `${baseUrl}get-list-docking` + ext,
+    getDetailListDocking: `${baseUrl}detail-list-docking` + ext,
+    getHasilPenilaian: `${baseUrl}get-hasil-penilaian` + ext,
+    getFeedbackPenjurian: `${baseUrl}get-feedback-penjurian` + ext,
+    feedbackPenjurian: `${baseUrl}feedback-penjurian` + ext,
+    getInovasiPenjurian: `${baseUrl}get-inovasi-penjurian` + ext,
+    getUtvic: `${baseUrl}get-utvic` + ext,
+    getSiteByPejuang: `${baseUrl}get-site-by-pejuang` + ext,
+    getCabangByPejuang: `${baseUrl}get-cabang-by-pejuang` + ext,
+    getHoByPejuang: `${baseUrl}get-ho-by-pejuang` + ext,
+    addCertificate: `${baseUrl}add-certificate` + ext,
+    addWinner: `${baseUrl}add-winner` + ext,
+  },
+};

@@ -1,28 +1,25 @@
-import React, { useContext, useEffect, useState } from 'react'
-import Header from '../../../../components/Header'
-import DrawerNav from '../../../../components/menu/DrawerNav'
-import TextInput from '../../../../components/TextInput'
-import PageHeader from '../_shared/PageHeader'
-import SelectInput, { transformToOptions } from '../../_shared/SelectInput'
-import FileInput from '../../../../components/FileInput'
-import Button from '../../../../components/Button'
-import { GlobalContext } from '../../../../store/global/Provider'
-import PageSpinner from '../../../../components/Spinner-1'
-import BreadcrumbsSection
-  from '../../../../components/BreadcrumbsSection/BreadcrumbsSection'
-import useInputForm from '../../_helpers/useInputForm'
+import React, { useContext, useEffect, useState } from "react";
+import Header from "../../../../components/Header";
+import DrawerNav from "../../../../components/menu/DrawerNav";
+import TextInput from "../../../../components/TextInput";
+import PageHeader from "../_shared/PageHeader";
+import SelectInput, { transformToOptions } from "../../_shared/SelectInput";
+import FileInput from "../../../../components/FileInput";
+import Button from "../../../../components/Button";
+import { GlobalContext } from "../../../../store/global/Provider";
+import PageSpinner from "../../../../components/Spinner-1";
+import BreadcrumbsSection from "../../../../components/BreadcrumbsSection/BreadcrumbsSection";
+import useInputForm from "../../_helpers/useInputForm";
 
-function Form () {
-  const globalContext = useContext(GlobalContext)
-  const [responses, setResponses] = useState([])
-  const [formValues, , handleChange] = useInputForm({})
-  const [isLoading, setIsLoading] = useState(true)
+function Form() {
+  const globalContext = useContext(GlobalContext);
+  const [responses, setResponses] = useState([]);
+  const [formValues, _, handleChange] = useInputForm({});
+  const [isLoading, setIsLoading] = useState(true);
 
   const {
-    api: {
-      createInnovation: createInnovationApi,
-    },
-  } = window.processEnv
+    api: { createInnovation: createInnovationApi },
+  } = window.processEnv;
 
   useEffect(() => {
     const {
@@ -38,56 +35,55 @@ function Form () {
         masterTipeProyek: masterTipeProyekApi,
         masterTipeInovasi: masterTipeInovasiApi,
       },
-    } = window.processEnv
-    const { FetchGet } = globalContext
+    } = window.processEnv;
+    const { FetchGet } = globalContext;
 
     Promise.all([
       FetchGet({
         url: masterAreaApi,
-        errorText: 'Error while fetch Master Area',
+        errorText: "Error while fetch Master Area",
       }),
       FetchGet({
         url: masterReferensiApi,
-        errorText: 'Error while fetch Master Referensi',
+        errorText: "Error while fetch Master Referensi",
       }),
       FetchGet({
         url: masterTemaInovasiApi,
-        errorText: 'Error while fetch Master Tema Inovasi',
+        errorText: "Error while fetch Master Tema Inovasi",
       }),
       FetchGet({
         url: masterMetodologiProyekApi,
-        errorText: 'Error while fetch Master Metodologi Proyek',
+        errorText: "Error while fetch Master Metodologi Proyek",
       }),
       FetchGet({
         url: masterSubkategoriInovasiApi,
-        errorText: 'Error while fetch Master Subkategori Inovasi',
+        errorText: "Error while fetch Master Subkategori Inovasi",
       }),
       FetchGet({
         url: masterFasilitatorApi,
-        errorText: 'Error while fetch Master Fasilitator',
+        errorText: "Error while fetch Master Fasilitator",
       }),
       FetchGet({
         url: masterUserApi,
-        errorText: 'Error while fetch Master User',
+        errorText: "Error while fetch Master User",
       }),
       FetchGet({
         url: masterKategoriInovasiApi,
-        errorText: 'Error while fetch Master Kategori Inovasi',
+        errorText: "Error while fetch Master Kategori Inovasi",
       }),
       FetchGet({
         url: masterTipeProyekApi,
-        errorText: 'Error while fetch Master Tipe Proyek',
+        errorText: "Error while fetch Master Tipe Proyek",
       }),
       FetchGet({
         url: masterTipeInovasiApi,
-        errorText: 'Error while fetch Master Tipe Inovasi',
+        errorText: "Error while fetch Master Tipe Inovasi",
       }),
-    ])
-      .then(responses => {
-        setResponses(responses)
-        setIsLoading(false)
-      })
-  }, [globalContext])
+    ]).then((responses) => {
+      setResponses(responses);
+      setIsLoading(false);
+    });
+  }, [globalContext]);
 
   const [
     masterAreaRes,
@@ -100,254 +96,271 @@ function Form () {
     masterKategoriInovasiRes,
     masterTipeProyekRes,
     masterTipeInovasiRes,
-  ] = responses
+  ] = responses;
 
   if (isLoading) {
-    return <PageSpinner/>
+    return <PageSpinner />;
   }
 
   return (
     <section>
-      <div className={'container md:border md:shadow mb-8'}>
+      <div className={"container md:border md:shadow mb-8"}>
         <form
-          className={'flex flex-col space-y-8 my-7'}
+          className={"flex flex-col space-y-8 my-7"}
           onSubmit={(e) => {
-            e.preventDefault()
+            e.preventDefault();
 
-            function validate (formValues, labelIds) {
+            function validate(formValues, labelIds) {
               for (let i = 0; i < labelIds.length; i++) {
-                const label = labelIds[i]
+                const label = labelIds[i];
                 if (!formValues[label]) {
-                  const labelText = document.querySelector(
-                    `label[for="${label}"]`)
-                    .textContent
-                    .replace(/\*$/, '')
-                    .replace(/^pilih/i, '')
-                  alert(`Pilih ${labelText} terlebih dahulu`)
-                  return false
+                  const labelText = document
+                    .querySelector(`label[for="${label}"]`)
+                    .textContent.replace(/\*$/, "")
+                    .replace(/^pilih/i, "");
+                  alert(`Pilih ${labelText} terlebih dahulu`);
+                  return false;
                 }
               }
-              return true
+              return true;
             }
 
-            if (!validate(formValues,
-              ['tipe-proyek', 'tipe-inovasi', 'member'])) {
-              return
+            if (
+              !validate(formValues, ["tipe-proyek", "tipe-inovasi", "member"])
+            ) {
+              return;
             }
 
-            alert(JSON.stringify(formValues))
+            alert(JSON.stringify(formValues));
           }}
         >
           <div
-            className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-8'}>
+            className={
+              "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-8"
+            }
+          >
             <TextInput
-              labelText={'Judul'}
-              labelId={'judul'}
-              placeholder={'Masukkan Judul'}
+              labelText={"Judul"}
+              labelId={"judul"}
+              placeholder={"Masukkan Judul"}
               required
               onChange={handleChange}
             />
 
             <TextInput
-              labelText={'Unit'}
-              labelId={'unit'}
-              placeholder={'Masukkan Unit'}
+              labelText={"Unit"}
+              labelId={"unit"}
+              placeholder={"Masukkan Unit"}
               onChange={handleChange}
             />
 
             <SelectInput
-              labelText={'Area'}
-              labelId={'area'}
-              placeholder={'Pilih Area'}
+              labelText={"Area"}
+              labelId={"area"}
+              placeholder={"Pilih Area"}
               onChange={handleChange}
             >
-              {transformToOptions(masterAreaRes, 'Id', 'Name')}
+              {transformToOptions(masterAreaRes, "Id", "Name")}
             </SelectInput>
 
             <SelectInput
-              labelText={'Area Hybrid'}
-              labelId={'area-hybrid'}
-              placeholder={'Pilih Area'}
+              labelText={"Area Hybrid"}
+              labelId={"area-hybrid"}
+              placeholder={"Pilih Area"}
               onChange={handleChange}
             >
-              {transformToOptions(masterAreaRes, 'Id', 'Name')}
+              {transformToOptions(masterAreaRes, "Id", "Name")}
             </SelectInput>
 
             <SelectInput
-              labelText={'Pilih Tipe Proyek'}
-              labelId={'tipe-proyek'}
-              placeholder={'Pilih Tipe Proyek'}
+              labelText={"Pilih Tipe Proyek"}
+              labelId={"tipe-proyek"}
+              placeholder={"Pilih Tipe Proyek"}
               onChange={handleChange}
               required
             >
-              {transformToOptions(masterTipeProyekRes, 'Id',
-                'ProjectTypeName')}
+              {transformToOptions(masterTipeProyekRes, "Id", "ProjectTypeName")}
             </SelectInput>
 
             <SelectInput
-              labelText={'Pilih Kategori Inovasi'}
-              labelId={'kategori-inovasi'}
-              placeholder={'Pilih Kategori Inovasi'}
+              labelText={"Pilih Kategori Inovasi"}
+              labelId={"kategori-inovasi"}
+              placeholder={"Pilih Kategori Inovasi"}
               onChange={handleChange}
             >
-              {transformToOptions(masterKategoriInovasiRes, 'Id',
-                'CategoryName')}
+              {transformToOptions(
+                masterKategoriInovasiRes,
+                "Id",
+                "CategoryName"
+              )}
             </SelectInput>
 
             <SelectInput
-              labelText={'Pilih Sub Kategori'}
-              labelId={'sub-kategori'}
-              placeholder={'Pilih Sub Kategori'}
+              labelText={"Pilih Sub Kategori"}
+              labelId={"sub-kategori"}
+              placeholder={"Pilih Sub Kategori"}
               onChange={handleChange}
             >
-              {transformToOptions(masterSubkategoriInovasiRes, 'Id',
-                'CategoryName')}
+              {transformToOptions(
+                masterSubkategoriInovasiRes,
+                "Id",
+                "CategoryName"
+              )}
             </SelectInput>
 
             <SelectInput
-              labelText={'Pilih Tema Inovasi'}
-              labelId={'tema-inovasi'}
-              placeholder={'Pilih Tema Inovasi'}
+              labelText={"Pilih Tema Inovasi"}
+              labelId={"tema-inovasi"}
+              placeholder={"Pilih Tema Inovasi"}
               onChange={handleChange}
             >
-              {transformToOptions(masterTemaInovasiRes, 'Id',
-                'InovationThemeName')}
+              {transformToOptions(
+                masterTemaInovasiRes,
+                "Id",
+                "InovationThemeName"
+              )}
             </SelectInput>
 
             <SelectInput
-              labelText={'Pilih Tipe Inovasi'}
-              labelId={'tipe-inovasi'}
-              placeholder={'Pilih Tipe'}
+              labelText={"Pilih Tipe Inovasi"}
+              labelId={"tipe-inovasi"}
+              placeholder={"Pilih Tipe"}
               onChange={handleChange}
               required
             >
-              {transformToOptions(masterTipeInovasiRes, 'Id',
-                'InovationTypeName')}
+              {transformToOptions(
+                masterTipeInovasiRes,
+                "Id",
+                "InovationTypeName"
+              )}
             </SelectInput>
 
             <SelectInput
-              labelText={'Pilih Referensi'}
-              labelId={'referensi'}
-              placeholder={'Pilih Referensi'}
+              labelText={"Pilih Referensi"}
+              labelId={"referensi"}
+              placeholder={"Pilih Referensi"}
               onChange={handleChange}
             >
-              {transformToOptions(masterReferensiRes, 'Id', 'Judul')}
+              {transformToOptions(masterReferensiRes, "Id", "Judul")}
             </SelectInput>
 
             <TextInput
-              containerClassName={'md:row-span-2 md:col-span-2'}
+              containerClassName={"md:row-span-2 md:col-span-2"}
               componentsProps={{
                 input: {
-                  className: 'h-[170px]',
+                  className: "h-[170px]",
                 },
               }}
-              labelText={'Deskripsi'}
-              labelId={'deskripsi'}
-              placeholder={'Tulis Deksripsi'}
+              labelText={"Deskripsi"}
+              labelId={"deskripsi"}
+              placeholder={"Tulis Deksripsi"}
               multiline
               onChange={handleChange}
             />
 
             <SelectInput
-              labelText={'Pilih Metodologi Proyek'}
-              labelId={'metodologi-proyek'}
-              placeholder={'Pilih Metodologi'}
+              labelText={"Pilih Metodologi Proyek"}
+              labelId={"metodologi-proyek"}
+              placeholder={"Pilih Metodologi"}
               onChange={handleChange}
             >
-              {transformToOptions(masterMetodologiProyekRes, 'Id',
-                'MetodologiProjectName')}
+              {transformToOptions(
+                masterMetodologiProyekRes,
+                "Id",
+                "MetodologiProjectName"
+              )}
             </SelectInput>
 
             <SelectInput
-              labelText={'Pilih Fasilitator'}
-              labelId={'fasilitator'}
-              placeholder={'Pilih Fasilitator'}
+              labelText={"Pilih Fasilitator"}
+              labelId={"fasilitator"}
+              placeholder={"Pilih Fasilitator"}
               onChange={handleChange}
             >
-              {transformToOptions(masterFasilitatorRes, 'Id',
-                'FasilitatorName')}
+              {transformToOptions(
+                masterFasilitatorRes,
+                "Id",
+                "FasilitatorName"
+              )}
             </SelectInput>
-
           </div>
 
-          <div className={'h-[1px] w-full bg-gray-300'}/>
+          <div className={"h-[1px] w-full bg-gray-300"} />
 
           <div
-            className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-8'}>
+            className={
+              "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-8"
+            }
+          >
             <TextInput
-              labelText={'Nama Tim'}
-              labelId={'nama-tim'}
-              placeholder={'Nama Tim'}
+              labelText={"Nama Tim"}
+              labelId={"nama-tim"}
+              placeholder={"Nama Tim"}
               onChange={handleChange}
             />
 
             <TextInput
-              labelText={'Leader'}
-              labelId={'leader'}
-              placeholder={'Leader'}
+              labelText={"Leader"}
+              labelId={"leader"}
+              placeholder={"Leader"}
               required
               onChange={handleChange}
             />
 
             <SelectInput
-              labelText={'Member'}
-              labelId={'member'}
-              placeholder={'Pilih Member'}
+              labelText={"Member"}
+              labelId={"member"}
+              placeholder={"Pilih Member"}
               required
               onChange={handleChange}
             >
-              {transformToOptions(masterUserRes, 'UserId', 'UserName')}
+              {transformToOptions(masterUserRes, "UserId", "UserName")}
             </SelectInput>
 
             <FileInput
-              labelText={'Upload Foto'}
-              labelId={'upload-foto'}
-              placeholder={'Upload Image'}
+              labelText={"Upload Foto"}
+              labelId={"upload-foto"}
+              placeholder={"Upload Image"}
               accept="image/png, image/jpeg"
-              extensions={['jpeg', 'png']}
+              extensions={["jpeg", "png"]}
               onChange={handleChange}
             />
           </div>
 
           <div>
-            <Button type={'submit'}>
-              Save a Draft
-            </Button>
+            <Button type={"submit"}>Save a Draft</Button>
           </div>
-
         </form>
-
       </div>
     </section>
-  )
+  );
 }
 
-function InnovationProfile () {
+function InnovationProfile() {
   return (
     <React.Fragment>
       <React.Fragment>
-        <Header/>
-        <DrawerNav/>
+        <Header />
+        <DrawerNav />
       </React.Fragment>
 
       <BreadcrumbsSection
         items={[
           {
-            title: 'Home',
-            href: '/'
+            title: "Home",
+            href: "/",
           },
           {
-            title: 'Submit Innovation',
+            title: "Submit Innovation",
           },
         ]}
       />
 
-      <PageHeader/>
+      <PageHeader />
 
-      <Form/>
-
+      <Form />
     </React.Fragment>
-  )
+  );
 }
 
-export default InnovationProfile
+export default InnovationProfile;

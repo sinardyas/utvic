@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import Header from "../../components/Header";
+import PageSpinner from "../../components/Spinner-1";
+
+import BreadcrumbsSection from "../../components/BreadcrumbsSection/BreadcrumbsSection";
 
 import { ReactComponent as ItalicIcon } from "../../assets/images/italic_icon.svg";
+
+import { GlobalContext } from "../../store/global/Provider";
 
 const TabMenu = ({ menuList, menuActive, onTabClick }) => {
   const baseClass = "p-4 font-semibold cursor-pointer";
@@ -118,6 +123,10 @@ const TotalScore = () => {
 };
 
 const Penilaian = () => {
+  const globalContext = useContext(GlobalContext);
+  const [responses, setResponses] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   const [currentActiveTab, setActiveTab] = useState("Penilaian");
   const [currentActiveMenu, setActiveMenu] = useState(2);
   const [isDetailActive, setDetailActive] = useState(false);
@@ -132,6 +141,33 @@ const Penilaian = () => {
   const handleOpenChangeRankBulk = () => setOpenChangeRankBulk(true);
   const handleCloseChangeRankBulk = () => setOpenChangeRankBulk(false);
 
+  const {
+    api: { createInnovation: createInnovationApi },
+  } = window.processEnv;
+
+  useEffect(() => {
+    const {
+      api: { masterKategoriInovasi: masterKategoriInovasiApi },
+    } = window.processEnv;
+    const { FetchGet } = globalContext;
+
+    Promise.all([
+      FetchGet({
+        url: masterKategoriInovasiApi,
+        errorText: "Error while fetch Master Kategori Inovasi",
+      }),
+    ]).then((responses) => {
+      setResponses(responses);
+      setIsLoading(false);
+    });
+  }, [globalContext]);
+
+  const [masterKategoriInovasiRes] = responses;
+
+  // if (isLoading) {
+  //   return <PageSpinner />;
+  // }
+
   const onTabClick = (menuSelected) => {
     setActiveTab(menuSelected);
   };
@@ -139,7 +175,24 @@ const Penilaian = () => {
   return (
     <div className="flex flex-col w-full items-center">
       <Header />
-      <div className="h-[100px]"></div>
+      <div className="hidden md:flex w-full bg-slate-200 px-52">
+        <BreadcrumbsSection
+          items={[
+            {
+              title: "Home",
+              href: "/",
+            },
+            {
+              title: "Penjurian",
+              href: "/penjurian",
+            },
+            {
+              title: currentActiveTab,
+            },
+          ]}
+        />
+      </div>
+      <div className="h-[50px]"></div>
 
       <TabMenu
         menuList={["Profil Inovasi", "Analisis", "Ide", "Result", "Penilaian"]}
@@ -157,44 +210,46 @@ const Penilaian = () => {
           />
         </div>
         <div className="flex flex-col w-full md:w-9/12 p-2 gap-2">
-          <div className="flex flex-col gap-4 border-[1px] border-[#ccc] w-full p-4 rounded-lg">
-            <div className="flex justify-between">
-              <div className="flex flex-col gap-2">
-                <p className="font-semibold text-xl">LISA</p>
-                <p className="text-lg">People & Culture</p>
-                <div className="flex gap-2 items-center">
-                  <span className="p-2 gap-4 text-[#D58D49] bg-[#D58D49]/[.20] rounded-lg max-w-[80px]">
-                    110000
-                  </span>
-                  <p className="text-gray-400">
-                    Inovasi Pembersihan Unit | Jakarta
+          {currentActiveTab === "Penilaian" && (
+            <div className="flex flex-col gap-4 border-[1px] border-[#ccc] w-full p-4 rounded-lg">
+              <div className="flex justify-between">
+                <div className="flex flex-col gap-2">
+                  <p className="font-semibold text-xl">LISA</p>
+                  <p className="text-lg">People & Culture</p>
+                  <div className="flex gap-2 items-center">
+                    <span className="p-2 gap-4 text-[#D58D49] bg-[#D58D49]/[.20] rounded-lg max-w-[80px]">
+                      110000
+                    </span>
+                    <p className="text-gray-400">
+                      Inovasi Pembersihan Unit | Jakarta
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2 justify-between items-end">
+                  <p>&nbsp;</p>
+                  <p className="font-semibold text-2xl">Ibnu Prasetyo</p>
+                  <p className="text-md text-gray-400">
+                    *nilai berupa raneg 1-5 dan dapat berupa Decimal
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col gap-2 justify-between items-end">
-                <p>&nbsp;</p>
-                <p className="font-semibold text-2xl">Ibnu Prasetyo</p>
-                <p className="text-md text-gray-400">
-                  *nilai berupa raneg 1-5 dan dapat berupa Decimal
-                </p>
+              <hr />
+              {currentActiveMenu === 2 && <ListInnovationDescription />}
+              {currentActiveMenu === 4 && <ListInnovationInput />}
+              <TotalScore />
+              <div className="flex mt-3 gap-3">
+                <button
+                  className="px-4 py-3 bg-red-500 text-white rounded-lg"
+                  onClick={handleClose}
+                >
+                  Cancel
+                </button>
+                <button className="px-4 py-3 bg-[#FFCD00] text-black rounded-lg">
+                  Save
+                </button>
               </div>
             </div>
-            <hr />
-            {currentActiveMenu === 2 && <ListInnovationDescription />}
-            {currentActiveMenu === 4 && <ListInnovationInput />}
-            <TotalScore />
-            <div className="flex mt-3 gap-3">
-              <button
-                className="px-4 py-3 bg-red-500 text-white rounded-lg"
-                onClick={handleClose}
-              >
-                Cancel
-              </button>
-              <button className="px-4 py-3 bg-[#FFCD00] text-black rounded-lg">
-                Save
-              </button>
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

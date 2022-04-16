@@ -1,258 +1,239 @@
-Link{
-    font-family: 'Source Sans Pro', sans-serif;
+Link {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+
+  color: red;
+}
+h2 {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.innovate-text {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.btn-yellow {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  /* identical to box height, or 133% */
+
+  color: #000000;
+}
+.img-article {
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.list-articel {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 10px;
+  .artikel-title {
+    font-family: "SF Pro Display";
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 20px;
+    line-height: 24px;
     /* identical to box height */
 
-
-
-    color: red;
-}
-h2{
-    font-family: 'SF Pro Display';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
-    /* identical to box height */
-
-
+    text-align: center;
 
     color: #000000;
+  }
 }
 
-.innovate-text{
-    font-family: 'Source Sans Pro', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 29px;
-    /* identical to box height */
-
-
-    color: #000000;
+.list-feature {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
+.text-event-all {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
 
-.btn-yellow{
-    font-family: 'Source Sans Pro', sans-serif;
-font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 24px;
-/* identical to box height, or 133% */
-
-
-color: #000000;
-}
-.img-article{
-    -webkit-border-top-left-radius: 10px;
--webkit-border-top-right-radius: 10px;
--moz-border-radius-topleft: 10px;
--moz-border-radius-topright: 10px;
-border-top-left-radius: 10px;
-border-top-right-radius: 10px;
+  color: #ffcd00;
 }
 
-.list-articel{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    row-gap: 10px;
-    .artikel-title{
-        font-family: 'SF Pro Display';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 24px;
-/* identical to box height */
+.lihat-semua {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
 
-text-align: center;
-
-color: #000000;
-    }
+  color: #000000;
 }
 
-.list-feature{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+.innovate-text {
+  padding-right: 20px;
+}
+.text-title {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20.1447px;
+  line-height: 24px;
+
+  color: #000000;
 }
 
+.text-description {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17.2668px;
+  line-height: 21px;
 
-
-.text-event-all{
-    font-family: 'SF Pro Display';
-font-style: normal;
-font-weight: 700;
-font-size: 24px;
-line-height: 29px;
-/* identical to box height */
-
-
-color: #FFCD00;
+  color: #000000;
 }
 
-.lihat-semua{
-    font-family: 'SF Pro Display';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 29px;
-/* identical to box height */
+.text-menu-mobile {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
 
-
-color: #000000;
+  color: #000000;
 }
 
-.innovate-text{
-    padding-right: 20px;
-}
-.text-title{
-    font-family: 'SF Pro Display';
-font-style: normal;
-font-weight: 500;
-font-size: 20.1447px;
-line-height: 24px;
-
-color: #000000
-}
-
-.text-description{
-    font-family: 'SF Pro Display';
-font-style: normal;
-font-weight: 400;
-font-size: 17.2668px;
-line-height: 21px;
-
-color: #000000;
-}
-
-.text-menu-mobile{
-    font-family: 'SF Pro Display';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 14px;
-text-align: center;
-
-color: #000000;
-}
-
-.banner{
-    padding-top: 100px;
+.banner {
+  padding-top: 100px;
 }
 
 @media (max-width: 992px) {
-    h2{
-        font-family: 'Source Sans Pro', sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 17px;
-        line-height: 17px;
-        /* identical to box height */
+  h2 {
+    font-family: "Source Sans Pro", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 17px;
+    /* identical to box height */
 
+    color: #000000;
+  }
 
-        color: #000000;
+  .text-event-all {
+    font-family: "SF Pro Display";
+    font-style: italic;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 17px;
+    /* identical to box height */
+
+    color: #0e67ab;
+  }
+  .lihat-semua {
+    font-family: "SF Pro Display";
+    font-style: italic;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 17px;
+    /* identical to box height */
+
+    color: #0e67ab;
+  }
+
+  .btn-yellow {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 21px;
+    /* identical to box height, or 150% */
+
+    color: #000000;
+  }
+
+  .innovate-text {
+    padding-right: 5px;
+  }
+
+  .text-title {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 17px;
+    /* identical to box height */
+
+    color: #000000;
+  }
+
+  .text-description {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 14px;
+
+    color: #000000;
+  }
+
+  .text-like {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    /* identical to box height */
+
+    color: #000000;
+  }
+
+  .img-like {
+    width: 20px;
+    height: 18px;
+  }
+  .img-comment {
+    width: 18px;
+    height: 18px;
+  }
+  .list-articel {
+    .artikel-title {
+      font-family: "SF Pro Display";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 14px;
+      text-align: center;
+
+      color: #000000;
     }
-
-    .text-event-all{
-        font-family: 'SF Pro Display';
-        font-style: italic;
-        font-weight: 600;
-        font-size: 17px;
-        line-height: 17px;
-        /* identical to box height */
-
-
-        color: #0E67AB;
-    }
-    .lihat-semua{
-        font-family: 'SF Pro Display';
-        font-style: italic;
-        font-weight: 600;
-        font-size: 17px;
-        line-height: 17px;
-        /* identical to box height */
-
-
-        color: #0E67AB;
-    }
-
-    .btn-yellow{
-        font-family: 'SF Pro Display';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 17px;
-        line-height: 21px;
-        /* identical to box height, or 150% */
-
-
-        color: #000000
-    }
-
-    .innovate-text{
-        padding-right: 5px;
-    }
-
-    .text-title{
-        font-family: 'SF Pro Display';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 17px;
-        line-height: 17px;
-        /* identical to box height */
-
-
-        color: #000000;
-    }
-
-    .text-description{
-        font-family: 'SF Pro Display';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 17px;
-        line-height: 14px;
-
-        color: #000000;
-    }
-
-    .text-like{
-        font-family: 'Roboto';
-font-style: normal;
-font-weight: 500;
-font-size: 13px;
-line-height: 16px;
-/* identical to box height */
-
-
-color: #000000;
-    }
-
-    .img-like{
-        width: 20px;
-        height: 18px;
-
-    }
-    .img-comment{
-        width: 18px;
-        height: 18px;
-    }
-    .list-articel{
-
-        .artikel-title{
-            font-family: 'SF Pro Display';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 17px;
-            line-height: 14px;
-            text-align: center;
-
-            color: #000000
-        }
-    }
-    .text-menu-mobile{
-        font-family: 'SF Pro Display';
+  }
+  .text-menu-mobile {
+    font-family: "SF Pro Display";
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -260,144 +241,132 @@ color: #000000;
     text-align: center;
 
     color: #000000;
-    }
-    .banner{
-
-        position: relative;
-   bottom: -50px;
-     padding-top: 0px;
-    }
-    .section-body{
-        position: relative;
-        top: -50px;
-    }
-
-
+  }
+  .banner {
+    position: relative;
+    bottom: -50px;
+    padding-top: 0px;
+  }
+  .section-body {
+    position: relative;
+    top: -50px;
+  }
 }
 
-.swipper{
-    padding: 0px;
+.swipper {
+  padding: 0px;
 }
 
 @media (max-width: 768px) {
-    h2{
-        font-family: 'Source Sans Pro', sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 17px;
-        /* identical to box height */
+  h2 {
+    font-family: "Source Sans Pro", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 17px;
+    /* identical to box height */
 
+    color: #000000;
+  }
 
-        color: #000000;
+  .text-event-all {
+    font-family: "SF Pro Display";
+    font-style: italic;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 17px;
+    /* identical to box height */
+
+    color: #0e67ab;
+  }
+  .lihat-semua {
+    font-family: "SF Pro Display";
+    font-style: italic;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 17px;
+    /* identical to box height */
+
+    color: #0e67ab;
+  }
+
+  .btn-yellow {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    /* identical to box height, or 150% */
+
+    color: #000000;
+  }
+
+  .innovate-text {
+    padding-right: 5px;
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    color: #000000;
+  }
+
+  .text-title {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+    /* identical to box height */
+
+    color: #000000;
+  }
+
+  .text-description {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 14px;
+
+    color: #000000;
+  }
+
+  .text-like {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11.7565px;
+    line-height: 16px;
+    /* identical to box height */
+
+    color: #000000;
+  }
+
+  .img-like {
+    width: 18.09px;
+    height: 16.13px;
+  }
+  .img-comment {
+    width: 16.28px;
+    height: 16.28px;
+  }
+  .list-articel {
+    .artikel-title {
+      font-family: "SF Pro Display";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 14px;
+      text-align: center;
+
+      color: #000000;
     }
-
-    .text-event-all{
-        font-family: 'SF Pro Display';
-        font-style: italic;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 17px;
-        /* identical to box height */
-
-
-        color: #0E67AB;
-    }
-    .lihat-semua{
-        font-family: 'SF Pro Display';
-        font-style: italic;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 17px;
-        /* identical to box height */
-
-
-        color: #0E67AB;
-    }
-
-    .btn-yellow{
-        font-family: 'SF Pro Display';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 21px;
-        /* identical to box height, or 150% */
-
-
-        color: #000000
-    }
-
-    .innovate-text{
-        padding-right: 5px;
-        font-family: 'SF Pro Display';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 17px;
-/* identical to box height */
-
-
-color: #000000;
-    }
-
-    .text-title{
-        font-family: 'SF Pro Display';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 17px;
-        /* identical to box height */
-
-
-        color: #000000;
-    }
-
-    .text-description{
-        font-family: 'SF Pro Display';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 14px;
-
-        color: #000000;
-    }
-
-    .text-like{
-        font-family: 'Roboto';
-font-style: normal;
-font-weight: 500;
-font-size: 11.7565px;
-line-height: 16px;
-/* identical to box height */
-
-
-color: #000000;
-    }
-
-    .img-like{
-        width: 18.09px;
-        height: 16.13px;
-
-    }
-    .img-comment{
-        width: 16.28px;
-        height: 16.28px;
-    }
-    .list-articel{
-
-        .artikel-title{
-            font-family: 'SF Pro Display';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 14px;
-            text-align: center;
-
-            color: #000000
-        }
-    }
-    .text-menu-mobile{
-        font-family: 'SF Pro Display';
+  }
+  .text-menu-mobile {
+    font-family: "SF Pro Display";
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -405,120 +374,111 @@ color: #000000;
     text-align: center;
 
     color: #000000;
-    }
-
+  }
 }
 
 @media (max-width: 576px) {
-    h2{
-        font-family: 'Source Sans Pro', sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 17px;
-        /* identical to box height */
+  h2 {
+    font-family: "Source Sans Pro", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
 
+    color: #000000;
+  }
 
-        color: #000000;
+  .text-event-all {
+    font-family: "SF Pro Display";
+    font-style: italic;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    color: #0e67ab;
+  }
+  .lihat-semua {
+    font-family: "SF Pro Display";
+    font-style: italic;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    color: #0e67ab;
+  }
+
+  .btn-yellow {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height, or 150% */
+
+    color: #000000;
+  }
+
+  .innovate-text {
+    padding-right: 5px;
+  }
+
+  .text-title {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    color: #000000;
+  }
+
+  .text-description {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+
+    color: #000000;
+  }
+
+  .text-like {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11.7565px;
+    line-height: 14px;
+    /* identical to box height */
+
+    color: #000000;
+  }
+
+  .img-like {
+    width: 18.09px;
+    height: 16.13px;
+  }
+  .img-comment {
+    width: 16.28px;
+    height: 16.28px;
+  }
+  .list-articel {
+    .artikel-title {
+      font-family: "SF Pro Display";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+
+      color: #000000;
     }
-
-    .text-event-all{
-        font-family: 'SF Pro Display';
-        font-style: italic;
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 17px;
-        /* identical to box height */
-
-
-        color: #0E67AB;
-    }
-    .lihat-semua{
-        font-family: 'SF Pro Display';
-        font-style: italic;
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 17px;
-        /* identical to box height */
-
-
-        color: #0E67AB;
-    }
-
-    .btn-yellow{
-        font-family: 'SF Pro Display';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 21px;
-        /* identical to box height, or 150% */
-
-
-        color: #000000
-    }
-
-    .innovate-text{
-        padding-right: 5px;
-    }
-
-    .text-title{
-        font-family: 'SF Pro Display';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 17px;
-        /* identical to box height */
-
-
-        color: #000000;
-    }
-
-    .text-description{
-        font-family: 'SF Pro Display';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 14px;
-
-        color: #000000;
-    }
-
-    .text-like{
-        font-family: 'Roboto';
-font-style: normal;
-font-weight: 500;
-font-size: 11.7565px;
-line-height: 14px;
-/* identical to box height */
-
-
-color: #000000;
-    }
-
-    .img-like{
-        width: 18.09px;
-        height: 16.13px;
-
-    }
-    .img-comment{
-        width: 16.28px;
-        height: 16.28px;
-    }
-    .list-articel{
-
-        .artikel-title{
-            font-family: 'SF Pro Display';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 14px;
-            text-align: center;
-
-            color: #000000
-        }
-    }
-    .text-menu-mobile{
-        font-family: 'SF Pro Display';
+  }
+  .text-menu-mobile {
+    font-family: "SF Pro Display";
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -526,10 +486,9 @@ color: #000000;
     text-align: center;
 
     color: #000000;
-    }
-
+  }
 }
 
 .Mui-focused {
-    outline: 3px solid #DAECFF;
+  // outline: 3px solid #DAECFF;
 }
