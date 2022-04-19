@@ -22,15 +22,27 @@ class GlobalProvider extends React.Component {
     });
   };
 
-  FetchGet({ url, errorText = `Error - fetch API` }) {
+  FetchGet({url, errorText = `Error - fetch API`, ...axiosRequestConfig}) {
     return new Promise((resolve, reject) => {
       api({
         method: "GET",
         url,
 
         headers: {
-          Auth: localStorage.getItem("Token"),
+          Auth: localStorage.getItem('Token')
         },
+        ...axiosRequestConfig
+      })
+      .then(response => {
+        const { Status, Message, Data } = response.data
+        console.log('Data:', !!(Status === 200 && ( Data && (Data.length || Object.keys(Data).length) )))
+
+        if ( Status === 200 && ( Data && (Data.length || Object.keys(Data).length) ) ) resolve(Data)
+        else {reject(Message)}
+      })
+      .catch((error) => {
+        console.error(error)
+        reject(errorText)
       })
         .then((response) => {
           const { Status, Message, Data } = response.data;

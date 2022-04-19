@@ -34,6 +34,10 @@ import Stars from "./views/stars/_index";
 import Champion from "./views/champion";
 import PenjuarianLokal from "./views/penjurianlokal";
 import Perjuangan from "./views/perjuangan/_index";
+import CalendarEvent from './views/event/calendar'
+import CreateEvent from './views/event/create-event'
+import Makalahku from './views/gallery/makalah/makalahku'
+import MakalahArea from './views/gallery/makalah/makalah-area'
 import Penjurian from "./views/penjurian/Penjurian";
 import Penilaian from "./views/penilaian/Penilaian";
 
@@ -51,7 +55,8 @@ import Dasboard from "./views/dashboard/";
 import Settings from "./views/settings";
 import FormMadatory from "./views/settings/FormMandatory";
 import MonitoringProject from "./views/MonitoringProject/";
-// import AddSessionPenjurian from "./views/settings/session-penjurian/AddSessionPenjurian";
+import FormCreateInovasiChampion from "./views/champion/CreateForm";
+
 import Botb from "./views/botb";
 import AddCertificate from "./views/botb/AddCertificate";
 import AddCertificateManual from "./views/botb/AddCertificateManual";
@@ -142,6 +147,16 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <Champion />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/champion/create"
+              element={
+                <PrivateRoute>
+                  <FormCreateInovasiChampion />
                 </PrivateRoute>
               }
             />
@@ -279,10 +294,10 @@ export default function AppFunc() {
             <Route
               path="/makalah"
               element={
-                // <PrivateRoute>
-                <Makalah />
-                // </PrivateRoute>
-              }
+                <PrivateRoute>
+                  <Makalah />
+                </PrivateRoute>
+              } 
             />
 
             <Route
@@ -303,14 +318,6 @@ export default function AppFunc() {
               }
             />
 
-            {/* <Route
-              path="setting/add-session-penjurian"
-              element={
-                <PrivateRoute>
-                  <AddSessionPenjurian />
-                </PrivateRoute>
-              }
-            /> */}
 
             <Route
               exact
@@ -434,6 +441,24 @@ export default function AppFunc() {
                 </PrivateRoute>
               }
             />
+            <Route
+              exact
+              path={'/event/calendar'}
+              element={
+                <PrivateRoute>
+                  <CalendarEvent />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={'/event/create-event'}
+              element={
+                <PrivateRoute>
+                  <CreateEvent />
+                </PrivateRoute>
+              }
+            />
 
             <Route
               exact
@@ -451,6 +476,24 @@ export default function AppFunc() {
               element={
                 <PrivateRoute>
                   <AddCertificate />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={'/gallery/makalahku'}
+              element={
+                <PrivateRoute>
+                  <Makalahku />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={'/gallery/makalah-area'}
+              element={
+                <PrivateRoute>
+                  <MakalahArea />
                 </PrivateRoute>
               }
             />

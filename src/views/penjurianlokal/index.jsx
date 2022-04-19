@@ -25,7 +25,7 @@ import SelectUnstyled, { selectUnstyledClasses } from '@mui/base/SelectUnstyled'
 import OptionUnstyled, { optionUnstyledClasses } from '@mui/base/OptionUnstyled';
 import PopperUnstyled from '@mui/base/PopperUnstyled';
 import Search from "../../assets/images/search.png"
-import Table from './Table2'
+import Table from './Table3'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Keyboard, Mousewheel } from "swiper/core";
 import List from '@mui/material/List';
@@ -38,7 +38,12 @@ import Typography from '@mui/material/Typography';
 
 
 import { styled } from '@mui/system';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
+import MuiAccordion from '@mui/material/Accordion';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
 
 SwiperCore.use([Keyboard, Mousewheel]);
 
@@ -193,6 +198,9 @@ const CustomSelect = React.forwardRef(function CustomSelect(props, ref) {
 
 const slides = [1, 2, 3, 4];
 
+
+
+
 class Child extends React.Component {
  
   constructor(props) {
@@ -317,12 +325,12 @@ class Child extends React.Component {
   
 
 
-     <section className='pl-20'>
+     <section className='section-main'>
        <div className="container">
     
 
-         <div className="flex flex-row justify-between pt-5">
-           <div className="flex flex-row title">
+         <div className="flex flex-row ">
+           <div className="flex flex-row">
          
            <div className='flex items-center'>
              
@@ -334,9 +342,7 @@ class Child extends React.Component {
             
            </div>
            </div>
-           <div className='block md:hidden'>
-           <img src={Search} alt=".." />
-           </div>
+         
          </div>
         
          </div>
@@ -346,7 +352,53 @@ class Child extends React.Component {
 
      <SearchForm/>
 
-     <section className='w-full pb-40 pl-20 profile-body lg:pt-10 sm:pt-20'>
+     <section>
+  <div className="container">
+   
+     
+  <ul class="rounded-md ">
+      
+     
+        <Accordion>
+          <li class="rounded-md w-full flex flex-col bg-amber-300 ">
+            <AccordionSummary expandIcon={ <ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" > 
+            <strong>Riwayat Penjurian</strong>
+            </AccordionSummary>
+          </li>
+          <ul>
+            <div className='px-2'>
+              <hr />
+            </div>
+            <li class=" w-full flex flex-col  hover:bg-slate-900  active:bg-slate-900 focus:bg-slate-900">
+              <AccordionDetails>
+                <span className='hover:text-white'>Penjurian Lokal</span>
+              </AccordionDetails>
+            </li>
+            <div className='px-2'>
+              <hr />
+            </div>
+            <li class="w-full flex flex-col  hover:bg-slate-900  active:bg-slate-900 focus:bg-slate-900">
+              <AccordionDetails>
+                <span className='hover:text-white'>Penjurian Nasional</span>
+              </AccordionDetails>
+            </li>
+            <div className='px-2'>
+              <hr />
+            </div>
+            <li class="w-full flex flex-col  hover:bg-slate-900  active:bg-slate-900 focus:bg-slate-900">
+              <AccordionDetails>
+                <span className='hover:text-white'>Penjurian Grand Final</span>
+              </AccordionDetails>
+            </li>
+          </ul>
+        </Accordion>
+       
+   </ul>
+   
+  </div>
+</section>
+
+     <section className='section-main lg:pt-10 pb-40 sm:pt-20 w-full'>
        <div className="container">
 
       <div className="flex flex-col">

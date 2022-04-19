@@ -152,7 +152,24 @@ background: #FFCD00;
     flex-direction: row;
     row-gap: 30px;
 }
+.section-second{
+    button{
+        font-size: 16px;
+        border-radius: 5px;
+        box-shadow: 0px 9px 20px rgba(0, 0, 0, 0.05);
+    }
+}
+h3{
+    font-family: 'SF Pro Display';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
 
+
+color: #000000;
+}
 @media (max-width: 992px) {
     .list-task{
         display: grid;
@@ -173,7 +190,23 @@ background: #FFCD00;
     .title-star{
       padding-top: 60px;
     }
+    .section-second{
+        button{
+            font-size: 12px;
+            font-family: 'SF Pro Display';
 
+font-weight: 700;
+        }
+    }
+    h3{
+        font-family: 'SF Pro Display';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 21px;
+
+color: #000000;
+    }
   
 }
 

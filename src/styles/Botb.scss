@@ -1,0 +1,23 @@
+.tab-menu{
+    display: flex;
+
+   column-gap: 60px;
+   button{
+          padding: 20px; 
+}
+}
+
+@media (max-width: 992px) {
+    .tab-menu{
+    
+   
+        display: flex;
+    
+       column-gap: 10px;
+
+       button{
+        padding: 10px; 
+}
+     
+    }
+}
