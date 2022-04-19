@@ -8,5 +8,6 @@ import FolderIcon from './folder-2.svg';
 import CalendarIcon from './calendar-2.svg';
 import ArrowDownIcon from './arrow-down.svg';
 import ArrowUpIcon from './arrow-up.svg';
+import ChampionIcon from '../champion.png';
 
-export { TrashIcon, InfoIcon, ArrangeSquare, UserIcon, AddIcon, EditIcon, FolderIcon, CalendarIcon, ArrowDownIcon, ArrowUpIcon }
+export { TrashIcon, InfoIcon, ArrangeSquare, UserIcon, AddIcon, EditIcon, FolderIcon, CalendarIcon, ArrowDownIcon, ArrowUpIcon,ChampionIcon }

@@ -6,7 +6,6 @@ module.exports = {
       center: true,
       padding: "1rem",
     },
-
     extend: {
       color: {
         primary: "#FFCD00",
@@ -14,5 +13,8 @@ module.exports = {
     },
   },
   plugins: [
+    function ({ addVariant }) {
+      addVariant('child', '& > *')
+    },
   ],
 }

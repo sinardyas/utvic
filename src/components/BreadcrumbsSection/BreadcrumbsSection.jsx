@@ -2,9 +2,9 @@ import React from 'react';
 import Link from '@mui/material/Link'
 import Breadcrumbs from '@mui/material/Breadcrumbs'
 
-function BreadcrumbsSection({ items }) {
+function BreadcrumbsSection({ className, items }) {
     return (
-      <section className="space-from-header py-[1rem] bg-slate-200">
+      <section className={`space-from-header py-[1rem] bg-slate-200 ${className || ''}`}>
         <div className={'container'}>
           <div role="presentation" className="pt-3">
             <Breadcrumbs aria-label="breadcrumb">

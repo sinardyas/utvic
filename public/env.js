@@ -36,6 +36,9 @@ window.processEnv = {
     permissionDocument: `${baseUrl}permission-document` + ext,
     deleteDocument: `${baseUrl}delete-document` + ext,
     getDocument: `${baseUrl}get-document` + ext,
+    listEvent: `${baseUrl}list-event` + ext,
+    addEvent: `${baseUrl}add-event` + ext,
+    galeriMakalah: `${baseUrl}galeri-makalah` + ext,
 
     getListDocking: `${baseUrl}get-list-docking` + ext,
     getDetailListDocking: `${baseUrl}detail-list-docking` + ext,
@@ -49,5 +52,6 @@ window.processEnv = {
     getHoByPejuang: `${baseUrl}get-ho-by-pejuang` + ext,
     addCertificate: `${baseUrl}add-certificate` + ext,
     addWinner: `${baseUrl}add-winner` + ext,
+    
   },
 };

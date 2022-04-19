@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { GlobalContext } from '../../store/global/Provider'
 
 import 'swiper/css';
-import '../../styles/profile.scss';
+import '../../styles/Botb.scss';
 import PageSpinner from '../../components/Spinner-1';
 import Link from '@mui/material/Link';
 import Foto from "../../assets/images/foto.png";
@@ -14,7 +14,7 @@ import EditPen from "../../assets/images/edit-pen.png";
 import Header from '../../components/Header'
 import DrawerNav from '../../components/menu/DrawerNav'
 import Menus from './Menu.jsx'
-import Tables from './Table2.jsx'
+import Tables from './Table3.jsx'
 
 const { 
   api: {

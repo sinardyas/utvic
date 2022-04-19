@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
   "Message": "Sukses",
   "Data": [
     {
-        "DocumentId": 123,
+        "DocumentId": 1,
       "name": "Makalah",
       "ImageUrl": "{DOMAIN}/upload/folder.png",
       "Type": "folder",
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
       "IsActive": true,
       "Children": [
         {
-            "DocumentId": 123,
+            "DocumentId": 2,
           "name": "makalah.doc",
           "ImageUrl": "{DOMAIN}/upload/file.png",
           "Type": ".doc",
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
           "PathUrl": "{DOMAIL}/upload/dokumen/makalah.doc"
         },
         {
-            "DocumentId": 123,
+            "DocumentId": 3,
           "name": "makalah.doc",
           "ImageUrl": "{DOMAIN}/upload/file.png",
           "Type": ".doc",
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
       ]
     },
     {
-        "DocumentId": 123,
+        "DocumentId": 4,
       "name": "Makalah",
       "ImageUrl": "{DOMAIN}/upload/folder.png",
       "Type": "folder",
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
       "IsActive": true,
       "Children": [
         {
-            "DocumentId": 123,
+            "DocumentId": 5,
           "name": "makalah.doc",
           "ImageUrl": "{DOMAIN}/upload/file.png",
           "Type": ".doc",
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
           "PathUrl": "{DOMAIL}/upload/dokumen/makalah.doc"
         },
         {
-            "DocumentId": 123,
+            "DocumentId": 6,
           "name": "makalah.doc",
           "ImageUrl": "{DOMAIN}/upload/file.png",
           "Type": ".doc",

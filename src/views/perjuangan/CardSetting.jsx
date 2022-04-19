@@ -161,13 +161,24 @@ class Child extends React.Component {
       <div className="list-setting">
         <div className="pb-5">
   <div class="p-6 bg-white rounded-xl border-solid border-2 border-slate-200 w-full">
- 
+ <div className="flex flex-col">
   <div className="flex flex-row justify-between w-full">
-      <div className="flex flex-col w-7/12">
+      <div className="flex flex-col w-full">
+        <div className="flex flex-row gap-5">
+          <div className="w-full" >
+         
     <p className='font-bold'>LDR Mandiri &amp; Online Genba</p>
+    </div>
+    <div className="w-4/12 block md:hidden" >
+    <FormControlLabel
+        control={<IOSSwitch  defaultChecked />}
+        label=""
+      />
+      </div>
+    </div>
     <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
       </div>
-      <div className="flex flex-row w-full justify-between w-5/12 items-center">
+      <div className="flex flex-row  w-9/12 justify-between items-center hidden md:flex">
       <div class="verikal_center"></div>
         <h3 className='font-bold'>25%</h3>
       <FormControlLabel
@@ -182,90 +193,179 @@ class Child extends React.Component {
       </div>
 
       </div>
+      
 
+  </div>
+  <div className="flex flex-row gap-3 mt-5  w-full  items-center block md:hidden">
+    
+        <h3 className='font-bold'>25%</h3>
+    
+      <div>
+      <img src={Edit} alt=".." width="47" height="47"/>
+      </div>
+      <div>
+      <img src={Delete} alt=".." width="47" height="47"/>
+      </div>
+
+      </div>
   </div>
 </div>
 </div>
 <div className="pb-5">
-<div class="p-6 bg-white rounded-xl border-solid border-2 border-slate-200 w-full">
- 
- <div className="flex flex-row justify-between w-full">
-     <div className="flex flex-col w-7/12">
-   <p className='font-bold'>LDR Mandiri &amp; Online Genba</p>
-   <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
-     </div>
-     <div className="flex flex-row w-full justify-between w-5/12 items-center">
-     <div class="verikal_center"></div>
-       <h3 className='font-bold'>25%</h3>
-     <FormControlLabel
-       control={<IOSSwitch  defaultChecked />}
-       label=""
-     />
-     <div>
-     <img src={Edit} alt=".." width="47" height="47"/>
-     </div>
-     <div>
-     <img src={Delete} alt=".." width="47" height="47"/>
-     </div>
+  <div class="p-6 bg-white rounded-xl border-solid border-2 border-slate-200 w-full">
+ <div className="flex flex-col">
+  <div className="flex flex-row justify-between w-full">
+      <div className="flex flex-col w-full">
+        <div className="flex flex-row gap-5">
+          <div className="w-full" >
+         
+    <p className='font-bold'>LDR Mandiri &amp; Online Genba</p>
+    </div>
+    <div className="w-4/12 block md:hidden" >
+    <FormControlLabel
+        control={<IOSSwitch  defaultChecked />}
+        label=""
+      />
+      </div>
+    </div>
+    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+      </div>
+      <div className="flex flex-row  w-9/12 justify-between items-center hidden md:flex">
+      <div class="verikal_center"></div>
+        <h3 className='font-bold'>25%</h3>
+      <FormControlLabel
+        control={<IOSSwitch  defaultChecked />}
+        label=""
+      />
+      <div>
+      <img src={Edit} alt=".." width="47" height="47"/>
+      </div>
+      <div>
+      <img src={Delete} alt=".." width="47" height="47"/>
+      </div>
 
-     </div>
+      </div>
+      
 
- </div>
+  </div>
+  <div className="flex flex-row gap-3 mt-5  w-full  items-center block md:hidden">
+    
+        <h3 className='font-bold'>25%</h3>
+    
+      <div>
+      <img src={Edit} alt=".." width="47" height="47"/>
+      </div>
+      <div>
+      <img src={Delete} alt=".." width="47" height="47"/>
+      </div>
+
+      </div>
+  </div>
 </div>
 </div>
 <div className="pb-5">
-<div class="p-6 bg-white rounded-xl border-solid border-2 border-slate-200 w-full">
- 
- <div className="flex flex-row justify-between w-full">
-     <div className="flex flex-col w-7/12">
-   <p className='font-bold'>LDR Mandiri &amp; Online Genba</p>
-   <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
-     </div>
-     <div className="flex flex-row w-full justify-between w-5/12 items-center">
-     <div class="verikal_center"></div>
-       <h3 className='font-bold'>25%</h3>
-     <FormControlLabel
-       control={<IOSSwitch  defaultChecked />}
-       label=""
-     />
-     <div>
-     <img src={Edit} alt=".." width="47" height="47"/>
-     </div>
-     <div>
-     <img src={Delete} alt=".." width="47" height="47"/>
-     </div>
+  <div class="p-6 bg-white rounded-xl border-solid border-2 border-slate-200 w-full">
+ <div className="flex flex-col">
+  <div className="flex flex-row justify-between w-full">
+      <div className="flex flex-col w-full">
+        <div className="flex flex-row gap-5">
+          <div className="w-full" >
+         
+    <p className='font-bold'>LDR Mandiri &amp; Online Genba</p>
+    </div>
+    <div className="w-4/12 block md:hidden" >
+    <FormControlLabel
+        control={<IOSSwitch  defaultChecked />}
+        label=""
+      />
+      </div>
+    </div>
+    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+      </div>
+      <div className="flex flex-row  w-9/12 justify-between items-center hidden md:flex">
+      <div class="verikal_center"></div>
+        <h3 className='font-bold'>25%</h3>
+      <FormControlLabel
+        control={<IOSSwitch  defaultChecked />}
+        label=""
+      />
+      <div>
+      <img src={Edit} alt=".." width="47" height="47"/>
+      </div>
+      <div>
+      <img src={Delete} alt=".." width="47" height="47"/>
+      </div>
 
-     </div>
+      </div>
+      
 
- </div>
+  </div>
+  <div className="flex flex-row gap-3 mt-5  w-full  items-center block md:hidden">
+    
+        <h3 className='font-bold'>25%</h3>
+    
+      <div>
+      <img src={Edit} alt=".." width="47" height="47"/>
+      </div>
+      <div>
+      <img src={Delete} alt=".." width="47" height="47"/>
+      </div>
+
+      </div>
+  </div>
 </div>
 </div>
 
 <div className="pb-5">
-<div class="p-6 bg-white rounded-xl border-solid border-2 border-slate-200 w-full">
- 
- <div className="flex flex-row justify-between w-full">
-     <div className="flex flex-col w-7/12">
-   <p className='font-bold'>LDR Mandiri &amp; Online Genba</p>
-   <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
-     </div>
-     <div className="flex flex-row w-full justify-between w-5/12 items-center">
-     <div class="verikal_center"></div>
-       <h3 className='font-bold'>25%</h3>
-     <FormControlLabel
-       control={<IOSSwitch  defaultChecked />}
-       label=""
-     />
-     <div>
-     <img src={Edit} alt=".." width="47" height="47"/>
-     </div>
-     <div>
-     <img src={Delete} alt=".." width="47" height="47"/>
-     </div>
+  <div class="p-6 bg-white rounded-xl border-solid border-2 border-slate-200 w-full">
+ <div className="flex flex-col">
+  <div className="flex flex-row justify-between w-full">
+      <div className="flex flex-col w-full">
+        <div className="flex flex-row gap-5">
+          <div className="w-full" >
+         
+    <p className='font-bold'>LDR Mandiri &amp; Online Genba</p>
+    </div>
+    <div className="w-4/12 block md:hidden" >
+    <FormControlLabel
+        control={<IOSSwitch  defaultChecked />}
+        label=""
+      />
+      </div>
+    </div>
+    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+      </div>
+      <div className="flex flex-row  w-9/12 justify-between items-center hidden md:flex">
+      <div class="verikal_center"></div>
+        <h3 className='font-bold'>25%</h3>
+      <FormControlLabel
+        control={<IOSSwitch  defaultChecked />}
+        label=""
+      />
+      <div>
+      <img src={Edit} alt=".." width="47" height="47"/>
+      </div>
+      <div>
+      <img src={Delete} alt=".." width="47" height="47"/>
+      </div>
 
-     </div>
+      </div>
+      
 
- </div>
+  </div>
+  <div className="flex flex-row gap-3 mt-5  w-full  items-center block md:hidden">
+    
+        <h3 className='font-bold'>25%</h3>
+    
+      <div>
+      <img src={Edit} alt=".." width="47" height="47"/>
+      </div>
+      <div>
+      <img src={Delete} alt=".." width="47" height="47"/>
+      </div>
+
+      </div>
+  </div>
 </div>
 </div>
 

@@ -8,8 +8,9 @@ import Date from '../../assets/images/calendar-admin.png'
 import Calendar from '../../assets/images/calender.png'
 import DatePickers from '../../components/DatePickers'
 import { borderLeft } from '@mui/system';
+import '../../styles/stars.scss';
 
-const style = {
+const styles = (theme) => ({
   position: 'absolute',
   top: '50%',
   left: '50%',
@@ -21,8 +22,23 @@ const style = {
   p: 4,
   
 
-  borderLeft:'3px solid #FFCD00'
-};
+  borderLeft:'3px solid #FFCD00',
+
+  [theme.breakpoints.between('md', 'lg')]: {
+   
+    width:'460px',
+   padding :'0px',
+
+   },
+
+  [theme.breakpoints.between('xs', 'md')]: {
+   borderRadius:'20px',
+   width:'360px',
+  padding :'0px',
+  borderLeft:'none',
+  },
+
+});
 
 export default function Settings() {
   const [open, setOpen] = React.useState(false);
@@ -41,7 +57,7 @@ export default function Settings() {
         </div>
       <div className="col-button flex gap-5">
       <button onClick={handleOpen} className='bg-yellow-400 px-4 py-2  text-black font-semibold disabled:opacity-75'> 
-        <div className="flex flex-row  gap-3 items-center">
+        <div className="flex flex-row  gap-1 items-center">
             <div>
                 <img src={Setting} alt=".." width="20" height="20" className='setting-img'/>
             </div>
@@ -50,7 +66,7 @@ export default function Settings() {
       </button>
 
       <button onClick={handleOpen2} className='bg-yellow-400 px-4 py-2  text-black font-semibold disabled:opacity-75'> 
-        <div className="flex flex-row gap-3 items-center">
+        <div className="flex flex-row gap-1 items-center">
             <div>
                 <img src={Setting} alt=".." width="20" height="20" className='setting-img'/>
             </div>
@@ -65,11 +81,11 @@ export default function Settings() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={styles}>
            
         <div className="flex flex-col py-10 px-10">
-            <h2 className='font-bold'>Setting Jumlah Seasonal Task</h2>
-            <div className="flex flex-row w-full mt-10 gap-3">
+            <h3 className='font-bold'>Setting Jumlah Seasonal Task</h3>
+            <div className="col-datepicker  flex flex-row w-full mt-10 gap-3">
                 <div className="flex flex-col w-full">
                
                 <strong>Tahap Pejuang</strong>
@@ -103,9 +119,9 @@ export default function Settings() {
         aria-labelledby="modal-modal-title2"
         aria-describedby="modal-modal-description2"
       >
-        <Box sx={style}>
+        <Box sx={styles}>
         <div className="flex flex-col py-10 px-10">
-            <h2 className='font-bold'>Setting Point Basic Task</h2>
+            <h3 className='font-bold'>Setting Point Basic Task</h3>
             <div className="flex flex-col w-full mt-5 gap-3">
             <div className="col-datepicker flex flex-row gap-5 pt-5">
         <div className='flex flex-col w-full'>
