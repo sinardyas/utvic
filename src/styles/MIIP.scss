@@ -21,7 +21,7 @@
     @apply flex items-center md:justify-between flex-wrap;
 
     .filter-field-container {
-      @apply space-y-3 flex-[0_1_100%] md:flex-[0_1_31%] mb-4;
+      @apply space-y-3 flex-0-1 md:flex-30 mb-4;
 
       .filter-select {
         @apply focus:outline-none bg-inherit w-full placeholder:italic;
@@ -41,7 +41,7 @@
     @apply flex flex-wrap w-full  justify-between;
 
     .card-section {
-      @apply flex shadow-md items-center space-x-4 flex-[0_1_100%] md:flex-[0_1_48%] mb-4 p-4 border-l-2 border-[#FFCD00];
+      @apply flex shadow-md items-center space-x-4 flex-0-1 mb-4 p-4 border-l-2 border-primary;
 
       > .card-section-image {
         > img {

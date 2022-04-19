@@ -6,6 +6,6 @@
   @apply flex items-center justify-center space-x-1 h-8 rounded-full bg-black text-white w-16;
 
   .active {
-    @apply bg-[#FFCD00] h-8 w-8 rounded-full flex items-center justify-center text-black;
+    @apply bg-primary h-8 w-8 rounded-full flex items-center justify-center text-black;
   }
 }
