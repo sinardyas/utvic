@@ -1,52 +1,52 @@
-.container-detail-penilaian-pejuang {
-  @apply container  mx-auto pt-6 space-y-6;
-}
+// .container-detail-penilaian-pejuang {
+//   @apply container  mx-auto pt-6 space-y-6;
+// }
 
-.header-detail-penilaian {
-  @apply flex items-center px-2;
-}
+// .header-detail-penilaian {
+//   @apply flex items-center px-2;
+// }
 
-.title-page-container {
-  @apply flex items-center space-x-4;
-}
+// .title-page-container {
+//   @apply flex items-center space-x-4;
+// }
 
-.button-back {
-  @apply items-center justify-center px-6 py-3 border text-xl font-bold rounded-md border-black cursor-pointer  transition-all duration-300 ease-in-out;
-}
+// .button-back {
+//   @apply items-center justify-center px-6 py-3 border text-xl font-bold rounded-md border-black cursor-pointer  transition-all duration-300 ease-in-out;
+// }
 
-.card {
-  @apply m-2 flex-45 text-black/70  transition-all duration-300 ease-in-out rounded-md border border-gray-200 py-1 px-4 h-32 shadow-lg flex flex-col;
+// .card {
+//   @apply m-2 flex-45 text-black/70  transition-all duration-300 ease-in-out rounded-md border border-gray-200 py-1 px-4 h-32 shadow-lg flex flex-col;
 
-  .card-title {
-    @apply font-bold;
-  }
+//   .card-title {
+//     @apply font-bold;
+//   }
 
-  .card-content {
-  }
-}
+//   .card-content {
+//   }
+// }
 
-@screen xl {
-  .container-detail-penilaian-pejuang {
-    @apply px-12;
-  }
-}
+// @screen xl {
+//   .container-detail-penilaian-pejuang {
+//     @apply px-12;
+//   }
+// }
 
-@screen lg {
-  .header-detail-penilaian {
-    @apply justify-between;
-  }
+// @screen lg {
+//   .header-detail-penilaian {
+//     @apply justify-between;
+//   }
 
-  .card {
-    @apply min-w-[14rem];
-  }
-}
+//   .card {
+//     @apply min-w-[14rem];
+//   }
+// }
 
-@screen md {
-  .header-detail-penilaian {
-    @apply px-16;
-  }
+// @screen md {
+//   .header-detail-penilaian {
+//     @apply px-16;
+//   }
 
-  .card {
-    @apply flex-30 min-w-11rem;
-  }
-}
+//   .card {
+//     @apply flex-30 min-w-11rem;
+//   }
+// }
